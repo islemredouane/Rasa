@@ -311,6 +311,7 @@ nav ul a:hover::after {
   -moz-transition: all 0.6s ease;
   -ms-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
+    will-change: transform , backdrop-filter ;
 }
 
 .card.active {
@@ -1969,4 +1970,5 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
 
