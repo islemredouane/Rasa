@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <meta name="description" content="Rasa club website">
+        <title>Rasa Registration form</title>
+        <link rel="icon" href="rasa-favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Offside&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="rasa.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+       <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA1rOxxo_WUjjjpKhkpphBEg62sSjnHryU",
+    authDomain: "rasa-a6578.firebaseapp.com",
+    databaseURL: "https://rasa-a6578-default-rtdb.firebaseio.com",
+    projectId: "rasa-a6578",
+    storageBucket: "rasa-a6578.firebasestorage.app",
+    messagingSenderId: "525552402327",
+    appId: "1:525552402327:web:ae544c5d7ebd5f26388ed2"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const form = document.getElementById("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const full_name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const school = document.querySelector('input[name="school"]:checked').value;
+    const year = document.querySelector('input[name="year"]:checked').value;
+    const hobbies = Array.from(document.querySelectorAll('input[name="skill"]:checked')).map(h => h.value);
+    const availability = document.querySelector('input[name="availability"]:checked').value;
+    const motivation = document.getElementById("motivation").value;
+    const suggestions = document.getElementById("suggestions").value;
+
+    const userRef = ref(db, "registrations");
+    const newUser = push(userRef);
+
+    set(newUser, {
+      full_name,
+      email,
+      phone,
+      school,
+      year,
+      hobbies,
+      availability,
+      motivation,
+      suggestions,
+    })
+    .then(() => {
+      alert("✅ Form submitted successfully!");
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Error submitting form: " + error);
+    });
+  });
+</script>
+
+    </head>
+    <body style="background-color: #000000;">
+        <nav class="main-nav">
+                <a href="index.html#landing-page"><img src="rasa-logo.png"  alt="Rasa club logo" class="logo"></a>
+                <ul>
+                    <li><a class="menu" href="index.html#landing-page">Home</a></li>
+                <li><a class="menu" href="index.html#about-page">About</a></li>
+                    <li><a class="menu" href="Literature.html">Literature</a></li>
+                    <li><a class="menu" href="music.html">Music</a></li>
+                    <li><a class="menu" href="chess.html">Chess</a></li>
+                    <li><a class="menu" href="painting.html">Art</a></li>
+                    
+                </ul>
+                <button class="register-btn"><a href="registration.html">Register</a></button>
+            </nav>
+            <nav class="phones-nav">
+                <a href="index.html#landing-page"><img src="rasa-logo.png"  alt="Rasa club logo" class="logo"></a>
+                <ul>
+                    <li><a class="menu" href="Literature.html"><i class="fa-solid fa-book-open"></i></a></li>
+                    <li><a class="menu" href="music.html"><i class="fa-solid fa-music"></i></a></li>
+                    <li><a class="menu" href="chess.html"><i class="fa-solid fa-chess"></i></a></li>
+                    <li><a class="menu" href="painting.html"><i class="fa-solid fa-palette"></i></a></li>
+                </ul>
+                <button class="register-btn"><a href="registration.html">Register</a></button>
+            </nav>
+
+        <div data-aos="fade-up" class="registration-form">
+            <h1 class="shiny-text">Rasa Club Registration Form</h1>
+            <form id="form">
+                <div class="line">
+                    <input id="name" placeholder="Full name" required>
+                </div>
+                <div class="line">
+                    <input id="phone" placeholder="Phone number" required>
+                    <input id="email" type="email" placeholder="Email" required>
+                </div>
+                <div class="line">
+                    <fieldset required id="school-choice" class="radio-group">
+                        <legend>Choose your school</legend>
+
+                        <label>
+                            <input type="radio" name="school" value="ESTIN" checked>
+                            ESTIN
+                        </label>
+
+                        <label>
+                            <input type="radio" name="school" value="ENS">
+                            ENS
+                        </label>
+                    </fieldset>
+                    <fieldset required id="year" class="radio-group">
+                        <legend>Study year</legend>
+
+                        <label>
+                            <input type="radio" name="year" value="1cp" checked>
+                            1cp
+                        </label>
+
+                        <label>
+                            <input type="radio" name="year" value="2cp">
+                            2cp
+                        </label>
+
+                        <label>
+                            <input type="radio" name="year" value="cs">
+                            cs
+                        </label>
+                    </fieldset>
+                </div>
+                <textarea required name="motivation" placeholder="Why do you want to join RASA" id="motivation"></textarea>
+                <fieldset required id="skills" class="radio-group">
+                    <legend>What are your skills or interests?</legend>
+
+                    <label>
+                        <input type="radio" name="skill" value="Chess" checked>
+                        Chess
+                    </label>
+
+                    <label>
+                        <input type="radio" name="skill" value="Music">
+                        Music
+                    </label>
+
+                    <label>
+                        <input type="radio" name="skill" value="Literature">
+                        Literature
+                    </label>
+                    <label>
+                        <input type="radio" name="skill" value="Painting">
+                        Painting
+                    </label>
+                    <label>
+                        <input type="radio" name="skill" value="Gaming">
+                        Gaming
+                    </label>
+                </fieldset>
+                <fieldset required id="availability" class="radio-group">
+                    <legend>Are you available to participate regularly in club activities?</legend>
+
+                    <label>
+                        <input type="radio" name="availability" value="yes" checked>
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="availability" value="no">
+                        No
+                    </label>
+
+                    <label>
+                        <input type="radio" name="availability" value="Sometimes">
+                        Sometimes
+                    </label>
+                </fieldset>
+                
+                <textarea name="suggestions" placeholder="Do you have any additions or comments?" id="suggestions"></textarea>
+                <button class="primary-btn" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+        
+    </body>
+</html>
