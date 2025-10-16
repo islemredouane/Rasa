@@ -96,12 +96,10 @@
       </form>
     </div>
 
-    <!-- Firebase (ROT13 encoded) -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
       import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-      // ROT13 decoder
       function rot13(str) {
         return str.replace(/[A-Za-z]/g, c => {
           const base = c <= 'Z' ? 65 : 97;
@@ -176,4 +174,5 @@
     </script>
   </body>
 </html>
+
 
