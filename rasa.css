@@ -18,7 +18,6 @@ html {
   margin:0;
   padding: 0;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 body {
@@ -27,7 +26,6 @@ body {
   width: 100%;
   margin:0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 ul {
@@ -1968,6 +1966,7 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
 
 
 
