@@ -15,7 +15,7 @@
 html {
   scroll-behavior: smooth;
   width: 100%;
-
+  overflow-x:hidden;
 }
 
 body {
@@ -1964,6 +1964,7 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
 
 
 
