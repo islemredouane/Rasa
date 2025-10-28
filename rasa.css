@@ -14,15 +14,12 @@
 
 html {
   scroll-behavior: smooth;
-  width: 100%;
-  /* avoid forcing horizontal clipping here; instead ensure elements do not exceed viewport
-     (removing overflow-x: hidden prevents double/inner scrollbars). */
-  overflow-x: clip;
 }
 
 body {
   font-family: "Offside", sans-serif;
   width: 100%;
+  overflow-x: hidden;
   margin:0;
   padding: 0;
 }
@@ -2001,4 +1998,5 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
 
