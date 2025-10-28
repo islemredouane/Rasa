@@ -1590,9 +1590,8 @@ form textarea {
 }
 /*Large phones*/
 @media (max-width: 768px){
-  html {
+  body {
     overflow-x:hidden;
-      -webkit-overflow-scrolling: auto;
   }
   .logo {
     width: 55px;
@@ -2008,6 +2007,7 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
 
 
 
