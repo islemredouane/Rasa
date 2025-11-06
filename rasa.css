@@ -2065,7 +2065,7 @@ form textarea {
     padding: 8px 12px;
   }
   #landing-page {
-    padding: 0 1.25rem;
+    padding: 2rem 1.25rem;
   }
   #landing-page .hero-section {
     padding-top: 75px;
@@ -2089,8 +2089,8 @@ form textarea {
     font-size: 15px;
     padding: 10px 20px;
   }
-  #landing-page .hero-section .slogan {
-    font-size: 14px;
+  #landing-page .hero-section .text-section .slogan {
+    font-size: 18px;
     margin: 15px 0;
   }
   #landing-page .hero-section .image-section {
@@ -2100,7 +2100,7 @@ form textarea {
     padding-top: 15px;
   }
   #about-page {
-    padding: 5.5rem 1.25rem;
+    padding: 8.5rem 1.25rem;
   }
   #about-page .text h1 {
     font-size: 24px;
@@ -2121,6 +2121,7 @@ form textarea {
   }
   #our-team {
     padding: 4rem 1.25rem;
+    padding-top: 7rem;
   }
   #our-team h1 {
     font-size: 26px;
@@ -2132,20 +2133,20 @@ form textarea {
     height: 500px;
   }
   .card-slider .cards .card {
-    height: 460px;
+    height: 430px;
     padding: 15px;
   }
   .card h2 {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .card .name {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .card p {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .card.prev {
     transform: translateX(-20px) scale(0.8);
@@ -2208,7 +2209,7 @@ form textarea {
     margin: 12px auto;
   }
   #Literature {
-    padding: 5.5rem 1.25rem;
+    padding: 8.5rem 1.25rem;
   }
   #Literature .literature-hero .text h1 {
     font-size: 24px;
