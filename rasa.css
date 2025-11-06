@@ -557,6 +557,9 @@ form textarea:focus {
 form textarea {
     padding: 15px 20px;
 }
+#Contact form input::placeholder ,   #Contact form textarea::placeholder {
+    color:#444
+  }
 
 .form-btn  {
     margin: 20px 18px;
@@ -2368,3 +2371,4 @@ form textarea {
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
 }
+
