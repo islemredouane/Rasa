@@ -1276,9 +1276,7 @@ form textarea {
   color: var(--secondary-color);
 }
 
-/* ===========================
-   📱 RESPONSIVE DESIGN
-=========================== */
+/* RESPONSIVE DESIGN */
 
 /* ----- Large Tablets (≤1200px) ----- */
 @media (max-width: 1200px) {
@@ -1345,15 +1343,15 @@ form textarea {
 @media (max-width: 992px) {
   nav.main-nav {
     justify-content: space-between;
-    margin-left: 2rem;
+    margin-left: 1rem;
     width: 95%;
   }
   nav ul {
     padding: 20px;
   }
   nav ul a {
-    margin-left: 20px;
-    font-size: 16px;
+    margin-left: 30px;
+    font-size: 18px;
   }
   .register-btn {
     font-size: 15px;
@@ -1479,13 +1477,14 @@ form textarea {
   nav.main-nav {
     margin-left: 1rem;
     width: 96%;
+    height: 80px;
   }
   nav ul {
     padding: 15px;
   }
   nav ul a {
-    margin-left: 15px;
-    font-size: 15px;
+    margin-left: 20px;
+    font-size: 18px;
   }
   #landing-page {
     height: auto;
@@ -1515,12 +1514,11 @@ form textarea {
   #landing-page .hero-section .image-section {
     width: 100%;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
   }
   #landing-page .hero-section .image-section img {
     width: 100%;
     max-width: 450px;
-    padding-top: 20px;
   }
   #about-page {
     flex-direction: column;
@@ -1715,7 +1713,7 @@ form textarea {
   .logo {
     width: 50px;
     height: 50px;
-    margin-left: 20px;
+    margin-left: 5px;
   }
   nav.main-nav {
     display: none;
@@ -1725,6 +1723,7 @@ form textarea {
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1743,9 +1742,13 @@ form textarea {
   }
   nav.phones-nav ul i {
     padding: 2px;
-    margin: 0 14px;
-    transform: scale(1.8);
-  }
+    margin: 0 18px;
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
   nav.phones-nav ul a::after {
     display: none;
   }
@@ -1762,10 +1765,10 @@ form textarea {
     font-size: 22px;
   }
   #landing-page .hero-section .text-section .primary-btn {
-    width: 75%;
+    width: 65%;
   }
-  #landing-page .hero-section .slogan {
-    font-size: 17px;
+  #landing-page .hero-section .text-section .slogan {
+    font-size: 18px;
   }
   #landing-page .hero-section .image-section img {
     max-width: 100%;
@@ -1808,7 +1811,7 @@ form textarea {
     width: 65%;
   }
   #Literature {
-    padding: 7rem 1.75rem;
+    padding: 8rem 1.75rem;
   }
   #Literature .literature-hero .text h1 {
     font-size: 28px;
@@ -1883,15 +1886,19 @@ form textarea {
   .logo {
     width: 45px;
     height: 45px;
-    margin-left: 18px;
+    margin-left: 5px;
   }
   nav.phones-nav {
     padding: 0 18px;
   }
   nav.phones-nav ul i {
     margin: 0 12px;
-    transform: scale(1.7);
-  }
+    transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -ms-transform: scale(1.8);
+    -o-transform: scale(1.8);
+}
   .register-btn {
     font-size: 13px;
     padding: 10px 14px;
@@ -1966,7 +1973,7 @@ form textarea {
     margin: 15px auto;
   }
   #Literature {
-    padding: 6rem 1.5rem;
+    padding: 8rem 1.5rem;
   }
   #Literature .literature-hero .text h1 {
     font-size: 26px;
@@ -2014,7 +2021,8 @@ form textarea {
     padding: 40px 1.5rem;
   }
   #Instruments h1 {
-    font-size: 26px;
+    font-size: 28px;
+    text-align: center;
   }
   #Instruments .lit-card {
     min-height: 700px;
