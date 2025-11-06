@@ -1490,7 +1490,7 @@ form textarea {
   #landing-page {
     height: auto;
     min-height: 100vh;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
   #landing-page .hero-section {
     flex-direction: column;
@@ -1526,7 +1526,7 @@ form textarea {
     flex-direction: column;
     height: auto;
     min-height: 100vh;
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
   }
   #about-page .text h1 {
     font-size: 32px;
@@ -1553,6 +1553,10 @@ form textarea {
     height: auto;
     min-height: 100vh;
     overflow-x: hidden;
+    padding: 6rem 2rem;
+  }
+  #our-team h1 {
+    margin: 3rem auto 3rem;
   }
   .card-slider {
     width: 90%;
@@ -1592,7 +1596,7 @@ form textarea {
     margin-bottom: 3rem;
   }
   #Contact .container {
-    margin: 2rem 1rem;
+    margin: 3rem 2rem;
   }
   #Contact .container iframe {
     width: 100%;
@@ -1610,7 +1614,7 @@ form textarea {
   #Literature {
     height: auto;
     min-height: 100vh;
-    padding: 8rem 1.5rem;
+    padding: 8rem 2rem;
   }
   #Literature .literature-hero {
     flex-direction: column;
@@ -1639,7 +1643,7 @@ form textarea {
   .literature-about {
     height: auto;
     min-height: 80vh;
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
   }
   .literature-about h1 {
     font-size: 32px;
@@ -1650,14 +1654,14 @@ form textarea {
   #literature-team {
     height: auto;
     min-height: 100vh;
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
     overflow-x: hidden;
   }
   #literature-team h1 {
     font-size: 32px;
   }
   #overals {
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
   }
   #overals h1 {
     font-size: 36px;
@@ -1667,19 +1671,19 @@ form textarea {
     align-items: center;
   }
   #english-literature {
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
   }
   .english-books h1 {
     font-size: 36px;
   }
   #arabic-literature {
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
   }
   .arabic-books h1 {
     font-size: 36px;
   }
   #Instruments {
-    padding: 60px 1.5rem;
+    padding: 60px 2rem;
   }
   #Instruments h1 {
     font-size: 32px;
@@ -1699,7 +1703,7 @@ form textarea {
     width: 60%;
   }
   .registration-form {
-    padding: 100px 1.5rem;
+    padding: 100px 2rem;
   }
   .registration-form h1 {
     font-size: 32px;
@@ -1711,7 +1715,7 @@ form textarea {
   .logo {
     width: 50px;
     height: 50px;
-    margin-left: 15px;
+    margin-left: 20px;
   }
   nav.main-nav {
     display: none;
@@ -1727,7 +1731,7 @@ form textarea {
     align-items: center;
     z-index: 1000;
     margin: 5px 0 0 0;
-    padding: 0 15px;
+    padding: 0 20px;
     border-radius: 20px;
     background: rgba(106, 106, 106, 0.1);
     backdrop-filter: blur(5px);
@@ -1739,14 +1743,14 @@ form textarea {
   }
   nav.phones-nav ul i {
     padding: 2px;
-    margin: 0 12px;
+    margin: 0 14px;
     transform: scale(1.8);
   }
   nav.phones-nav ul a::after {
     display: none;
   }
   #landing-page {
-    padding: 0 1.25rem;
+    padding: 0 1.75rem;
   }
   #landing-page .hero-section {
     padding-top: 90px;
@@ -1758,16 +1762,16 @@ form textarea {
     font-size: 22px;
   }
   #landing-page .hero-section .text-section .primary-btn {
-    width: 80%;
+    width: 75%;
   }
   #landing-page .hero-section .slogan {
-    font-size: 16px;
+    font-size: 17px;
   }
   #landing-page .hero-section .image-section img {
     max-width: 100%;
   }
   #about-page {
-    padding: 7rem 1.25rem;
+    padding: 7rem 1.75rem;
   }
   #about-page .text h1 {
     font-size: 28px;
@@ -1776,28 +1780,35 @@ form textarea {
     font-size: 16px;
   }
   #about-page .text .team-btn {
-    width: 70%;
+    width: 65%;
   }
   #about-page .images img {
     max-width: 100%;
   }
+  #our-team {
+    padding: 5rem 1.75rem;
+  }
+  #our-team h1 {
+    margin: 2rem auto 2.5rem;
+  }
   .card-slider {
-    width: 280px;
+    width: 85%;
+    max-width: 290px;
   }
   .nav.prev {
-    left: -90px;
+    left: -80px;
   }
   .nav.next {
-    right: -90px;
+    right: -80px;
   }
   #Contact .container {
-    margin: 2rem 0.75rem;
+    margin: 2.5rem 1.75rem;
   }
   #Contact form .form-btn {
-    width: 70%;
+    width: 65%;
   }
   #Literature {
-    padding: 7rem 1.25rem;
+    padding: 7rem 1.75rem;
   }
   #Literature .literature-hero .text h1 {
     font-size: 28px;
@@ -1806,13 +1817,13 @@ form textarea {
     font-size: 16px;
   }
   #Literature .literature-hero .text .lit-team-btn {
-    width: 70%;
+    width: 65%;
   }
   #Literature .literature-hero .images img {
     max-width: 100%;
   }
   .literature-about {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   .literature-about h1 {
     font-size: 28px;
@@ -1821,31 +1832,31 @@ form textarea {
     font-size: 16px;
   }
   #literature-team {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   #literature-team h1 {
     font-size: 28px;
   }
   #overals {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   #overals h1 {
     font-size: 32px;
   }
   #english-literature {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   .english-books h1 {
     font-size: 32px;
   }
   #arabic-literature {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   .arabic-books h1 {
     font-size: 32px;
   }
   #Instruments {
-    padding: 50px 1.25rem;
+    padding: 50px 1.75rem;
   }
   #Instruments h1 {
     font-size: 28px;
@@ -1854,16 +1865,16 @@ form textarea {
     min-height: 650px;
   }
   #Instruments .lit-card .download-btn {
-    width: 70%;
+    width: 65%;
   }
   .registration-form {
-    padding: 80px 1.25rem;
+    padding: 80px 1.75rem;
   }
   .registration-form h1 {
     font-size: 28px;
   }
   .registration-form button {
-    width: 70%;
+    width: 65%;
   }
 }
 
@@ -1872,21 +1883,21 @@ form textarea {
   .logo {
     width: 45px;
     height: 45px;
-    margin-left: 10px;
+    margin-left: 18px;
   }
   nav.phones-nav {
-    padding: 0 10px;
+    padding: 0 18px;
   }
   nav.phones-nav ul i {
-    margin: 0 10px;
-    transform: scale(1.6);
+    margin: 0 12px;
+    transform: scale(1.7);
   }
   .register-btn {
     font-size: 13px;
-    padding: 10px;
+    padding: 10px 14px;
   }
   #landing-page {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
   #landing-page .hero-section {
     padding-top: 80px;
@@ -1901,7 +1912,7 @@ form textarea {
     font-size: 15px;
   }
   #about-page {
-    padding: 6rem 1rem;
+    padding: 6rem 1.5rem;
   }
   #about-page .text h1 {
     font-size: 26px;
@@ -1910,27 +1921,34 @@ form textarea {
     font-size: 15px;
   }
   #about-page .text .team-btn {
-    width: 80%;
+    width: 75%;
+  }
+  #our-team {
+    padding: 4.5rem 1.5rem;
+  }
+  #our-team h1 {
+    margin: 1.5rem auto 2rem;
   }
   .card-slider {
-    width: 260px;
+    width: 85%;
+    max-width: 270px;
     height: 520px;
   }
   .card-slider .cards .card {
     height: 480px;
   }
   .nav.prev {
-    left: -85px;
+    left: -75px;
   }
   .nav.next {
-    right: -85px;
+    right: -75px;
   }
   .card img {
     width: 160px;
     height: 160px;
   }
   #Contact .container {
-    margin: 1.5rem 0.5rem;
+    margin: 2rem 1.5rem;
   }
   #Contact .container iframe {
     height: 280px;
@@ -1944,11 +1962,11 @@ form textarea {
     width: calc(100% - 20px);
   }
   #Contact form .form-btn {
-    width: 80%;
+    width: 75%;
     margin: 15px auto;
   }
   #Literature {
-    padding: 6rem 1rem;
+    padding: 6rem 1.5rem;
   }
   #Literature .literature-hero .text h1 {
     font-size: 26px;
@@ -1957,10 +1975,10 @@ form textarea {
     font-size: 15px;
   }
   #Literature .literature-hero .text .lit-team-btn {
-    width: 80%;
+    width: 75%;
   }
   .literature-about {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   .literature-about h1 {
     font-size: 26px;
@@ -1969,31 +1987,31 @@ form textarea {
     font-size: 15px;
   }
   #literature-team {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   #literature-team h1 {
     font-size: 26px;
   }
   #overals {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   #overals h1 {
     font-size: 28px;
   }
   #english-literature {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   .english-books h1 {
     font-size: 28px;
   }
   #arabic-literature {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   .arabic-books h1 {
     font-size: 28px;
   }
   #Instruments {
-    padding: 40px 1rem;
+    padding: 40px 1.5rem;
   }
   #Instruments h1 {
     font-size: 26px;
@@ -2007,16 +2025,311 @@ form textarea {
     margin: 15px;
   }
   #Instruments .lit-card .download-btn {
-    width: 80%;
+    width: 75%;
   }
   .registration-form {
-    padding: 70px 1rem;
+    padding: 70px 1.5rem;
   }
   .registration-form h1 {
     font-size: 26px;
   }
   .registration-form button {
+    width: 75%;
+  }
+}
+
+/* ----- Very small phones (≤380px) ----- */
+@media (max-width: 380px){
+  .logo {
+    width: 42px;
+    height: 42px;
+    margin-left: 15px;
+  }
+  nav.phones-nav {
+    padding: 0 15px;
+  }
+  nav.phones-nav ul i {
+    margin: 0 10px;
+    transform: scale(1.5);
+  }
+  .register-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  #landing-page {
+    padding: 0 1.25rem;
+  }
+  #landing-page .hero-section {
+    padding-top: 75px;
+  }
+  #landing-page .hero-section .text-section {
+    margin-top: 1.5rem;
+  }
+  #landing-page .hero-section .text-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  #landing-page .hero-section .text-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  #landing-page .hero-section .text-section p {
+    font-size: 14px;
+  }
+  #landing-page .hero-section .text-section .primary-btn {
+    width: 85%;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+  #landing-page .hero-section .slogan {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+  #landing-page .hero-section .image-section {
+    padding-top: 15px;
+  }
+  #landing-page .hero-section .image-section img {
+    padding-top: 15px;
+  }
+  #about-page {
+    padding: 5.5rem 1.25rem;
+  }
+  #about-page .text h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  #about-page .text p {
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 28px;
+  }
+  #about-page .text .team-btn {
     width: 80%;
+    font-size: 15px;
+    margin: 30px 0;
+  }
+  #about-page .images {
+    margin-top: 25px;
+  }
+  #our-team {
+    padding: 4rem 1.25rem;
+  }
+  #our-team h1 {
+    font-size: 26px;
+    margin: 1.25rem auto 1.75rem;
+  }
+  .card-slider {
+    width: 90%;
+    max-width: 250px;
+    height: 500px;
+  }
+  .card-slider .cards .card {
+    height: 460px;
+    padding: 15px;
+  }
+  .card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .card .name {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .card.prev {
+    transform: translateX(-20px) scale(0.8);
+  }
+  .card.next {
+    transform: translateX(20px) scale(0.8);
+  }
+  .nav.prev {
+    left: -70px;
+  }
+  .nav.next {
+    right: -70px;
+  }
+  .nav {
+    font-size: 20px;
+    width: 80px;
+    height: 80px;
+  }
+  .card img {
+    width: 140px;
+    height: 140px;
+  }
+  .icons {
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .icons a {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    padding: 10px;
+  }
+  #Contact {
+    margin-bottom: 2.5rem;
+  }
+  #Contact .container {
+    margin: 2rem 1.25rem;
+  }
+  #Contact .info-item h2 {
+    font-size: 16px;
+  }
+  #Contact .info-item p {
+    font-size: 14px;
+  }
+  #Contact .container iframe {
+    height: 260px;
+  }
+  #Contact form {
+    padding: 10px;
+  }
+  #Contact form input,
+  #Contact form textarea {
+    margin: 8px;
+    width: calc(100% - 16px);
+    font-size: 14px;
+  }
+  #Contact form .form-btn {
+    width: 80%;
+    font-size: 15px;
+    margin: 12px auto;
+  }
+  #Literature {
+    padding: 5.5rem 1.25rem;
+  }
+  #Literature .literature-hero .text h1 {
+    font-size: 24px;
+  }
+  #Literature .literature-hero .text p {
+    font-size: 14px;
+    margin: 20px 0;
+    line-height: 28px;
+  }
+  #Literature .literature-hero .text .lit-team-btn {
+    width: 80%;
+    font-size: 15px;
+  }
+  #Literature .literature-hero .images {
+    margin-top: 25px;
+  }
+  .literature-about {
+    padding: 35px 1.25rem;
+  }
+  .literature-about h1 {
+    font-size: 24px;
+  }
+  .literature-about p {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  .below-btn {
+    width: 50px;
+    height: 50px;
+    margin: 30px auto;
+  }
+  .below-btn i {
+    transform: scale(1.7);
+  }
+  #literature-team {
+    padding: 35px 1.25rem;
+  }
+  #literature-team h1 {
+    font-size: 24px;
+  }
+  #overals {
+    padding: 35px 1.25rem;
+  }
+  #overals h1 {
+    font-size: 26px;
+  }
+  .lit-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+  }
+  .lit-card h3 {
+    font-size: 18px;
+  }
+  .lit-card p {
+    font-size: 14px;
+  }
+  #english-literature {
+    padding: 35px 1.25rem;
+  }
+  .english-books h1 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  #arabic-literature {
+    padding: 35px 1.25rem;
+  }
+  .arabic-books h1 {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+  #Instruments {
+    padding: 35px 1.25rem;
+  }
+  #Instruments h1 {
+    font-size: 24px;
+  }
+  #Instruments .lit-card {
+    min-height: 680px;
+    padding: 18px;
+  }
+  #Instruments .lit-card .text h1 {
+    font-size: 22px;
+  }
+  #Instruments .lit-card p {
+    font-size: 14px;
+    margin: 12px;
+    line-height: 1.7;
+  }
+  #Instruments .lit-card img {
+    width: 180px;
+    height: 220px;
+  }
+  #Instruments .lit-card .download-btn {
+    width: 85%;
+    font-size: 15px;
+  }
+  .registration-form {
+    padding: 60px 1.25rem;
+  }
+  .registration-form h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  .registration-form form {
+    padding-right: 0;
+  }
+  .registration-form form input,
+  .registration-form form textarea {
+    font-size: 14px;
+    margin: 8px;
+  }
+  .registration-form form fieldset {
+    margin: 8px 0;
+    padding: 14px 18px;
+  }
+  .registration-form fieldset legend {
+    font-size: 13px;
+  }
+  .registration-form fieldset label {
+    font-size: 14px;
+  }
+  .registration-form fieldset input[type="radio"] {
+    width: 20px;
+    height: 20px;
+  }
+  .registration-form button {
+    width: 85%;
+    font-size: 15px;
   }
 }
 
