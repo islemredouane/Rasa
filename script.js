@@ -183,4 +183,24 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
           errorMessage.style.display = 'none';
         }, 5000);
       });
+
   });
+
+// Fade in animation for elements when scrolling
+        const fadeElements = document.querySelectorAll('.hero-section, .text-section, .main-btn, .slogan, .image-section , .text, .images, .cards , .prev , .next, .info-item, .contactForm');
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            fadeObserver.observe(el);
+        });
