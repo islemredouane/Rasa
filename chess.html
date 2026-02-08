@@ -217,18 +217,18 @@
             <div class="flex flex-col sm:flex-row gap-6 pt-4">
               <button
                 type="button"
-                onclick="document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })"
+                onclick="document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })"
                 class="h-14 px-10 rounded-full bg-primary hover:bg-orange-500 text-black font-bold text-lg transition-all
                       hover:shadow-[0_0_30px_rgba(234,106,31,0.5)]
                       hover:-translate-y-1
                       flex items-center justify-center gap-2 font-display"
               >
-                <span>Join Fantasy</span>
+                <span>Our Team</span>
               </button>
 
               <button
                 type="button"
-                onclick="window.open('#', '_blank', 'noopener')"
+                onclick="document.getElementById('tournaments')?.scrollIntoView({ behavior: 'smooth' })"
                 class="h-14 px-10 rounded-full bg-transparent
                       hover:bg-white/5
                       border border-white/20 hover:border-white/50
@@ -245,7 +245,7 @@
             </div>
           </div>
 
-          <div class="relative h-[400px] md:h-[500px] w-full flex items-center justify-center">
+          <div class="relative h-[400px] md:h-[500px] w-full flex items-center justify-center" id="tournaments">
             <div class="absolute top-10 right-10 w-40 h-40 border-t-2 border-r-2 border-primary/30 z-0 hidden md:block"></div>
             <div class="absolute bottom-10 left-10 w-40 h-40 border-b-2 border-l-2 border-primary/30 z-0 hidden md:block"></div>
 
