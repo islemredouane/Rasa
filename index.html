@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Rasa club website">
+  <meta name="google-site-verification" content="qoBM-Cu5e5LU1w_2GOwKiuWhT7l8Z9eqZo0XNg77prE" />
+  <title>Rasa </title>
+  <link rel="icon" href="rasa-favicon.png">
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Quicksand:wght@300;400;500;600;700&amp;family=Offside&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+  <!-- ✅ Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- ✅ Tailwind Config -->
+  <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ea6a1f",
+                        "primary-dark": "#c5520e",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#000000",
+                        "surface": "#0f0f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Offside", "Space Grotesk", "sans-serif"],
+                        "body": ["Quicksand", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "3rem", "full": "9999px" },
+                    backgroundImage: {
+                        'gradient-metallic': 'linear-gradient(to right, #ea6a1f, #f9a825, #ea6a1f)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shine': 'shine 3s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shine: {
+                            '0%': { backgroundPosition: '200% center' },
+                            '100%': { backgroundPosition: '-200% center' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+
+  <!-- ✅ Global Styles -->
+  <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea6a1f;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(234, 106, 31, 0.5);
+            box-shadow: 0 0 20px rgba(234, 106, 31, 0.15);
+        }
+        .text-metallic {
+            background: linear-gradient(to right, #ea6a1f 20%, #ffb74d 40%, #ea6a1f 60%, #ffb74d 80%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite;
+        }
+        .neon-focus:focus-within {
+            box-shadow: 0 0 15px rgba(234, 106, 31, 0.4);
+            border-color: #ea6a1f;
+        }
+        .map-grayscale {
+            filter: grayscale(100%) invert(90%) contrast(120%);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black">
+  <!-- ✅ Top Navbar -->
+  <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
+    <nav class="glass-panel rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]" >
+      <div class="flex items-center gap-3">
+        <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+          <img 
+            src="/rasa-logo.png"
+            alt="Rasa logo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <span class="text-xl font-display font-bold tracking-tight text-white">Rasa</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="index.html">Home</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="literature.html">Literature</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="art.html">Art</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="music.html">Music</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="chess.html">Chess</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="gaming.html">Gaming</a>
+      </div>
+
+      <a
+        href="noregistrations.html"
+        class="bg-white text-black hover:bg-primary hover:text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,106,31,0.6)] flex items-center gap-2 font-display"
+      >
+        <span>Register</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- ✅ Hero Section -->
+  <div class="relative min-h-screen flex items-center justify-center pt-36 pb-20 overflow-hidden bg-black">
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-900/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+        <div class="flex-1 lg:flex-[1.2] flex flex-col gap-8 text-center lg:text-left z-20">
+          <div class="space-y-6">
+            <h1 class="text-6xl md:text-8xl font-display font-bold leading-[1] tracking-tight text-white" style="margin-bottom: 20px;">
+              Welcome to<br/>
+              <span class="text-metallic">Rasa Club</span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+              A cultural space where creativity breathes, connections grow, and student life finds its rythm beyond study.
+            </p>
+          </div>
+
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 w-fit mx-auto lg:mx-0 backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            <span class="text-xs font-bold tracking-widest uppercase text-primary">Feel the emotion. Live the expression</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+            <button
+              type="button"
+              onclick="document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })"
+              class="h-14 px-10 rounded-full bg-primary hover:bg-orange-500 text-black font-bold text-lg transition-all hover:shadow-[0_0_30px_rgba(234,106,31,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2 font-display"
+            >
+              <span>Discover Us</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="window.open('https://www.instagram.com/reel/DPwWIEAjG9P/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', '_blank', 'noopener')"
+              class="h-14 px-10 rounded-full bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/50 text-white font-medium text-lg transition-all flex items-center justify-center gap-2 backdrop-blur-sm group font-display"
+            >
+              <span class="material-symbols-outlined group-hover:text-primary transition-colors">play_circle</span>
+              <span>Watch Showreel</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-5 justify-center lg:justify-start pt-6 opacity-90">
+          </div>
+        </div>
+
+        <div class="flex-1 w-full max-w-[420px] lg:max-w-[520px] perspective-600 relative">
+          <div class="animate-float relative aspect-square w-full">
+            <div class="w-full h-full rounded-[3rem] bg-black/40 border border-white/10 backdrop-blur-sm p-4 transform rotate-6 transition-transform hover:rotate-0 duration-700">
+              <div class="w-full h-full rounded-[2.5rem] overflow-hidden relative">
+                <img 
+                  src="/images/rasa ai2.png"
+                  alt="Rasa Robot"
+                  class="w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(234,106,31,0.6)]"
+                />
+
+                <!-- ✅ Visual overlay (keeps contrast on top of image) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+              <div class="absolute bottom-8 left-8 right-8 glass-panel px-6 py-4 rounded-2xl flex items-center justify-between border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                <div>
+                  <span class="block text-xs text-primary font-bold uppercase tracking-wider mb-1">Upcoming Event</span>
+                  <span class="block text-lg font-bold text-white font-display">Rasa Chess Cup Tournament</span>
+                </div>
+                <div class="bg-white/10 p-2.5 rounded-xl">
+                  <span class="material-symbols-outlined text-white">calendar_month</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ About Section -->
+  <div class="relative py-32 bg-[#050505]" id="about">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row gap-20 items-center">
+
+        <div class="w-full md:w-7/12 relative group">
+          <div class="absolute -inset-4 bg-gradient-to-r from-primary to-orange-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+
+          <div class="relative aspect-[4/5] w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/5 group">
+
+            <!-- ✅ Scrollable Gallery -->
+            <div id="rasaGallery" class="flex w-full h-full overflow-x-auto snap-x snap-mandatory scroll-smooth">
+
+              <!-- ✅ Slide 1 -->
+              <img
+                src="/images/photo_5782932869046012688_y.jpg"
+                alt="Rasa memory 1"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 2 -->
+              <img
+                src="/images/photo_6019345169142368144_y.jpg"
+                alt="Rasa memory 2"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 3 -->
+              <img
+                src="/images/IMG_1218.JPG" 
+                alt="Rasa memory 3"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 4 -->
+              <img
+                src="/images/photo_6037583180832902926_y.jpg"
+                alt="Rasa memory 4"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 5 -->
+              <img
+                src="/images/photo_6037583180832902927_y.jpg"
+                alt="Rasa memory 5"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 6 -->
+              <img
+                src="/images/photo_6037583180832902928_y.jpg"
+                alt="Rasa memory 6"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 7 -->
+              <img
+                src="/images/photo_6037583180832902929_y.jpg"
+                alt="Rasa memory 7"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 8 -->
+              <img
+                src="/images/photo_6037583180832902930_y.jpg"
+                alt="Rasa memory 8"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 9 -->
+              <img
+                src="/images/photo_5776219620414000289_y.jpg"
+                alt="Rasa memory 9"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 10 -->
+              <img
+                src="/images/photo_5778383442117594544_w.jpg"
+                alt="Rasa memory 10"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 11 -->
+              <img
+                src="/images/photo_5776131642303909249_y.jpg"
+                alt="Rasa memory 11"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 12 -->
+              <img
+                src="/images/photo_5776131642303909250_x.jpg"
+                alt="Rasa memory 12"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 13 -->
+              <img
+                src="/images/photo_5778383442117594545_w.jpg" 
+                alt="Rasa memory 13"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 14 -->
+              <img
+                src="/images/photo_5776131642303909251_y.jpg"
+                alt="Rasa memory 14"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 15 -->
+              <img
+                src="/images/photo_6037583180832902925_y.jpg"
+                alt="Rasa memory 15"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 16 -->
+              <img
+                src="/images/IMG_1235.JPG"
+                alt="Rasa memory 16"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 17 -->
+              <img
+                src="/images/IMG_1252.JPG"
+                alt="Rasa memory 17"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+
+              <!-- ✅ Slide 18 -->
+              <img
+                src="/images/IMG_1302.JPG"
+                alt="Rasa memory 18"
+                class="snap-center shrink-0 w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- ✅ Gradient Overlay -->
+            <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+            <!-- ✅ Caption -->
+            <div class="absolute bottom-8 left-8">
+              <h4 class="text-3xl font-display font-bold text-white mb-2">Rasa Memories</h4>
+              <p class="text-gray-400 text-sm">Swipe to explore our moments.</p>
+            </div>
+
+            <!-- ✅ Gallery Controls -->
+            <button onclick="scrollGallery(-1)"
+              class="absolute left-4 top-1/2 -translate-y-1/2 z-10 size-10 rounded-full bg-black/60
+                    flex items-center justify-center hover:bg-primary transition">
+              <span class="material-symbols-outlined text-white">chevron_left</span>
+            </button>
+
+            <button onclick="scrollGallery(1)"
+              class="absolute right-4 top-1/2 -translate-y-1/2 z-10 size-10 rounded-full bg-black/60
+                    flex items-center justify-center hover:bg-primary transition">
+              <span class="material-symbols-outlined text-white">chevron_right</span>
+            </button>
+
+            <!-- ✅ Secondary Caption -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-8 left-8">
+              <h4 class="text-3xl font-display font-bold text-white mb-2">Rasa Memories</h4>
+              <p class="text-gray-400 text-sm">Capturing the essence of connection.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex flex-col gap-8">
+          <div>
+            <h2 class="text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+              <span class="h-px w-8 bg-primary"></span>
+              Who We Are
+            </h2>
+
+            <h3 class="text-5xl md:text-6xl font-display font-bold leading-tight text-white">
+              Where Culture Meets <br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-500 to-white">Student Life</span>
+            </h3>
+          </div>
+
+          <p class="text-xl text-gray-400 leading-relaxed font-light">
+                    Rasa is a cultural club founded in 2024 at the Higher School of Computer Sciences and Digital Technologies (ESTIN), Béjaïa. Created by a group of students, the club aims to ease academic pressure by fostering a vibrant cultural environment that brings together art, music, games, and creative expression. Through diverse activities and events, Rasa offers students a space to connect, relax, and express themselves beyond the classroom.
+          <div class="grid grid-cols-2 gap-8 py-6 border-y border-white/10">
+            <div class="flex flex-col gap-2">
+              <span class="text-4xl font-display font-bold text-primary">+5</span>
+              <span class="text-sm text-gray-500 uppercase tracking-wider">Events Hosted</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <span class="text-4xl font-display font-bold text-primary">+80</span>
+              <span class="text-sm text-gray-500 uppercase tracking-wider">Active Members</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Team Section -->
+  <div class="py-32 relative overflow-hidden bg-black" id="team">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-5xl md:text-6xl font-display font-bold mb-6 text-white">The Visionaries</h2>
+          <p class="text-gray-400 text-xl font-light">Meet the minds curating the next generation of cultural experiences.</p>
+        </div>
+
+        <!-- ✅ Desktop Scroll Controls -->
+        <div class="hidden md:flex gap-2">
+          <button
+            type="button"
+            onclick="scrollMembers(-1)"
+            class="size-12 rounded-full border border-white/10 flex items-center justify-center
+                  hover:bg-primary hover:border-primary hover:text-black transition-all">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+
+          <button
+            type="button"
+            onclick="scrollMembers(1)"
+            class="size-12 rounded-full border border-white/10 flex items-center justify-center
+                  hover:bg-primary hover:border-primary hover:text-black transition-all">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="relative">
+        <!-- ✅ Members Scroll Container -->
+        <div id="membersScroll"
+          class="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth
+                  [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Kouas Youcef Abdelmoumen"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/youcef.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:Y_kouas@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/youcef-abbelmoumen-kouas-790876387/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Kouas Youcef Abdelmoumen
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Leader</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zerrouki Lyamine"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/lyamine.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:ly_zerrouki@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/lyamine-zerrouki/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zerrouki Lyamine
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Vice president</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Khechfoud Maya"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/maya.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:m_khechfoud@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Khechfoud Maya
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Secritary</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Bellahcene Hamza"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/hamza.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:h_bellahsene@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/hamza-bellahsene-3723a7339/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Bellahcene Hamza
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Human Resources</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Chelouah Mounia"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/chelouah.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:m_chelouah@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/mounia-chelouah-798aa0389/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Chelouah Mounia
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Literature Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Mounia Mazit"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/mazit.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:m_mazit@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/mounia-mazit-9a5970389/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Mounia Mazit
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Literature Departement Co-Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Messaoudi Alicia"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/alicia.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:al_messaoudi@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/alycia-messaoudi-924962389/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Messaoudi Alicia
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Art Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Hebib kenza"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/kenza.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:k_hebib@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/kenza-hebib-097204304/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Hebib kenza
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Art Departement Co-Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Messilia Sofia Lachi"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/sofia.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:m_lachi@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/messilia-sofia-lachi-b01759332/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Messilia Sofia Lachi
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Music Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Akrouche Ahmed Rayan"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/rayane.JPG"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:a_akrouche@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Akrouche Ahmed Rayan
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Chess Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Habelhames Hana"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/Hana.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:h_habelhames@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Habelhames Hana
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Chess Departement Co-Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Kaddour Djebbar Abderahim"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/rahim.JPG"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:a_keddourdjebbar@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Kaddour Djebbar Abderahim
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Gaming Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Bekhouche Ahmed Ziad"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/ahmed.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:a_bekhouche@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Bekhouche Ahmed Ziad
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Gaming Departement Co-Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Redouane Mohamed Islem"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/islem.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:m_redouane@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/mohamed-islem-redouane-5ba586338/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Redouane Mohamed Islem
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Design Departement Manager & Website Developer</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Kernou Abdellah Amine"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/abdellah.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:a_kernou@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Kernou Abdellah Amine
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Multimedia Departement Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zamoum Chamsedine"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/shemsou.JPG"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:#"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zamoum Chamsedine
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Multimedia Departement Co-Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Houcine Thiziri"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/Thiziri.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:t_hocine@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Houcine Thiziri
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">communication Departement Manager</p>
+            </div>  
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="MOULOUDJ Sara "
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/girl-avatar.jpg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                  <a
+                      href="mailto:s_mouloudj@estin.dz"
+                      class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                              hover:bg-primary hover:text-white transition-colors text-white"
+                      aria-label="Send email"
+                      >
+                      <span class="material-symbols-outlined text-lg">alternate_email</span>
+                  </a>
+
+                  <a
+                  href="https://www.linkedin.com/in/sara-mouloudj-3183523ab"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
+                          hover:bg-primary transition-colors text-white"
+                  >
+                  <svg
+                      class="w-5 h-5 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                  >
+                      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+                  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                MOULOUDJ Sara 
+              </h3>
+              <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">communication Departement Co-Manager</p>
+            </div>  
+          </div>
+
+        </div>
+
+        <!-- ✅ Fade Edges -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-black/60 to-transparent"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-black/60 to-transparent"></div>
+      </div>
+
+      <!-- ✅ Contact Section -->
+      <div class="py-24 bg-[#050505] relative" id="contact">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 bg-[#0f0f0f] rounded-[2.5rem] overflow-hidden border border-white/5">
+            <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+              <h2 class="text-4xl font-display font-bold mb-4 text-white">Get in Touch</h2>
+              <p class="text-gray-400 mb-8">Have a question or want to collaborate? Drop us a message.</p>
+
+              <!-- ✅ Contact Form -->
+              <form id="contactForm" class="space-y-6">
+                <div class="space-y-1 group rounded-xl transition-all">
+                  <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Name</label>
+                  <input
+                    id="contactName"
+                    name="name"
+                    required
+                    class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors focus:ring-1 focus:ring-primary/50"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </div>
+
+                <div class="space-y-1 group rounded-xl transition-all">
+                  <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email</label>
+                  <input
+                    id="contactEmail"
+                    name="email"
+                    required
+                    class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors focus:ring-1 focus:ring-primary/50"
+                    placeholder="john@example.com"
+                    type="email"
+                  />
+                </div>
+
+                <div class="space-y-1 group rounded-xl transition-all">
+                  <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Subject</label>
+                  <input
+                    id="contactSubject"
+                    name="subject"
+                    required
+                    class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors focus:ring-1 focus:ring-primary/50"
+                    placeholder="Subject"
+                    type="text"
+                  />
+                </div>
+
+                <div class="space-y-1 group rounded-xl transition-all">
+                  <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Message</label>
+                  <textarea
+                    id="contactMessage"
+                    name="message"
+                    required
+                    class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors focus:ring-1 focus:ring-primary/50"
+                    placeholder="Your message here..."
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <button
+                  id="contactBtn"
+                  type="submit"
+                  class="w-full bg-primary hover:bg-orange-500 text-black font-bold py-4 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(234,106,31,0.4)] flex items-center justify-center gap-2 group mt-4"
+                >
+                  <span id="contactBtnText">Send Message</span>
+                  <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">send</span>
+                </button>
+
+                <p id="contactStatus" class="text-sm text-gray-400 pt-2 hidden"></p>
+              </form>
+            </div>
+
+            <!-- ✅ Map / Location Panel -->
+            <div class="relative h-[400px] lg:h-auto bg-gray-900 overflow-hidden">
+              <div class="absolute inset-0 map-grayscale bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=36.6636469,4.9099605&zoom=16&size=800x800&maptype=roadmap&style=feature:all|element:labels|visibility:off&style=feature:water|element:geometry|color:0x000000&style=feature:landscape|element:geometry|color:0x222222&key=YOUR_API_KEY')]">
+                <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+              </div>
+
+              <!-- ✅ Marker + Tooltip -->
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <span class="relative flex h-8 w-8">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-8 w-8 bg-primary border-4 border-black"></span>
+                </span>
+
+                <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 bg-black/80 backdrop-blur border border-white/10 px-4 py-2 rounded-lg whitespace-nowrap">
+                  <p class="text-white font-bold text-sm">Rasa Club</p>
+                  <p class="text-gray-400 text-xs">ESTIN – Béjaïa, Algeria</p>
+                </div>
+              </div>
+
+              <!-- ✅ Bottom Location Card -->
+              <div
+                class="absolute bottom-6 left-6 right-6
+                      bg-black/80 backdrop-blur-md border border-white/10
+                      p-4 rounded-xl"
+              >
+                <div class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+                  <div class="min-w-0">
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">
+                      Location
+                    </p>
+
+                    <p
+                      class="text-white leading-snug mt-1
+                            [display:-webkit-box] [-webkit-box-orient:vertical]
+                            [-webkit-line-clamp:2] overflow-hidden"
+                    >
+                      École Supérieure en Sciences et Technologies de l’Informatique et du Numérique
+                    </p>
+                  </div>
+
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=36.66364687538598,4.909960575296492"
+                    target="_blank"
+                    rel="noopener"
+                    class="shrink-0 size-11 bg-primary rounded-full
+                          flex items-center justify-center text-black
+                          hover:scale-110 transition-transform"
+                    aria-label="Open location in Google Maps"
+                  >
+                    <span class="material-symbols-outlined text-[20px] leading-none">near_me</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer class="border-t border-white/5 bg-black py-16 text-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+            <img 
+              src="/rasa-logo.png"
+              alt="Rasa logo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <span class="text-2xl font-display font-bold text-white">Rasa</span>
+        </div>
+
+        <div class="flex gap-10">
+          <!-- ✅ Instagram -->
+          <a
+            href="https://www.instagram.com/rasa.estin/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            class="group size-11 rounded-full flex items-center justify-center
+                  bg-white/5 hover:bg-primary transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.24 3.5 3.5 5.24 3.5 7.75v8.5c0 2.51 1.74 4.25 4.25 4.25h8.5c2.51 0 4.25-1.74 4.25-4.25v-8.5c0-2.51-1.74-4.25-4.25-4.25h-8.5z"/>
+              <path d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7z"/>
+              <circle cx="17.5" cy="6.5" r="1.25"/>
+            </svg>
+          </a>
+
+          <!-- ✅ LinkedIn -->
+          <a
+            href="https://www.linkedin.com/company/rasa-club/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            class="group size-11 rounded-full flex items-center justify-center
+                  bg-white/5 hover:bg-primary transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+            </svg>
+          </a>
+
+          <!-- ✅ Discord -->
+          <a
+            href="https://discord.gg/YOUR_INVITE"
+            target="_blank"
+            rel="noopener"
+            aria-label="Discord"
+            class="group size-11 rounded-full flex items-center justify-center
+                  bg-white/5 hover:bg-primary transition-all duration-300"
+          >
+            <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.249a.077.077 0 0 0-.078-.037a19.736 19.791 0 0 0-4.885 1.515a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.9a.077.077 0 0 1-.008-.128c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.118.099.243.197.368.291a.077.077 0 0 1-.006.128a12.299 12.299 0 0 1-1.873.899a.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.077.077 0 0 0 .084.028a19.876 19.876 0 0 0 5.993-3.03a.077.077 0 0 0 .031-.055c.5-5.177-.838-9.673-3.548-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.955 2.419-2.156 2.419zm7.975 0c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.946 2.419-2.156 2.419z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="text-gray-600">
+          © 2026 Rasa Club. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ Mobile Bottom Navigation -->
+  <div class="glass-panel rounded-full fixed bottom-2 left-0 right-0 z-50 md:hidden">
+    <div class="flex justify-around items-center py-3 px-2">
+
+      <!-- Home -->
+      <a href="index.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          home
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Home</span>
+      </a>
+
+      <!-- Literature -->
+      <a href="literature.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          menu_book
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Literature</span>
+      </a>
+
+      <!-- Art -->
+      <a href="art.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          palette
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Art</span>
+      </a>
+
+      <!-- Music -->
+      <a href="music.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          music_note
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Music</span>
+      </a>
+
+      <!-- Chess -->
+      <a href="chess.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          chess
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Chess</span>
+      </a>
+
+      <!-- Gaming -->
+      <a href="gaming.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+        <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+          sports_esports
+        </span>
+        <span class="text-[11px] font-semibold tracking-wide">Gaming</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ✅ Toast Notification -->
+  <div
+    id="toast"
+    class="fixed top-6 right-6 z-[9999] hidden
+           min-w-[260px] max-w-[340px]
+           glass-panel rounded-2xl px-5 py-4
+           flex items-start gap-3
+           border border-white/10
+           shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+           transition-all duration-300"
+  >
+    <span
+      id="toastIcon"
+      class="material-symbols-outlined text-primary text-[22px] mt-0.5"
+    >
+      check_circle
+    </span>
+
+    <div class="flex-1">
+      <p id="toastTitle" class="font-bold text-white text-sm">
+        Success
+      </p>
+      <p id="toastMessage" class="text-white/70 text-sm leading-snug mt-0.5">
+        Message sent successfully.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // ✅ Team slider: scroll by one card
+    function scrollMembers(direction) {
+      const container = document.getElementById('membersScroll');
+      if (!container) return;
+
+      const card = container.querySelector('.glass-card');
+      if (!card) return;
+
+      const gap = 32; // gap-8 = 2rem = 32px
+      const scrollAmount = card.offsetWidth + gap;
+
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    // ✅ Gallery slider: next/prev with loop
+    function scrollGallery(direction) {
+      const gallery = document.getElementById('rasaGallery');
+      if (!gallery) return;
+
+      const slides = gallery.children;
+      const slideCount = slides.length;
+      const slideWidth = gallery.clientWidth;
+
+      const maxScroll = slideWidth * (slideCount - 1);
+      const currentScroll = Math.round(gallery.scrollLeft);
+
+      if (direction === 1) {
+        if (currentScroll >= maxScroll - 5) {
+          gallery.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          gallery.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        }
+      }
+
+      if (direction === -1) {
+        if (currentScroll <= 5) {
+          gallery.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+          gallery.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        }
+      }
+    }
+
+    // ✅ Contact form submit (API POST)
+    const form = document.getElementById("contactForm");
+    const statusEl = document.getElementById("contactStatus");
+    const btn = document.getElementById("contactBtn");
+    const btnText = document.getElementById("contactBtnText");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      statusEl.classList.remove("hidden");
+      statusEl.textContent = "";
+      btn.disabled = true;
+      btnText.textContent = "Sending...";
+
+      const payload = {
+        name: document.getElementById("contactName").value.trim(),
+        email: document.getElementById("contactEmail").value.trim(),
+        subject: document.getElementById("contactSubject").value.trim(),
+        message: document.getElementById("contactMessage").value.trim(),
+      };
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) throw new Error(data?.message || "Failed");
+
+        statusEl.textContent = "✅ Message sent successfully!";
+        form.reset();
+      } catch (err) {
+        statusEl.textContent = "❌ Failed to send. Please try again.";
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = "Send Message";
+      }
+    });
+
+    // ✅ Toast helper
+    let toastTimeout;
+
+    function showToast({ type = "success", title, message }) {
+      const toast = document.getElementById("toast");
+      const icon = document.getElementById("toastIcon");
+      const toastTitle = document.getElementById("toastTitle");
+      const toastMessage = document.getElementById("toastMessage");
+
+      clearTimeout(toastTimeout);
+
+      if (type === "success") {
+        icon.textContent = "check_circle";
+        icon.className = "material-symbols-outlined text-primary text-[22px] mt-0.5";
+      } else {
+        icon.textContent = "error";
+        icon.className = "material-symbols-outlined text-red-500 text-[22px] mt-0.5";
+      }
+
+      toastTitle.textContent = title;
+      toastMessage.textContent = message;
+
+      toast.classList.remove("hidden", "opacity-0", "translate-y-2");
+      toast.classList.add("opacity-100", "translate-y-0");
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-2");
+        setTimeout(() => toast.classList.add("hidden"), 300);
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

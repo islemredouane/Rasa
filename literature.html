@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta name="description" content="Rasa club website - Literature" />
+    <meta
+      name="google-site-verification"
+      content="qoBM-Cu5e5LU1w_2GOwKiuWhT7l8Z9eqZo0XNg77prE"
+    />
+    <title>Rasa | Literature</title>
+    <link rel="icon" href="rasa-favicon.png" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Offside&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ea6a1f",
+              "background-light": "#f8f7f6",
+              "background-dark": "#050505",
+              "surface-dark": "#121212",
+            },
+            fontFamily: {
+              display: ["Offside", "Space Grotesk", "sans-serif"],
+              body: ["Quicksand", "sans-serif"],
+              sans: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            animation: {
+              shine: "shine 3s linear infinite",
+            },
+            keyframes: {
+              shine: {
+                "0%": { backgroundPosition: "200% center" },
+                "100%": { backgroundPosition: "-200% center" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ea6a1f;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .shiny-text {
+        background: linear-gradient(
+          to right,
+          #ea6a1f 20%,
+          #ffb07c 40%,
+          #ffb07c 60%,
+          #ea6a1f 80%
+        );
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shine 5s linear infinite;
+      }
+
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .glassmorphism {
+        background: rgba(18, 18, 18, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .neon-hover:hover {
+        box-shadow: 0 0 15px rgba(234, 106, 31, 0.3);
+        border-color: rgba(234, 106, 31, 0.5);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-body overflow-x-hidden"
+  >
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
+      <nav
+        class="glass-panel rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]"
+      >
+        <div class="flex items-center gap-3">
+          <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+            <img src="/rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-xl font-display font-bold tracking-tight text-white">Rasa</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="literature.html"
+            >Literature</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="art.html"
+            >Art</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="music.html"
+            >Music</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="chess.html"
+            >Chess</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="gaming.html"
+            >Gaming</a
+          >
+        </div>
+
+        <a
+          href="noregistrations.html"
+          class="bg-white text-black hover:bg-primary hover:text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,106,31,0.6)] flex items-center gap-2 font-display"
+        >
+          <span>Register</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <main class="pt-24 md:pt-20 lg:pt-16">
+      <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div
+          class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="flex-1 text-center lg:text-left">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-dark border border-white/10 mb-6"
+              >
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >New Academic Year</span
+                >
+              </div>
+
+              <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 tracking-tighter font-display">
+                <span class="shiny-text">Literature</span>
+                <br />
+                <span class="text-white">Department</span>
+              </h1>
+
+              <p
+                class="text-lg text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed"
+              >
+                Where imagination meets expression — our Literature Department celebrates creativity,
+                emotions, and the art of storytelling through books, poems, and timeless tales.
+              </p>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <button
+                  type="button"
+                  onclick="document.getElementById('library')?.scrollIntoView({ behavior: 'smooth' })"
+                  class="h-14 px-10 rounded-full bg-primary hover:bg-orange-500 text-black font-bold text-lg transition-all hover:shadow-[0_0_30px_rgba(234,106,31,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2 font-display"
+                >
+                  <span>Explore Library</span>
+                  <span
+                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+
+                <button
+                  type="button"
+                  onclick="document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })"
+                  class="h-14 px-10 rounded-lg font-bold border border-white/10 hover:bg-white/5 text-white transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Our team</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex-1 w-full flex justify-center lg:justify-end relative">
+              <div class="relative p-2">
+                <div
+                  class="absolute inset-0 border border-primary/30 rounded-[2rem] rotate-3 transform scale-105 z-0"
+                ></div>
+                <div
+                  class="absolute inset-0 border border-white/10 rounded-[2rem] -rotate-2 transform scale-105 z-0"
+                ></div>
+
+                <div
+                  class="relative rounded-[1.5rem] overflow-hidden h-[360px] sm:h-[420px] lg:h-[480px] max-w-md w-full shadow-2lg z-10 bg-surface-dark group"
+                >
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20"></div>
+
+                  <img
+                    alt="Abstract library interior with books"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLNX4miDQcvKrO2M2B7DCI8-dazc4SjZ2l7jol7BnoWNOHwrEFJSAuolj5_t6D8v3csuWXErhB1LOojNBsQh5QRhqMx7pTiKZnWLHeGHds_2o3WXK00onGBLE2oVt_EB955EsM-qneFoFRL8GMSYYuuk3OHJ55GoxTFS8u0Prng1_SXqot-fVdySWieBiOVn_hQUp2_zw_QGcUePBYrBpa4wy2zaL0LTgeybGIYZypo75bDTFZsERDl8emjoBLtfkYCPq8cyoM3s"
+                  />
+
+                  <div
+                    class="absolute bottom-6 left-6 z-30 bg-black/40 backdrop-blur-md border border-white/10 p-4 rounded-xl max-w-[200px]"
+                  >
+                    <p class="text-white font-bold text-lg">30+</p>
+                    <p class="text-gray-300 text-xs">Digital books available for readers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500">
+          <span class="material-symbols-outlined">keyboard_arrow_down</span>
+        </div>
+      </section>
+
+      <section class="py-24 bg-surface-dark relative" id="team">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="flex justify-center mb-12 text-center">
+            <div>
+              <h2 class="text-3xl font-bold text-white mb-2 font-display">The Literature Team</h2>
+              <p class="text-gray-400">The departement Minds</p>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button
+              onclick="scrollTeam(-1)"
+              class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20
+                    size-10 rounded-full bg-black/50 backdrop-blur
+                    border border-white/10 text-white
+                    flex items-center justify-center
+                    hover:bg-primary transition"
+              aria-label="Scroll left"
+            >
+              <span class="material-symbols-outlined text-lg">chevron_left</span>
+            </button>
+
+            <button
+              onclick="scrollTeam(1)"
+              class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20
+                    size-10 rounded-full bg-black/50 backdrop-blur
+                    border border-white/10 text-white
+                    flex items-center justify-center
+                    hover:bg-primary transition"
+              aria-label="Scroll right"
+            >
+              <span class="material-symbols-outlined text-lg">chevron_right</span>
+            </button>
+
+            <div
+              id="teamScroller"
+              class="overflow-x-auto scrollbar-hide pb-8 scroll-smooth
+                    -mx-6 md:mx-0
+                    px-[calc((100vw-18rem)/2)] md:px-0"
+            >
+              <div class="flex gap-6 w-max md:mx-auto">
+                <div
+                  class="group relative w-72 snap-center bg-background-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 neon-hover"
+                >
+                  <div class="aspect-[4/5] overflow-hidden">
+                    <img
+                      alt="Chelouah Mounia"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="/images/chelouah.jpg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"
+                    ></div>
+                  </div>
+                  <div class="absolute bottom-0 w-full p-5">
+                    <h3 class="text-white text-lg font-bold mb-1">Chelouah Mounia</h3>
+                    <p class="text-primary text-sm font-medium mb-3">Head of Department</p>
+                  </div>
+                </div>
+
+                <div
+                  class="group relative w-72 snap-center bg-background-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 neon-hover"
+                >
+                  <div class="aspect-[4/5] overflow-hidden">
+                    <img
+                      alt="Mazit Mounia"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      src="/images/mazit.jpg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90"
+                    ></div>
+                  </div>
+                  <div class="absolute bottom-0 w-full p-5">
+                    <h3 class="text-white text-lg font-bold mb-1">Mazit Mounia</h3>
+                    <p class="text-primary text-sm font-medium mb-3">Head of Department</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-32 bg-background-dark relative overflow-hidden" id="about">
+        <div
+          class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div class="flex flex-col lg:flex-row gap-16 items-start">
+            <div class="lg:w-1/3">
+              <h2 class="text-4xl font-bold text-white mb-6 font-display">Our Mission</h2>
+              <div class="w-16 h-1 bg-primary rounded-full"></div>
+            </div>
+
+            <div class="lg:w-2/3">
+              <div class="flex gap-8">
+                <div
+                  class="w-1 bg-gradient-to-b from-primary to-transparent rounded-full flex-shrink-0 self-stretch"
+                ></div>
+
+                <div class="space-y-8">
+                  <p class="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+                    The Literature Department is a home for passionate readers and writers. We explore
+                    timeless classics, share inspiring poetry, and create a welcoming space where members
+                    can express themselves through storytelling and creative writing — discovering words
+                    that connect hearts and minds.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                    <div>
+                      <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">menu_book</span>
+                        Reading & Discussion
+                      </h4>
+                      <p class="text-sm text-gray-400">
+                        We share famous literary works, discuss themes and characters, and learn from
+                        different styles, cultures, and eras.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">record_voice_over</span>
+                        Speaking Clubs
+                      </h4>
+                      <p class="text-sm text-gray-400">
+                        A space to build confidence, improve communication skills, and express ideas clearly
+                        through debates, speeches, and group talks.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-surface-dark relative" id="library">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Digital Library</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Explore a curated selection of novels and stories that bring imagination to life and connect
+              readers through timeless narratives.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary/50 transition-colors duration-300"
+            >
+              <img
+                alt="English Literature Background"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQn4wFEzbxTw_VfOJmaJgSbqbnZ_-M6ujati_H6uK4Qgfsk8z3bJKBpl_VPdFsgpvjCEQJ-sZDobRt_AWItghY2hGqOCT2Q1pBCwobsrIJaj3k9O7CXjGiUGOS8fZcfWje1ajd3RO5bfTqy0UmLCyiLRzRklbRbSaiMZ-2tuX88sieu8g6GjpBf5mkKVmTsrmQqwDdnkaSUkav_-6vNCKXW1KG2c4tOzo1bGbIgTECTGUna1VHLpFVCMqReWn5NNOmmU66D4VpTyQ"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"
+              ></div>
+              <div
+                class="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-300 group-hover:-translate-y-2"
+              >
+                <div
+                  class="w-12 h-12 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 text-primary"
+                >
+                  <span class="material-symbols-outlined text-2xl">menu_book</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">English</h3>
+                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                  From Chaucer to contemporary post-modernism, explore the vast landscape of English writing.
+                </p>
+                <a href="english.html" class="block">
+                  <button
+                    class="w-full py-3 bg-white/5 hover:bg-primary backdrop-blur-md border border-white/10 rounded-lg text-white font-medium transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(234,106,31,0.4)]"
+                  >
+                    <span>Explore Collection</span>
+                    <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary/50 transition-colors duration-300"
+            >
+              <img
+                alt="French Literature Background"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4yMzkjCY0iP6T-oDszbQMzUz0dVsYhscP2sESovix9hOc08qSjFeQbf_dj-IpMgWxtvMpLd_x43eI0zyAiI1g2kclH_EiHZLKj7X3CqTsfKDQAp1vXfj2tyxqLf8EEulnJzweNUuh912nqAEc4loHRjqDRpMzbHJ1I0MdUQLOb_Gihr-gkTXhUxZ7qTqEY3_ZMOAykJljCRKXWPkSHGG1PKqHD6eCL8ZbSO0EEdXFAZUPu2c4QloHzBC0yZOiF0GjVU8sNh9SvHQ"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"
+              ></div>
+              <div
+                class="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-300 group-hover:-translate-y-2"
+              >
+                <div
+                  class="w-12 h-12 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 text-primary"
+                >
+                  <span class="material-symbols-outlined text-2xl">translate</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">French</h3>
+                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                  Dive into the works of Hugo, Camus, and Proust. Experience the richness of Francophone literature.
+                </p>
+                <a href="frensh.html" class="block">
+                  <button
+                    class="w-full py-3 bg-white/5 hover:bg-primary backdrop-blur-md border border-white/10 rounded-lg text-white font-medium transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(234,106,31,0.4)]"
+                  >
+                    <span>Explore Collection</span>
+                    <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer border border-white/5 hover:border-primary/50 transition-colors duration-300"
+            >
+              <img
+                alt="Arabic Literature Background"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh5zj0S2RD02qcMjwSIaNqVhnXFV3lUpFhNjDFReVUakZ9slOKWbdXZkwKhdlYxmENBa2HizymPZnx927A3-3JXZJMAvMFlBqzZ45NwjA_gP4m4Bjbc8IOFv0pPZpkOBUoNhOLx4TfFV7nIkk5KLzDX_MI17fiF3byLPNbUbd5KjmcRcyNmrqUSmZT2a8gFOSXZ6IPcz038q8CK8ILbSsTwzbWTbvlnGCvg1vHcEw-4zrX7TMVX04SpYZgtrtugnzL09HYpboS8KQ"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"
+              ></div>
+              <div
+                class="absolute inset-0 p-8 flex flex-col justify-end transform transition-transform duration-300 group-hover:-translate-y-2"
+              >
+                <div
+                  class="w-12 h-12 bg-primary/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4 text-primary"
+                >
+                  <span class="material-symbols-outlined text-2xl">history_edu</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Arabic</h3>
+                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                  Discover the poetry of the Mu'allaqat and the prose of modern Arab visionaries.
+                </p>
+                <a href="arabic.html" class="block">
+                  <button
+                    class="w-full py-3 bg-white/5 hover:bg-primary backdrop-blur-md border border-white/10 rounded-lg text-white font-medium transition-all flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(234,106,31,0.4)]"
+                  >
+                    <span>Explore Collection</span>
+                    <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/5 bg-black py-16 text-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="flex items-center gap-3">
+            <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+              <img src="/rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-2xl font-display font-bold text-white">Rasa</span>
+          </div>
+
+          <div class="flex gap-10">
+            <a
+              href="https://www.instagram.com/rasa.estin/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              class="group size-11 rounded-full flex items-center justify-center
+           bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.24 3.5 3.5 5.24 3.5 7.75v8.5c0 2.51 1.74 4.25 4.25 4.25h8.5c2.51 0 4.25-1.74 4.25-4.25v-8.5c0-2.51-1.74-4.25-4.25-4.25h-8.5z"
+                />
+                <path
+                  d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7z"
+                />
+                <circle cx="17.5" cy="6.5" r="1.25" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/rasa-club/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              class="group size-11 rounded-full flex items-center justify-center
+           bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://discord.gg/YOUR_INVITE"
+              target="_blank"
+              rel="noopener"
+              aria-label="Discord"
+              class="group size-11 rounded-full flex items-center justify-center
+           bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-gray-400 group-hover:text-black transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.249a.077.077 0 0 0-.078-.037a19.736 19.736 0 0 0-4.885 1.515a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.9a.077.077 0 0 1-.008-.128c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.118.099.243.197.368.291a.077.077 0 0 1-.006.128a12.299 12.299 0 0 1-1.873.899a.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.077.077 0 0 0 .084.028a19.876 19.876 0 0 0 5.993-3.03a.077.077 0 0 0 .031-.055c.5-5.177-.838-9.673-3.548-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.955 2.419-2.156 2.419zm7.975 0c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.946 2.419-2.156 2.419z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="text-gray-600">© 2026 Rasa Club. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="glass-panel rounded-full fixed bottom-2 left-0 right-0 z-50 md:hidden">
+      <div class="flex justify-around items-center py-3 px-2">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            home
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Home</span>
+        </a>
+
+        <a
+          href="literature.html"
+          class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition"
+        >
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            menu_book
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Literature</span>
+        </a>
+
+        <a href="art.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            palette
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Art</span>
+        </a>
+
+        <a href="music.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            music_note
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Music</span>
+        </a>
+
+        <a href="chess.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            chess
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Chess</span>
+        </a>
+
+        <a href="gaming.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">
+            sports_esports
+          </span>
+          <span class="text-[11px] font-semibold tracking-wide">Gaming</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function scrollMembers(direction) {
+        const container = document.getElementById("membersScroll");
+        if (!container) return;
+
+        const card = container.querySelector(".glass-card");
+        if (!card) return;
+
+        const gap = 32;
+        const scrollAmount = card.offsetWidth + gap;
+
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
+
+      function scrollGallery(direction) {
+        const gallery = document.getElementById("rasaGallery");
+        if (!gallery) return;
+
+        const slides = gallery.children;
+        const slideCount = slides.length;
+        const slideWidth = gallery.clientWidth;
+
+        const maxScroll = slideWidth * (slideCount - 1);
+        const currentScroll = Math.round(gallery.scrollLeft);
+
+        if (direction === 1) {
+          if (currentScroll >= maxScroll - 5) {
+            gallery.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            gallery.scrollBy({ left: slideWidth, behavior: "smooth" });
+          }
+        }
+
+        if (direction === -1) {
+          if (currentScroll <= 5) {
+            gallery.scrollTo({ left: maxScroll, behavior: "smooth" });
+          } else {
+            gallery.scrollBy({ left: -slideWidth, behavior: "smooth" });
+          }
+        }
+      }
+
+      function scrollTeam(direction) {
+        const scroller = document.getElementById("teamScroller");
+        const scrollAmount = 312;
+        scroller.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
