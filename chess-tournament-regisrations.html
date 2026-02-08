@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tournament Inscription - Rasa CHESS CUP 2026</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Offside&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Tailwind theme setup -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ea6a1f",
+              "primary-dark": "#c5520e",
+              "background-light": "#f8f7f6",
+              "background-dark": "#000000",
+              surface: "#0f0f0f",
+            },
+            fontFamily: {
+              display: ["Offside", "Space Grotesk", "sans-serif"],
+              body: ["Quicksand", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              "3xl": "3rem",
+              full: "9999px",
+            },
+            backgroundImage: {
+              "gradient-metallic":
+                "linear-gradient(to right, #ea6a1f, #f9a825, #ea6a1f)",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              shine: "shine 3s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              shine: {
+                "0%": { backgroundPosition: "200% center" },
+                "100%": { backgroundPosition: "-200% center" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom utilities + global styling -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .glass-card {
+          background: rgba(20, 20, 20, 0.6);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+          border-color: rgba(234, 106, 31, 0.5);
+          box-shadow: 0 0 20px rgba(234, 106, 31, 0.15);
+        }
+        .glass-panel {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Remove number input spinners */
+        .no-spinner::-webkit-outer-spin-button,
+        .no-spinner::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        .no-spinner {
+          -moz-appearance: textfield;
+          appearance: textfield;
+        }
+
+        /* Use a single custom select arrow */
+        .select-clean {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-image: none !important;
+        }
+        select.select-clean::-ms-expand {
+          display: none;
+        }
+
+        .dropdown-panel {
+          background: rgba(5, 5, 5, 0.92);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 18px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        .text-metallic {
+          background: linear-gradient(
+            to right,
+            #ea6a1f 20%,
+            #ffb74d 40%,
+            #ea6a1f 60%,
+            #ffb74d 80%
+          );
+          background-size: 200% auto;
+          color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: shine 4s linear infinite;
+        }
+
+        .neon-focus:focus-within {
+          box-shadow: 0 0 15px rgba(234, 106, 31, 0.4);
+          border-color: #ea6a1f;
+        }
+        .orange-neon-focus:focus {
+          outline: none;
+          border-color: #ea6a1f;
+          box-shadow: 0 0 10px rgba(234, 106, 31, 0.4);
+        }
+
+        .bg-cinematic {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.75),
+              rgba(0, 0, 0, 0.85)
+            ),
+            url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfI45cX1FAk9ppMSC3DExZL4VpL8ekNhV_-dexVXC3gkvCISq3rmIqwJWJg6qo1WmJ2DTLepCVPVxoirkfP0hGEN0UB7sdqQsywdsMevxerae0ESqSrlAFzm5s28zjDsm6Bzn71BmcSvWPfN2V7_rCU_YtXnndaEpZ8XpweAuQOECGBuIZd9EOoq7dun5tRUedDpAoMypG-Jxkml9BF97bt8YW3BzoUq7Hrr0Nxj6JXmXGbC3tjynh4woEEK-UFg_ABdNMOWMdZ4I");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
+        @keyframes glow-pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(234, 106, 31, 0.5);
+          }
+          70% {
+            box-shadow: 0 0 0 15px rgba(234, 106, 31, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(234, 106, 31, 0);
+          }
+        }
+        .animate-glow-pulse {
+          animation: glow-pulse 2s infinite;
+        }
+      }
+
+      /* Scrollbar + smooth scroll */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ea6a1f;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black min-h-screen flex flex-col bg-cinematic"
+  >
+    <!-- Top navigation -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
+      <nav
+        class="glass-panel rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]"
+      >
+        <div class="flex items-center gap-3">
+          <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+            <img src="rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-xl font-display font-bold tracking-tight text-white">Rasa</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="literature.html"
+            >Literature</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="art.html"
+            >Art</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="music.html"
+            >Music</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="chess.html"
+            >Chess</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="gaming.html"
+            >Gaming</a
+          >
+        </div>
+
+        <a
+          href="noregistrations.html"
+          class="bg-white text-black hover:bg-primary hover:text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,106,31,0.6)] flex items-center gap-2 font-display"
+        >
+          <span>Register</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <main
+      class="flex-grow flex items-center justify-center px-6 py-28 relative overflow-hidden pt-36"
+    >
+      <div
+        class="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-primary/10 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[150px] rounded-full pointer-events-none"
+      ></div>
+
+      <div class="w-full max-w-xl z-10">
+        <div class="glass-card rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 border border-primary/10"
+          ></div>
+
+          <div class="text-center mb-10">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4"
+            >
+              <span class="material-symbols-outlined text-primary text-sm">event</span>
+              <span class="text-primary text-xs font-bold uppercase tracking-widest"
+                >Annual Tournament</span
+              >
+            </div>
+
+            <h1
+              class="text-3xl md:text-4xl font-black tracking-tighter text-white uppercase mb-2 font-display"
+            >
+              RASA CHESS CUP <span class="text-primary">2026</span>
+            </h1>
+            <p class="text-gray-400 text-sm uppercase tracking-[0.2em]">
+              Tournament Registration
+            </p>
+          </div>
+
+          <form class="space-y-6">
+            <!-- Full Name -->
+            <div class="space-y-2">
+              <label
+                class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                for="name"
+                >Full Name</label
+              >
+              <div class="relative group">
+                <span
+                  class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
+                  >person</span
+                >
+                <input
+                  id="name"
+                  type="text"
+                  class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="space-y-2">
+              <label
+                class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                for="email"
+                >Email Address</label
+              >
+              <div class="relative group">
+                <span
+                  class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
+                  >alternate_email</span
+                >
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="m_redouane@estin.dz"
+                  class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
+                />
+              </div>
+            </div>
+
+            <!-- Skill Level + ELO -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Skill Level -->
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                  >Skill Level</label
+                >
+
+                <div class="relative" data-dropdown>
+                  <input type="hidden" name="level" value="" data-dropdown-value />
+
+                  <button
+                    type="button"
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-12 text-left text-white font-body transition-all hover:bg-white/10 orange-neon-focus"
+                    data-dropdown-trigger
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                  >
+                    <span
+                      class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"
+                      >leaderboard</span
+                    >
+
+                    <span class="block text-gray-500" data-dropdown-label>Select Level</span>
+
+                    <span
+                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
+                      >expand_more</span
+                    >
+                  </button>
+
+                  <div
+                    class="hidden absolute z-50 mt-3 w-full dropdown-panel rounded-2xl overflow-hidden"
+                    data-dropdown-menu
+                    role="listbox"
+                  >
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="beginner"
+                    >
+                      Beginner
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="intermediate"
+                    >
+                      Intermediate
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="pro"
+                    >
+                      Pro
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ELO -->
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                  for="elo"
+                  >ELO Rating</label
+                >
+                <div class="relative group">
+                  <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
+                    >military_tech</span
+                  >
+
+                  <input
+                    id="elo"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    placeholder="e.g. 1450"
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all no-spinner"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Study Year + Student Card ID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Study Year -->
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                  >Study Year</label
+                >
+                <div class="relative" data-dropdown>
+                  <input type="hidden" name="studyYear" value="" data-dropdown-value />
+
+                  <button
+                    type="button"
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-12 text-left text-white font-body transition-all hover:bg-white/10 orange-neon-focus"
+                    data-dropdown-trigger
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                  >
+                    <span
+                      class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"
+                      >school</span
+                    >
+
+                    <span class="block text-gray-500" data-dropdown-label>Select Year</span>
+
+                    <span
+                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
+                      >expand_more</span
+                    >
+                  </button>
+
+                  <div
+                    class="hidden absolute z-50 bottom-full mb-3 w-full dropdown-panel rounded-2xl overflow-hidden"
+                    data-dropdown-menu
+                    role="listbox"
+                  >
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="1cp"
+                    >
+                      1CP
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="2cp"
+                    >
+                      2CP
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="1cs"
+                    >
+                      1CS
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="2cs"
+                    >
+                      2CS
+                    </button>
+                    <button
+                      type="button"
+                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
+                      data-dropdown-option
+                      data-value="3cs"
+                    >
+                      3CS
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Student Card ID -->
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
+                  for="cardId"
+                  >Student Card ID</label
+                >
+                <div class="relative group">
+                  <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
+                    >badge</span
+                  >
+
+                  <input
+                    id="cardId"
+                    type="text"
+                    placeholder="XXXXXXXXXXXX"
+                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="w-full md:w-auto md:min-w-[260px] mx-auto flex items-center justify-center gap-2 bg-primary hover:bg-orange-500 text-black rounded-full px-8 py-4 md:py-3.5 text-base font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_10px_26px_rgba(234,106,31,0.25)] hover:shadow-[0_12px_30px_rgba(234,106,31,0.35)] animate-glow-pulse"
+              >
+                <span>Register</span>
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+
+              <p
+                class="text-center text-gray-500 text-xs font-medium uppercase tracking-[0.1em] mt-4"
+              >
+                Registrations ends on <span class="text-primary/80">February 14th, 2026</span>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-black py-16 text-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="flex items-center gap-3">
+            <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+              <img src="/rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-2xl font-display font-bold text-white">Rasa</span>
+          </div>
+
+          <div class="flex gap-10">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/rasa.estin/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.24 3.5 3.5 5.24 3.5 7.75v8.5c0 2.51 1.74 4.25 4.25 4.25h8.5c2.51 0 4.25-1.74 4.25-4.25v-8.5c0-2.51-1.74-4.25-4.25-4.25h-8.5z"/>
+                <path d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7z"/>
+                <circle cx="17.5" cy="6.5" r="1.25"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/rasa-club/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"/>
+              </svg>
+            </a>
+
+            <!-- Discord -->
+            <a
+              href="https://discord.gg/YOUR_INVITE"
+              target="_blank"
+              rel="noopener"
+              aria-label="Discord"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.249a.077.077 0 0 0-.078-.037a19.736 19.736 0 0 0-4.885 1.515a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.9a.077.077 0 0 1-.008-.128c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.118.099.243.197.368.291a.077.077 0 0 1-.006.128a12.299 12.299 0 0 1-1.873.899a.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.077.077 0 0 0 .084.028a19.876 19.876 0 0 0 5.993-3.03a.077.077 0 0 0 .031-.055c.5-5.177-.838-9.673-3.548-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.955 2.419-2.156 2.419zm7.975 0c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.946 2.419-2.156 2.419z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="text-gray-600">© 2026 Rasa Club. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile bottom navigation -->
+    <div class="glass-panel rounded-full fixed bottom-2 left-0 right-0 z-50 md:hidden">
+      <div class="flex justify-around items-center py-3 px-2">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">home</span>
+          <span class="text-[11px] font-semibold tracking-wide">Home</span>
+        </a>
+
+        <a href="literature.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">menu_book</span>
+          <span class="text-[11px] font-semibold tracking-wide">Literature</span>
+        </a>
+
+        <a href="art.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">palette</span>
+          <span class="text-[11px] font-semibold tracking-wide">Art</span>
+        </a>
+
+        <a href="music.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">music_note</span>
+          <span class="text-[11px] font-semibold tracking-wide">Music</span>
+        </a>
+
+        <a href="chess.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">chess</span>
+          <span class="text-[11px] font-semibold tracking-wide">Chess</span>
+        </a>
+
+        <a href="gaming.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">sports_esports</span>
+          <span class="text-[11px] font-semibold tracking-wide">Gaming</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      (function initDropdowns() {
+        const dropdowns = document.querySelectorAll("[data-dropdown]");
+
+        function closeAll(except) {
+          dropdowns.forEach((d) => {
+            if (d === except) return;
+            const menu = d.querySelector("[data-dropdown-menu]");
+            const trigger = d.querySelector("[data-dropdown-trigger]");
+            if (!menu || !trigger) return;
+            menu.classList.add("hidden");
+            trigger.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        dropdowns.forEach((dropdown) => {
+          const trigger = dropdown.querySelector("[data-dropdown-trigger]");
+          const menu = dropdown.querySelector("[data-dropdown-menu]");
+          const label = dropdown.querySelector("[data-dropdown-label]");
+          const valueInput = dropdown.querySelector("[data-dropdown-value]");
+          const options = dropdown.querySelectorAll("[data-dropdown-option]");
+
+          if (!trigger || !menu || !label || !valueInput) return;
+
+          trigger.addEventListener("click", () => {
+            const isOpen = !menu.classList.contains("hidden");
+            closeAll(dropdown);
+            menu.classList.toggle("hidden", isOpen);
+            trigger.setAttribute("aria-expanded", String(!isOpen));
+          });
+
+          options.forEach((opt) => {
+            opt.addEventListener("click", () => {
+              const val = opt.getAttribute("data-value") || "";
+              valueInput.value = val;
+              label.textContent = opt.textContent.trim();
+              label.classList.remove("text-gray-500");
+              label.classList.add("text-white");
+
+              menu.classList.add("hidden");
+              trigger.setAttribute("aria-expanded", "false");
+            });
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          const inside = e.target.closest("[data-dropdown]");
+          if (!inside) closeAll();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeAll();
+        });
+      })();
+    </script>
+  </body>
+</html>
