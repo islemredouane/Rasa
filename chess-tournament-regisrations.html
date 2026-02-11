@@ -286,256 +286,24 @@
             </p>
           </div>
 
-          <form class="space-y-6">
-            <!-- Full Name -->
-            <div class="space-y-2">
-              <label
-                class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                for="name"
-                >Full Name</label
-              >
-              <div class="relative group">
-                <span
-                  class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
-                  >person</span
-                >
-                <input
-                  id="name"
-                  type="text"
-                  class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
-                />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="space-y-2">
-              <label
-                class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                for="email"
-                >Email Address</label
-              >
-              <div class="relative group">
-                <span
-                  class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
-                  >alternate_email</span
-                >
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="m_redouane@estin.dz"
-                  class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
-                />
-              </div>
-            </div>
-
-            <!-- Skill Level + ELO -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Skill Level -->
-              <div class="space-y-2">
-                <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                  >Skill Level</label
-                >
-
-                <div class="relative" data-dropdown>
-                  <input type="hidden" name="level" value="" data-dropdown-value />
-
-                  <button
-                    type="button"
-                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-12 text-left text-white font-body transition-all hover:bg-white/10 orange-neon-focus"
-                    data-dropdown-trigger
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                  >
-                    <span
-                      class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"
-                      >leaderboard</span
-                    >
-
-                    <span class="block text-gray-500" data-dropdown-label>Select Level</span>
-
-                    <span
-                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
-                      >expand_more</span
-                    >
-                  </button>
-
-                  <div
-                    class="hidden absolute z-50 mt-3 w-full dropdown-panel rounded-2xl overflow-hidden"
-                    data-dropdown-menu
-                    role="listbox"
-                  >
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="beginner"
-                    >
-                      Beginner
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="intermediate"
-                    >
-                      Intermediate
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="pro"
-                    >
-                      Pro
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- ELO -->
-              <div class="space-y-2">
-                <label
-                  class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                  for="elo"
-                  >ELO Rating</label
-                >
-                <div class="relative group">
-                  <span
-                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
-                    >military_tech</span
-                  >
-
-                  <input
-                    id="elo"
-                    type="text"
-                    inputmode="numeric"
-                    pattern="[0-9]*"
-                    placeholder="e.g. 1450"
-                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all no-spinner"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Study Year + Student Card ID -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Study Year -->
-              <div class="space-y-2">
-                <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                  >Study Year</label
-                >
-                <div class="relative" data-dropdown>
-                  <input type="hidden" name="studyYear" value="" data-dropdown-value />
-
-                  <button
-                    type="button"
-                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-12 text-left text-white font-body transition-all hover:bg-white/10 orange-neon-focus"
-                    data-dropdown-trigger
-                    aria-haspopup="listbox"
-                    aria-expanded="false"
-                  >
-                    <span
-                      class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"
-                      >school</span
-                    >
-
-                    <span class="block text-gray-500" data-dropdown-label>Select Year</span>
-
-                    <span
-                      class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
-                      >expand_more</span
-                    >
-                  </button>
-
-                  <div
-                    class="hidden absolute z-50 bottom-full mb-3 w-full dropdown-panel rounded-2xl overflow-hidden"
-                    data-dropdown-menu
-                    role="listbox"
-                  >
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="1cp"
-                    >
-                      1CP
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="2cp"
-                    >
-                      2CP
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="1cs"
-                    >
-                      1CS
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="2cs"
-                    >
-                      2CS
-                    </button>
-                    <button
-                      type="button"
-                      class="w-full px-5 py-3 text-left text-white/90 hover:bg-white/5 transition-colors"
-                      data-dropdown-option
-                      data-value="3cs"
-                    >
-                      3CS
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Student Card ID -->
-              <div class="space-y-2">
-                <label
-                  class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1"
-                  for="cardId"
-                  >Student Card ID</label
-                >
-                <div class="relative group">
-                  <span
-                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl group-focus-within:text-primary transition-colors"
-                    >badge</span
-                  >
-
-                  <input
-                    id="cardId"
-                    type="text"
-                    placeholder="XXXXXXXXXXXX"
-                    class="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-4 text-white font-body placeholder:text-gray-600 orange-neon-focus transition-all"
-                  />
-                </div>
-              </div>
-            </div>
-
             <!-- Submit -->
             <div class="pt-2">
-              <button
-                type="submit"
-                class="w-full md:w-auto md:min-w-[260px] mx-auto flex items-center justify-center gap-2 bg-primary hover:bg-orange-500 text-black rounded-full px-8 py-4 md:py-3.5 text-base font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_10px_26px_rgba(234,106,31,0.25)] hover:shadow-[0_12px_30px_rgba(234,106,31,0.35)] animate-glow-pulse"
+              <a
+                href="https://forms.gle/g8NfTke8G4joP1Tn8"
+                target="_blank"
+                rel="noopener"
+                class="w-full md:w-auto md:min-w-[200px] mx-auto flex items-center justify-center gap-2 bg-primary hover:bg-orange-500 text-black rounded-full px-8 py-4 md:py-3.5 text-base font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_10px_26px_rgba(234,106,31,0.25)] hover:shadow-[0_12px_30px_rgba(234,106,31,0.35)] animate-glow-pulse"
               >
                 <span>Register</span>
                 <span class="material-symbols-outlined text-[18px]">send</span>
-              </button>
+              </a>
 
               <p
                 class="text-center text-gray-500 text-xs font-medium uppercase tracking-[0.1em] mt-4"
               >
-                Registrations ends on <span class="text-primary/80">February 14th, 2026</span>
+                Limited places. <span class="text-primary/80">Register fast!</span>
               </p>
             </div>
-          </form>
         </div>
       </div>
     </main>
@@ -691,4 +459,3 @@
     </script>
   </body>
 </html>
-
