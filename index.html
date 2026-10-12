@@ -214,7 +214,7 @@
               <div class="absolute bottom-8 left-8 right-8 glass-panel px-6 py-4 rounded-2xl flex items-center justify-between border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
                 <div>
                   <span class="block text-xs text-primary font-bold uppercase tracking-wider mb-1">Upcoming Event</span>
-                  <span class="block text-lg font-bold text-white font-display">Rasa Chess Cup Tournament</span>
+                  <span class="block text-lg font-bold text-white font-display">RASA's Open Day</span>
                 </div>
                 <div class="bg-white/10 p-2.5 rounded-xl">
                   <span class="material-symbols-outlined text-white">calendar_month</span>
@@ -415,6 +415,7 @@
 
           <p class="text-xl text-gray-400 leading-relaxed font-light">
                     Rasa is a cultural club founded in 2024 at the Higher School of Computer Sciences and Digital Technologies (ESTIN), Béjaïa. Created by a group of students, the club aims to ease academic pressure by fostering a vibrant cultural environment that brings together art, music, games, and creative expression. Through diverse activities and events, Rasa offers students a space to connect, relax, and express themselves beyond the classroom.
+          </p>
           <div class="grid grid-cols-2 gap-8 py-6 border-y border-white/10">
             <div class="flex flex-col gap-2">
               <span class="text-4xl font-display font-bold text-primary">+5</span>
@@ -440,8 +441,20 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div class="max-w-2xl">
-          <h2 class="text-5xl md:text-6xl font-display font-bold mb-6 text-white">The Visionaries</h2>
+          <h2 class="text-5xl md:text-6xl font-display font-bold mb-6 text-white">The Board</h2>
           <p class="text-gray-400 text-xl font-light">Meet the minds curating the next generation of cultural experiences.</p>
+
+          <!-- ✅ Season Tabs -->
+          <div class="inline-flex mt-8 p-1 rounded-full border border-white/10 bg-white/5" role="tablist" aria-label="Board season">
+            <button type="button" role="tab" aria-selected="true" aria-controls="membersScroll" data-board-tab="membersScroll"
+              class="board-tab px-5 py-2 rounded-full text-sm font-bold font-display transition-colors bg-primary text-black">
+              2026/27
+            </button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="pastBoardScroll" data-board-tab="pastBoardScroll"
+              class="board-tab px-5 py-2 rounded-full text-sm font-bold font-display transition-colors text-white/70 hover:text-white">
+              2025/26 · Past Board
+            </button>
+          </div>
         </div>
 
         <!-- ✅ Desktop Scroll Controls -->
@@ -467,9 +480,358 @@
 
       <div class="relative">
         <!-- ✅ Members Scroll Container -->
-        <div id="membersScroll"
+        <div id="membersScroll" role="tabpanel"
           class="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth
                   [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Kernou Abdellah"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/kernou-abdellah.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Executive Board</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Kernou Abdellah
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">President</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zamoum Chemseddine"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/zamoum-chemseddine.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Executive Board</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zamoum Chemseddine
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Vice President</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Slimani Sabrina"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/slimani-sabrina.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Executive Board</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Slimani Sabrina
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Secretary</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Redouane Mohamed Islem"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/redouane-mohamed-islem.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Human Resources</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Redouane Mohamed Islem
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Human Resources Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Abid Khalida"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/abid-khalida.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Literature</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Abid Khalida
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Literature Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Sawsen Aouzellag"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/sawsen-aouzellag.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Literature</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Sawsen Aouzellag
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Literature Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Banahcen Mohamed Ishak"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/banahcen-mohamed-ishak.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Art</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Banahcen Mohamed Ishak
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Art Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zemali Boudjemaa"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/zemali-boudjemaa.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Music</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zemali Boudjemaa
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Music Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Dr Salim Benslimane"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/dr-salim-benslimane.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Chess</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Dr Salim Benslimane
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Chess Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zekagh Ishak"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/zekagh-ishak.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Chess</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zekagh Ishak
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Chess Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Hocine Thiziri"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/hocine-thiziri.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Multimedia</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Hocine Thiziri
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Multimedia Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Zaidi Yanis"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/zaidi-yanis.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Multimedia</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Zaidi Yanis
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Multimedia Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Benkahla Redouane"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/benkahla-redouane.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Communication</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Benkahla Redouane
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Communication Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Adam Bouakkache"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/adam-bouakkache.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Charity</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Adam Bouakkache
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Charity Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Belgacem Nourhane"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/belgacem-nourhane.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Charity</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Belgacem Nourhane
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Charity Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Bekhouche Ahmed Ziad"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/bekhouche-ahmed-ziad.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Events</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Bekhouche Ahmed Ziad
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Events Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Hamdi Adem"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/hamdi-adem.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Events</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Hamdi Adem
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Events Department Manager</p>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
+                      snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
+            <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
+              <img alt="Arbouche Feriel"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  src="/images/board-2026-27/arbouche-feriel.webp" width="600" height="600" loading="lazy" decoding="async"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-primary/40 text-primary text-[10px] font-bold uppercase tracking-widest">Logistics</span>
+            </div>
+
+            <div class="text-center pb-4">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                Arbouche Feriel
+              </h3>
+              <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Logistics Department Manager</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ✅ Past Board 2025/26 -->
+        <div id="pastBoardScroll" role="tabpanel"
+          class="hidden flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth
+                  [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <p class="sr-only">Board of the 2025/26 season. Thank you for everything you built.</p>
 
           <!-- CARD -->
           <div class="glass-card rounded-[2rem] p-3 group relative overflow-hidden
@@ -1681,7 +2043,7 @@
   <script>
     // ✅ Team slider: scroll by one card
     function scrollMembers(direction) {
-      const container = document.getElementById('membersScroll');
+      const container = document.querySelector('#membersScroll:not(.hidden), #pastBoardScroll:not(.hidden)');
       if (!container) return;
 
       const card = container.querySelector('.glass-card');
@@ -1695,6 +2057,20 @@
         behavior: 'smooth'
       });
     }
+
+    // ✅ Board season tabs
+    document.querySelectorAll('.board-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.board-tab').forEach((t) => {
+          const active = t === tab;
+          t.setAttribute('aria-selected', active);
+          t.classList.toggle('bg-primary', active);
+          t.classList.toggle('text-black', active);
+          t.classList.toggle('text-white/70', !active);
+          document.getElementById(t.dataset.boardTab).classList.toggle('hidden', !active);
+        });
+      });
+    });
 
     // ✅ Gallery slider: next/prev with loop
     function scrollGallery(direction) {
