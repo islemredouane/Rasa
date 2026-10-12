@@ -1,0 +1,12 @@
+{
+  "name": "rasa-website",
+  "private": true,
+  "description": "Rasa Club website (static pages + Vercel function for the contact form)",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

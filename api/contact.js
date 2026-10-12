@@ -5,10 +5,19 @@ export default async function handler(req, res) {
     return res.status(405).json({ status: "error", message: "Only POST allowed" });
   }
 
-  const { name, email, subject, message } = req.body;
+  const body = req.body || {};
+  // Single-line fields: no line breaks (they would let someone inject email headers).
+  const line = (v, max) => String(v ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, max);
+  const name = line(body.name, 100);
+  const email = line(body.email, 254);
+  const subject = line(body.subject, 150);
+  const message = String(body.message ?? "").trim().slice(0, 5000);
 
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ status: "error", message: "All fields are required" });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ status: "error", message: "Please enter a valid email address" });
   }
 
   try {
