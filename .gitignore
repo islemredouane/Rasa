@@ -1,0 +1,20 @@
+# Private data — never commit (applicant lists, form exports)
+*.csv
+*.xlsx
+
+# Raw / source design files
+*.CR2
+*.cr2
+*.psd
+*.HEIC
+*.heic
+
+# Local env & tooling
+.env
+.env.*
+.vercel/
+node_modules/
+.vscode/
+.claude/
+.DS_Store
+Thumbs.db
