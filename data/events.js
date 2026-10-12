@@ -28,7 +28,6 @@ window.RASA_EVENTS = {
       summary:
         "Our welcome day for the new students: meet the 2026/27 board, discover every department and find your place in the club. ROSO is waiting for you!",
       cover: "/images/events/upcoming/welcome-day-2026/cover.webp",
-      coverFit: "contain",
       link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow for the date" },
     },
   ],
