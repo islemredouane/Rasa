@@ -379,40 +379,19 @@
     <!-- Mobile bottom navigation -->
     <div class="glass-panel rounded-t-[20px] rounded-b-none border-x-0 border-b-0 fixed bottom-0 inset-x-0 w-full z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
       <div class="flex justify-around items-center py-3 px-2">
-        <a href="index.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">home</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Home</span>
+        <a href="index.html" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">home</span>
+          <span class="text-[11px] font-semibold tracking-wide">Home</span>
         </a>
 
-        <a href="literature.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">menu_book</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Literature</span>
-        </a>
+        <button type="button" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">grid_view</span>
+          <span class="text-[11px] font-semibold tracking-wide">Departments</span>
+        </button>
 
-        <a href="art.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">palette</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Art</span>
-        </a>
-
-        <a href="music.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">music_note</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Music</span>
-        </a>
-
-        <a href="chess.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">chess</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Chess</span>
-        </a>
-
-        <a href="gaming.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">sports_esports</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Activities</span>
-        </a>
-
-        <!-- Charity -->
-        <a href="charity.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">volunteer_activism</span>
-          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Charity</span>
+        <a href="index.html#contact" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">mail</span>
+          <span class="text-[11px] font-semibold tracking-wide">Contact</span>
         </a>
       </div>
     </div>
@@ -472,5 +451,6 @@
         });
       })();
     </script>
-  </body>
+    <script src="/js/mobile-nav.js" defer></script>
+</body>
 </html>
