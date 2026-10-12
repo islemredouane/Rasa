@@ -13,6 +13,10 @@
 //   coverFit  optional "contain" to show the whole image (logos, mascot) instead of cropping
 //   link      optional { href, label } to a page or Instagram post
 //   highlight true = shown on the homepage (keep it to 3 per season)
+//   start/end machine-readable date for search engines: "2026-02", "2026-02-15" or "2026-02-12T20:30:00+01:00"
+//   notAnEvent true = not listed as an Event in structured data (e.g. year-round communication)
+//
+// After editing, run:  node scripts/build.mjs   (updates SEO data, pre-rendered HTML and the sitemap)
 //
 // Upcoming events go in RASA_EVENTS.upcoming; when an event is over, move it into its season.
 
@@ -40,6 +44,7 @@ window.RASA_EVENTS = {
       events: [
         {
           id: "welcome-day",
+          start: "2025-10",
           title: "Welcome Day",
           date: "Oct 2025",
           place: "ESTIN",
@@ -53,6 +58,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "movie-night",
+          start: "2025-10",
           title: "Movie Night",
           date: "Oct 2025",
           place: "ESTIN",
@@ -64,6 +70,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "sila",
+          start: "2025-10",
           title: "Algiers International Book Fair (SILA)",
           date: "Oct 2025",
           place: "Algiers",
@@ -75,6 +82,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "1-november",
+          start: "2025-11",
           title: "1 November commemoration",
           date: "Nov 2025",
           place: "ESTIN",
@@ -86,6 +94,8 @@ window.RASA_EVENTS = {
         },
         {
           id: "speaking-club",
+          start: "2025-11",
+          end: "2025-12",
           title: "Speaking Club",
           date: "Nov–Dec 2025",
           place: "ESTIN",
@@ -97,6 +107,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "yennayer",
+          start: "2026-02",
           title: "Inter-club Yennayer celebration",
           date: "Feb 2026",
           place: "ESTIN",
@@ -108,6 +119,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "movie-night-2",
+          start: "2026-02",
           title: "Movie Night: Dune",
           date: "Feb 2026",
           place: "ESTIN",
@@ -118,6 +130,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "qa3da-musicale",
+          start: "2026-02-12T20:30:00+01:00",
           title: "Qa3da Musicale",
           date: "12 Feb 2026",
           place: "RASA room",
@@ -128,6 +141,8 @@ window.RASA_EVENTS = {
         },
         {
           id: "chess-cup",
+          start: "2026-02-15",
+          end: "2026-02-17",
           title: "RASA Chess Cup",
           date: "15–17 Feb 2026",
           place: "ESTIN",
@@ -142,6 +157,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "tikjda",
+          start: "2026-04",
           title: "Tikjda trip",
           date: "Apr 2026",
           place: "Tikjda, Bouira",
@@ -154,6 +170,7 @@ window.RASA_EVENTS = {
         },
         {
           id: "communication",
+          notAnEvent: true,
           title: "Wishes & year retrospective",
           date: "All year",
           place: "Instagram",

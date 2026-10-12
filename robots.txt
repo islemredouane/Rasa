@@ -1,0 +1,23 @@
+# Rasa Club — https://rasa-off.vercel.app
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /offline
+
+# AI assistants and answer engines are welcome: a plain summary lives at /llms.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://rasa-off.vercel.app/sitemap.xml
