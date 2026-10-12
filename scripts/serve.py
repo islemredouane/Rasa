@@ -30,6 +30,7 @@ class Handler(SimpleHTTPRequestHandler):
         ".webmanifest": "application/manifest+json",
         ".webp": "image/webp",
         ".js": "application/javascript",
+        ".mjs": "application/javascript",
     }
 
     def _redirect(self, location: str) -> None:
