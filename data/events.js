@@ -137,7 +137,7 @@ window.RASA_EVENTS = {
             "Our first chess tournament: three days of games and a champion, Sameur Adel. A new yearly rendezvous was born.",
           stat: "24 players",
           cover: "/images/chess-cup-2026/9.webp",
-          link: { href: "chess.html#chess-cup", label: "See the recap" },
+          link: { href: "/chess#chess-cup", label: "See the recap" },
           highlight: true,
         },
         {
