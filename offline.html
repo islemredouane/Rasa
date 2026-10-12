@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Offline | Rasa</title>
+    <meta name="description" content="You are offline. Rasa will be back as soon as you reconnect." />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="/rasa-favicon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Self-contained styles: this page must render with no network at all -->
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; }
+      body {
+        background: radial-gradient(circle at 50% 30%, rgba(234, 106, 31, 0.18), transparent 60%), #000;
+        color: #fff;
+        font-family: "Quicksand", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+      }
+      main { max-width: 420px; }
+      img { width: 96px; height: 96px; }
+      h1 { font-family: "Offside", "Space Grotesk", system-ui, sans-serif; font-size: 2rem; margin: 24px 0 8px; }
+      h1 span { color: #ea6a1f; }
+      p { color: #a1a1aa; line-height: 1.6; margin: 0 0 28px; }
+      .actions { display: flex; flex-direction: column; gap: 12px; }
+      button, a {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 52px; border-radius: 9999px; font-weight: 700; font-size: 1rem;
+        text-decoration: none; cursor: pointer; font-family: inherit;
+      }
+      button { background: #ea6a1f; color: #000; border: 0; }
+      button:hover { background: #f97316; }
+      a { color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+      a:hover { border-color: rgba(255, 255, 255, 0.5); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/rasa-logo.png" alt="Rasa logo" />
+      <h1>You’re <span>offline</span></h1>
+      <p>This page isn’t saved on your device yet. Check your connection and try again. Pages you already visited still work offline.</p>
+      <div class="actions">
+        <button type="button" onclick="location.reload()">Try again</button>
+        <a href="/index.html">Back to Home</a>
+      </div>
+    </main>
+    <script>
+      // Reload by itself as soon as the connection comes back
+      window.addEventListener("online", () => location.reload());
+    </script>
+  </body>
+</html>
