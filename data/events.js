@@ -103,7 +103,7 @@ window.RASA_EVENTS = {
           icon: "festival",
           summary:
             "Tifinagh workshop, “Guess the Word” in Tamazight, a Yennayer quiz, traditional Kabyle dishes and clothes, and music.",
-          cover: null,
+          cover: "/images/events/2025-26/yennayer/cover.webp",
         },
         {
           id: "movie-night-2",
