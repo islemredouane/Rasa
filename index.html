@@ -1867,6 +1867,27 @@
         <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-black/60 to-transparent"></div>
       </div>
 
+      <!-- ✅ Mobile Scroll Controls (desktop ones sit next to the title) -->
+      <div class="flex md:hidden justify-center gap-3 mt-8">
+        <button
+          type="button"
+          onclick="scrollMembers(-1)"
+          aria-label="Previous board member"
+          class="size-12 rounded-full border border-white/10 flex items-center justify-center
+                hover:bg-primary hover:border-primary hover:text-black transition-all">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+
+        <button
+          type="button"
+          onclick="scrollMembers(1)"
+          aria-label="Next board member"
+          class="size-12 rounded-full border border-white/10 flex items-center justify-center
+                hover:bg-primary hover:border-primary hover:text-black transition-all">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+
       <!-- ✅ Contact Section -->
       <div class="py-24 bg-[#050505] relative" id="contact">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
