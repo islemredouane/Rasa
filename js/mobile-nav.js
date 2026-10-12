@@ -63,6 +63,31 @@
     document.body.style.overflow = open ? "hidden" : "";
   }
 
+  // Scroll progress along the top edge of the bar (phones hide the page scrollbar).
+  if (bar) {
+    bar.classList.add("overflow-hidden");
+    const track = document.createElement("div");
+    track.setAttribute("aria-hidden", "true");
+    track.className = "absolute top-0 left-0 right-0 h-[3px] bg-white/5";
+    const fill = document.createElement("div");
+    fill.className = "h-full w-full origin-left bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
+    fill.style.transform = "scaleX(0)";
+    track.append(fill);
+    bar.prepend(track);
+
+    let ticking = false;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      fill.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
   toggle.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
   overlay.addEventListener("click", () => setOpen(false));
   document.addEventListener("keydown", (e) => {
