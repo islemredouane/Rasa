@@ -1,0 +1,11 @@
+# Keep repo-only and source files out of the deployed site
+*.csv
+*.xlsx
+*.CR2
+*.cr2
+*.psd
+*.HEIC
+*.heic
+*.md
+scripts/
+.env*
