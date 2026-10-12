@@ -26,7 +26,7 @@ window.RASA_EVENTS = {
       icon: "celebration",
       summary:
         "Meet the 2026/27 board, discover every department and find your place in the club. Come curious, leave with a new family.",
-      cover: null,
+      cover: "/images/events/upcoming/open-day-2026/cover.webp",
       link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow for the date" },
     },
   ],
@@ -35,7 +35,7 @@ window.RASA_EVENTS = {
     {
       id: "2025-26",
       title: "Season 2025/26",
-      intro: "Ten activities across literature, music, chess, heritage and outings: the year RASA grew up.",
+      intro: "Eleven activities across literature, music, chess, heritage and outings: the year RASA grew up.",
       events: [
         {
           id: "welcome-day",
@@ -51,17 +51,6 @@ window.RASA_EVENTS = {
           highlight: true,
         },
         {
-          id: "sila",
-          title: "Algiers International Book Fair (SILA)",
-          date: "Oct 2025",
-          place: "Algiers",
-          tags: ["Literature"],
-          icon: "menu_book",
-          summary:
-            "A cultural trip to SILA: visiting the stands, meeting authors and publishers, and bringing books home.",
-          cover: null,
-        },
-        {
           id: "movie-night",
           title: "Movie Night",
           date: "Oct 2025",
@@ -70,7 +59,18 @@ window.RASA_EVENTS = {
           icon: "movie",
           summary:
             "A horror film chosen by the students themselves in an Instagram poll, to breathe before exam season.",
-          cover: null,
+          cover: "/images/events/2025-26/movie-night/cover.webp",
+        },
+        {
+          id: "sila",
+          title: "Algiers International Book Fair (SILA)",
+          date: "Oct 2025",
+          place: "Algiers",
+          tags: ["Literature"],
+          icon: "menu_book",
+          summary:
+            "A cultural trip to SILA: visiting the stands, meeting authors and publishers, and bringing books home.",
+          cover: "/images/events/2025-26/sila/cover.webp",
         },
         {
           id: "1-november",
@@ -81,7 +81,7 @@ window.RASA_EVENTS = {
           icon: "flag",
           summary:
             "Speeches on the meaning of the Revolution of 1 November 1954 and heritage music, in a solemn atmosphere.",
-          cover: null,
+          cover: "/images/events/2025-26/1-november/cover.webp",
         },
         {
           id: "speaking-club",
@@ -106,6 +106,16 @@ window.RASA_EVENTS = {
           cover: null,
         },
         {
+          id: "movie-night-2",
+          title: "Movie Night: Dune",
+          date: "Feb 2026",
+          place: "ESTIN",
+          tags: ["Relaxation"],
+          icon: "movie",
+          summary: "A second movie night, with Dune: Part One on the big screen.",
+          cover: "/images/events/2025-26/movie-night-2/cover.webp",
+        },
+        {
           id: "qa3da-musicale",
           title: "Qa3da Musicale",
           date: "12 Feb 2026",
@@ -113,7 +123,7 @@ window.RASA_EVENTS = {
           tags: ["Music", "with LDC"],
           icon: "music_note",
           summary: "An open musical evening in our room to decompress after a heavy week.",
-          cover: null,
+          cover: "/images/events/2025-26/qa3da-musicale/cover.webp",
         },
         {
           id: "chess-cup",
@@ -138,7 +148,7 @@ window.RASA_EVENTS = {
           icon: "landscape",
           summary: "Discovering the Djurdjura mountains together, with the support of Sinay Travel and the Orca club.",
           stat: "651 likes on the video",
-          cover: null,
+          cover: "/images/events/2025-26/tikjda/cover.webp",
           highlight: true,
         },
         {
