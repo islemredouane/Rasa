@@ -1,4 +1,4 @@
-// Renders RASA events from data/events.js into:
+// Renders RASA events from data/events.js (in the browser, and in scripts/build.mjs for pre-rendering) into:
 //   [data-events-upcoming]  upcoming events (events page)
 //   [data-events-seasons]   one timeline per season (events page)
 //   [data-events-home]      homepage teaser: next event + highlights
@@ -41,7 +41,7 @@
       .map((t) => `<span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-300">${esc(t)}</span>`)
       .join("");
     return `
-      <article class="group glass-card rounded-3xl overflow-hidden flex flex-col">
+      <article id="event-${esc(e.id)}" class="group glass-card rounded-3xl overflow-hidden flex flex-col scroll-mt-28">
         <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-primary/20 via-white/[0.03] to-transparent flex items-center justify-center">
           ${media(e, "text-[64px]")}
           <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur text-white text-xs font-bold">${esc(e.date)}</span>
@@ -87,17 +87,15 @@
       </article>`;
   }
 
-  // ----- Events page -----
-  const upcomingEl = document.querySelector("[data-events-upcoming]");
-  if (upcomingEl) {
-    upcomingEl.innerHTML = data.upcoming.length
+  // ----- Page sections (also used by scripts/build.mjs to pre-render the HTML) -----
+  function upcomingHTML() {
+    return data.upcoming.length
       ? data.upcoming.map(upcomingCard).join("")
       : `<p class="text-center text-gray-400">No event announced yet. Follow <a class="text-primary font-bold" href="https://www.instagram.com/rasa.estin/" target="_blank" rel="noopener">@rasa.estin</a> to be the first to know.</p>`;
   }
 
-  const seasonsEl = document.querySelector("[data-events-seasons]");
-  if (seasonsEl) {
-    seasonsEl.innerHTML = data.seasons
+  function seasonsHTML() {
+    return data.seasons
       .map(
         (s) => `
         <section id="season-${esc(s.id)}" class="scroll-mt-28">
@@ -117,13 +115,11 @@
       .join("");
   }
 
-  // ----- Homepage teaser -----
-  const homeEl = document.querySelector("[data-events-home]");
-  if (homeEl) {
+  function homeHTML() {
     const next = data.upcoming[0];
     const latest = data.seasons[0];
     const highlights = latest ? latest.events.filter((e) => e.highlight).slice(0, 3) : [];
-    homeEl.innerHTML = `
+    return `
       ${next ? upcomingCard(next) : ""}
       ${highlights.length ? `
         <div class="mt-14 flex items-end justify-between gap-4 mb-8">
@@ -136,4 +132,16 @@
         </a>
       </div>`;
   }
+
+  window.RasaEvents = { upcomingHTML, seasonsHTML, homeHTML };
+  if (typeof document === "undefined") return; // running in the build script
+
+  // The HTML is pre-rendered at build time for crawlers; the browser re-renders it from the latest data.
+  const fill = (selector, html) => {
+    const el = document.querySelector(selector);
+    if (el) el.innerHTML = html();
+  };
+  fill("[data-events-upcoming]", upcomingHTML);
+  fill("[data-events-seasons]", seasonsHTML);
+  fill("[data-events-home]", homeHTML);
 })();
