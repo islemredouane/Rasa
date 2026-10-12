@@ -221,15 +221,15 @@
 
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
-              <div class="absolute bottom-8 left-8 right-8 glass-panel px-6 py-4 rounded-2xl flex items-center justify-between border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+              <a href="events.html#upcoming" class="group/event absolute bottom-8 left-8 right-8 glass-panel px-6 py-4 rounded-2xl flex items-center justify-between border border-white/10 hover:border-primary/50 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-colors">
                 <div>
                   <span class="block text-xs text-primary font-bold uppercase tracking-wider mb-1">Upcoming Event</span>
                   <span class="block text-lg font-bold text-white font-display">RASA's Open Day</span>
                 </div>
-                <div class="bg-white/10 p-2.5 rounded-xl">
+                <div class="bg-white/10 group-hover/event:bg-primary p-2.5 rounded-xl transition-colors">
                   <span class="material-symbols-outlined text-white">calendar_month</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -473,6 +473,21 @@
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- ✅ Events Section (rendered from data/events.js) -->
+  <div class="py-32 relative bg-[#050505] scroll-mt-20" id="events">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-14">
+        <h2 class="text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+          <span class="h-px w-8 bg-primary"></span>
+          What We Do
+        </h2>
+        <h3 class="text-5xl md:text-6xl font-display font-bold text-white">Events</h3>
+        <p class="mt-6 text-gray-400 text-xl font-light">What’s coming next, and the moments that made last season.</p>
+      </div>
+      <div data-events-home></div>
     </div>
   </div>
 
@@ -2291,6 +2306,8 @@
     }
   </script>
   <script src="/js/mobile-nav.js" defer></script>
+  <script src="/data/events.js" defer></script>
+  <script src="/js/events.js" defer></script>
 </body>
 </html>
 
