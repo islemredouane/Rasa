@@ -228,7 +228,7 @@
 
               <button
                 type="button"
-                onclick="document.getElementById('tournaments')?.scrollIntoView({ behavior: 'smooth' })"
+                onclick="document.getElementById('chess-cup')?.scrollIntoView({ behavior: 'smooth' })"
                 class="h-14 px-10 rounded-full bg-transparent
                       hover:bg-white/5
                       border border-white/20 hover:border-white/50
@@ -240,7 +240,7 @@
                 <span class="material-symbols-outlined group-hover:text-primary transition-colors">
                    emoji_events
                 </span>
-                <span>Tournaments</span>
+                <span>Chess Cup 2026</span>
               </button>
             </div>
           </div>
@@ -269,40 +269,180 @@
         </div>
 
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
-          <button class="flex items-center justify-center w-12 h-12 rounded-full bg-[#181311] border border-primary/50 text-primary animate-glow-pulse cursor-pointer hover:bg-primary hover:text-white transition-colors">
+          <button type="button" aria-label="Scroll to the Chess Cup recap" onclick="document.getElementById('chess-cup')?.scrollIntoView({ behavior: 'smooth' })" class="flex items-center justify-center w-12 h-12 rounded-full bg-[#181311] border border-primary/50 text-primary animate-glow-pulse cursor-pointer hover:bg-primary hover:text-white transition-colors">
             <span class="material-symbols-outlined">arrow_downward</span>
           </button>
         </div>
       </section>
 
-      <section class="px-6 py-12">
-        <div class="max-w-5xl mx-auto">
-          <div class="glass-card orange-glow-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10 relative overflow-hidden group">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -mr-32 -mt-32"></div>
+      <!-- CHESS CUP 2026 RECAP -->
+      <section class="px-6 py-20 md:py-28 scroll-mt-28" id="chess-cup">
+        <div class="max-w-6xl mx-auto">
 
-            <div class="flex flex-col gap-4 relative z-10">
-              <div class="flex items-center gap-3 text-primary font-bold tracking-widest text-sm uppercase">
+          <!-- Heading -->
+          <div class="text-center mb-14">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase">
+              <span class="material-symbols-outlined text-base">emoji_events</span>
+              Last tournament · Recap
+            </div>
+            <h2 class="mt-6 text-4xl md:text-5xl font-bold text-white font-display">RASA Chess Cup 2026</h2>
+            <p class="mt-4 text-gray-400 text-lg">
+              15–17 February 2026 · ESTIN · The first edition of our chess tournament
+            </p>
+          </div>
+
+          <!-- Key figures -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="glass-card rounded-2xl p-6 text-center">
+              <div class="text-4xl md:text-5xl font-bold text-primary font-display">24</div>
+              <div class="mt-2 text-xs md:text-sm text-gray-400 uppercase tracking-widest">Players</div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 text-center">
+              <div class="text-4xl md:text-5xl font-bold text-primary font-display">3</div>
+              <div class="mt-2 text-xs md:text-sm text-gray-400 uppercase tracking-widest">Days of play</div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 text-center">
+              <div class="text-4xl md:text-5xl font-bold text-primary font-display">1<sup class="text-2xl">st</sup></div>
+              <div class="mt-2 text-xs md:text-sm text-gray-400 uppercase tracking-widest">Edition</div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 text-center">
+              <div class="text-4xl md:text-5xl font-bold text-primary font-display">100%</div>
+              <div class="mt-2 text-xs md:text-sm text-gray-400 uppercase tracking-widest">Organised by RASA</div>
+            </div>
+          </div>
+
+          <!-- Podium
+               Winner photos: /images/chess-cup-2026/winner-1.webp, winner-2.webp, winner-3.webp
+               Until a photo exists, the placeholder behind it stays visible. -->
+          <div class="mt-20">
+            <h3 class="text-center text-2xl md:text-3xl font-bold text-white font-display mb-12">The Podium</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 items-end max-w-4xl mx-auto">
+              <!-- 2nd place -->
+              <div class="flex flex-col items-center text-center sm:order-1 order-2">
+                <div class="relative size-28 md:size-32 rounded-full overflow-hidden border-4 border-gray-300/70 bg-white/5 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-5xl text-white/20">person</span>
+                  <img src="/images/chess-cup-2026/winner-2.webp" alt="2nd place, RASA Chess Cup 2026" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+                </div>
+                <div class="mt-4 text-white font-bold text-lg font-display">Name coming soon</div>
+                <div class="mt-3 w-full rounded-t-2xl bg-gradient-to-b from-gray-300/20 to-transparent border-t-2 border-gray-300/70 pt-4 pb-10">
+                  <span class="text-3xl">🥈</span>
+                  <div class="text-gray-300 text-xs font-bold uppercase tracking-widest mt-1">2nd place</div>
+                </div>
+              </div>
+
+              <!-- 1st place -->
+              <div class="flex flex-col items-center text-center sm:order-2 order-1">
+                <span class="material-symbols-outlined text-primary text-4xl mb-2">workspace_premium</span>
+                <div class="relative size-36 md:size-40 rounded-full overflow-hidden border-4 border-primary bg-white/5 flex items-center justify-center shadow-[0_0_40px_rgba(234,106,31,0.35)]">
+                  <span class="material-symbols-outlined text-6xl text-white/20">person</span>
+                  <img src="/images/chess-cup-2026/winner-1.webp" alt="Champion, RASA Chess Cup 2026" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+                </div>
+                <div class="mt-4 text-white font-bold text-xl font-display">Name coming soon</div>
+                <div class="mt-3 w-full rounded-t-2xl bg-gradient-to-b from-primary/25 to-transparent border-t-2 border-primary pt-4 pb-16">
+                  <span class="text-4xl">🥇</span>
+                  <div class="text-primary text-xs font-bold uppercase tracking-widest mt-1">Champion</div>
+                </div>
+              </div>
+
+              <!-- 3rd place -->
+              <div class="flex flex-col items-center text-center order-3">
+                <div class="relative size-28 md:size-32 rounded-full overflow-hidden border-4 border-amber-700/80 bg-white/5 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-5xl text-white/20">person</span>
+                  <img src="/images/chess-cup-2026/winner-3.webp" alt="3rd place, RASA Chess Cup 2026" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+                </div>
+                <div class="mt-4 text-white font-bold text-lg font-display">Name coming soon</div>
+                <div class="mt-3 w-full rounded-t-2xl bg-gradient-to-b from-amber-700/20 to-transparent border-t-2 border-amber-700/80 pt-4 pb-6">
+                  <span class="text-3xl">🥉</span>
+                  <div class="text-amber-600 text-xs font-bold uppercase tracking-widest mt-1">3rd place</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="mt-20">
+            <h3 class="text-center text-2xl md:text-3xl font-bold text-white font-display mb-10">How it went</h3>
+            <ol class="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <li class="glass-card rounded-2xl p-5 border-t-2 border-t-primary/40">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">Before</div>
+                <div class="mt-2 text-white font-bold">Registrations</div>
+                <p class="mt-1 text-gray-400 text-sm">Open to every ESTIN student.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-5 border-t-2 border-t-primary/60">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">15 Feb</div>
+                <div class="mt-2 text-white font-bold">Day 1</div>
+                <p class="mt-1 text-gray-400 text-sm">Opening rounds.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-5 border-t-2 border-t-primary/80">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">16 Feb</div>
+                <div class="mt-2 text-white font-bold">Day 2</div>
+                <p class="mt-1 text-gray-400 text-sm">The race for the top heats up.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-5 border-t-2 border-t-primary">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">17 Feb</div>
+                <div class="mt-2 text-white font-bold">Day 3</div>
+                <p class="mt-1 text-gray-400 text-sm">Final rounds.</p>
+              </li>
+              <li class="rounded-2xl p-5 bg-primary text-black">
+                <div class="text-xs font-bold uppercase tracking-widest">18 Feb</div>
+                <div class="mt-2 font-bold">Results</div>
+                <p class="mt-1 text-sm text-black/75">Winners announced and congratulated.</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Photo strip
+               Photos: /images/chess-cup-2026/photo-1.webp … photo-4.webp -->
+          <div class="mt-20">
+            <h3 class="text-center text-2xl md:text-3xl font-bold text-white font-display mb-10">Moments from the board</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dashed border-white/15 bg-white/[0.03] flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-white/15">photo_camera</span>
+                <img src="/images/chess-cup-2026/photo-1.webp" alt="RASA Chess Cup 2026, players at the boards" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+              </div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dashed border-white/15 bg-white/[0.03] flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-white/15">photo_camera</span>
+                <img src="/images/chess-cup-2026/photo-2.webp" alt="RASA Chess Cup 2026, a game in progress" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+              </div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dashed border-white/15 bg-white/[0.03] flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-white/15">photo_camera</span>
+                <img src="/images/chess-cup-2026/photo-3.webp" alt="RASA Chess Cup 2026, tournament room" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+              </div>
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dashed border-white/15 bg-white/[0.03] flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-white/15">photo_camera</span>
+                <img src="/images/chess-cup-2026/photo-4.webp" alt="RASA Chess Cup 2026, award ceremony" class="absolute inset-0 w-full h-full object-cover" loading="lazy" onerror="this.remove()"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming next: Chess Cup 2027 -->
+          <div class="mt-20 glass-card orange-glow-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -mr-32 -mt-32 pointer-events-none"></div>
+            <div class="relative z-10 text-center md:text-left">
+              <div class="flex items-center justify-center md:justify-start gap-3 text-primary font-bold tracking-widest text-sm uppercase">
                 <span class="relative flex h-3 w-3">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
                 </span>
-                Last Tournament
+                Coming next
               </div>
-
-              <h2 class="text-3xl md:text-4xl font-bold text-white font-display">Rasa chess Cup 2026</h2>
-              <p class="text-gray-400 font-body text-lg">First edition of RASA Chess cup</p>
+              <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white font-display">RASA Chess Cup 2027</h2>
+              <p class="mt-2 text-gray-400 text-lg">The 2nd edition is on its way. Registrations open with the announcement on Instagram.</p>
             </div>
-
             <a
-              class="animate-pulse-glow inline-flex w-full md:w-auto px-12 py-5
-                    bg-primary rounded-2xl text-xl font-bold text-black
-                    transition-all hover:brightness-110
-                    relative z-10 justify-center items-center"
+              href="https://www.instagram.com/rasa.estin/"
+              target="_blank"
+              rel="noopener"
+              class="relative z-10 inline-flex w-full md:w-auto shrink-0 items-center justify-center gap-2 px-10 py-4
+                     rounded-2xl border border-primary/60 text-white font-bold text-lg
+                     hover:bg-primary hover:text-black transition-all"
             >
-              Event Finished
+              Follow for the announcement
+              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
             </a>
-
           </div>
+
         </div>
       </section>
 
