@@ -854,20 +854,23 @@
 
     <!-- Mobile bottom navigation -->
     <div class="glass-panel rounded-t-[20px] rounded-b-none border-x-0 border-b-0 fixed bottom-0 inset-x-0 w-full z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
-      <div class="flex justify-around items-center py-3 px-2">
-        <a href="index.html" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">home</span>
-          <span class="text-[11px] font-semibold tracking-wide">Home</span>
+      <div data-nav-row class="relative flex items-center max-w-sm mx-auto px-2 py-2">
+        <span data-nav-pill aria-hidden="true" class="absolute left-0 top-2 bottom-2 rounded-2xl bg-white/10 border border-white/10 opacity-0 transition-[transform,width,opacity] duration-300 ease-out"></span>
+        <a href="index.html" data-nav="home" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[22px] leading-none">home</span>
+          <span class="text-[10px] font-semibold tracking-wide">Home</span>
         </a>
-
-        <button type="button" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">grid_view</span>
-          <span class="text-[11px] font-semibold tracking-wide">Departments</span>
+        <a href="index.html#team" data-nav="board" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[22px] leading-none">groups</span>
+          <span class="text-[10px] font-semibold tracking-wide">Board</span>
+        </a>
+        <button type="button" data-nav="departments" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[22px] leading-none">grid_view</span>
+          <span class="text-[10px] font-semibold tracking-wide">Departments</span>
         </button>
-
-        <a href="index.html#contact" class="flex flex-1 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">mail</span>
-          <span class="text-[11px] font-semibold tracking-wide">Contact</span>
+        <a href="index.html#contact" data-nav="contact" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[22px] leading-none">mail</span>
+          <span class="text-[10px] font-semibold tracking-wide">Contact</span>
         </a>
       </div>
     </div>

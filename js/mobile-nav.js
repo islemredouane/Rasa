@@ -1,4 +1,7 @@
-// Phone bottom bar: "Departments" opens a sheet listing every department.
+// Phone bottom bar: Home · Board · Departments · Contact.
+// - A highlight pill slides to the selected item (filled icon, white label).
+// - "Departments" opens a sheet listing every department.
+// - A thin line along the bar's top edge shows scroll progress.
 // To add a department, add it to DEPARTMENTS below — no page needs editing.
 (function () {
   const DEPARTMENTS = [
@@ -9,15 +12,25 @@
     { href: "gaming.html", icon: "sports_esports", label: "Activities" },
     { href: "charity.html", icon: "volunteer_activism", label: "Charity" },
   ];
+  // Pages that belong to a department (libraries are part of Literature).
+  const DEPARTMENT_PAGES = DEPARTMENTS.map((d) => d.href).concat(["arabic.html", "english.html", "frensh.html"]);
 
   const toggle = document.querySelector("[data-dept-toggle]");
-  if (!toggle) return;
+  const row = document.querySelector("[data-nav-row]");
+  if (!toggle || !row) return;
 
-  const page = location.pathname.split("/").pop() || "index.html";
-  const current = (href) => href === page || href.replace(".html", "") === page;
+  const bar = toggle.closest(".fixed");
+  const pill = row.querySelector("[data-nav-pill]");
+  const items = [...row.querySelectorAll("[data-nav]")];
+  const toggleIcon = toggle.querySelector(".material-symbols-outlined");
 
+  const page = (location.pathname.split("/").pop() || "index.html").replace(/^(?!.*\.html$)(.+)$/, "$1.html");
+  const isHome = page === "index.html";
+  const isCurrent = (href) => href === page;
+
+  // ---------- Departments sheet ----------
   const tiles = DEPARTMENTS.map((d) => {
-    const active = current(d.href);
+    const active = isCurrent(d.href);
     return `
       <a href="${d.href}" ${active ? 'aria-current="page"' : ""}
         class="flex flex-col items-center justify-center gap-2 rounded-2xl py-4 px-2 border transition
@@ -40,52 +53,75 @@
     <div class="mx-auto mb-4 h-1 w-10 rounded-full bg-white/20"></div>
     <div class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-white/50 text-center font-display">Departments</div>
     <div class="grid grid-cols-3 gap-3">${tiles}</div>`;
-
   document.body.append(overlay, sheet);
 
-  const bar = toggle.closest(".fixed");
-  const icon = toggle.querySelector(".material-symbols-outlined");
+  // ---------- Sliding highlight ----------
+  let selected = null;
 
-  function place() {
+  function select(key) {
+    selected = key;
+    const item = items.find((el) => el.dataset.nav === key);
+    for (const el of items) {
+      const on = el === item;
+      el.classList.toggle("text-white", on);
+      el.classList.toggle("text-white/60", !on);
+      el.querySelector(".material-symbols-outlined").style.fontVariationSettings = on ? "'FILL' 1" : "";
+      if (el.tagName === "A") on ? el.setAttribute("aria-current", "page") : el.removeAttribute("aria-current");
+    }
+    if (!pill) return;
+    if (!item) { pill.style.opacity = "0"; return; }
+    const inset = 4;
+    pill.style.width = item.offsetWidth - inset * 2 + "px";
+    pill.style.transform = `translateX(${item.offsetLeft + inset}px)`;
+    pill.style.opacity = "1";
+  }
+
+  // Which item matches where the visitor is right now.
+  let lockUntil = 0;
+  function pageKey() {
+    if (DEPARTMENT_PAGES.includes(page)) return "departments";
+    if (!isHome) return null;
+    const contact = document.getElementById("contact");
+    const team = document.getElementById("team");
+    const line = window.innerHeight * 0.5;
+    if (contact && contact.getBoundingClientRect().top < line) return "contact";
+    if (team && team.getBoundingClientRect().top < line) return "board";
+    return "home";
+  }
+
+  // Place the pill without animating on first paint.
+  if (pill) {
+    pill.style.transition = "none";
+    select(pageKey());
+    requestAnimationFrame(() => requestAnimationFrame(() => (pill.style.transition = "")));
+  } else {
+    select(pageKey());
+  }
+
+  for (const el of items) {
+    if (el === toggle) continue;
+    el.addEventListener("click", () => {
+      lockUntil = Date.now() + 1000; // let the smooth scroll finish before the scroll-spy takes over again
+      select(el.dataset.nav);
+    });
+  }
+
+  // ---------- Sheet open / close ----------
+  function placeSheet() {
     sheet.style.bottom = (bar ? bar.offsetHeight : 0) + "px";
   }
 
   function setOpen(open) {
-    place();
+    placeSheet();
     toggle.setAttribute("aria-expanded", String(open));
-    if (icon) icon.textContent = open ? "close" : "grid_view";
-    toggle.classList.toggle("text-primary", open);
+    if (toggleIcon) toggleIcon.textContent = open ? "close" : "grid_view";
     for (const el of [overlay, sheet]) {
       el.classList.toggle("opacity-0", !open);
       el.classList.toggle("pointer-events-none", !open);
     }
     sheet.classList.toggle("translate-y-full", !open);
     document.body.style.overflow = open ? "hidden" : "";
-  }
-
-  // Scroll progress along the top edge of the bar (phones hide the page scrollbar).
-  if (bar) {
-    bar.classList.add("overflow-hidden");
-    const track = document.createElement("div");
-    track.setAttribute("aria-hidden", "true");
-    track.className = "absolute top-0 left-0 right-0 h-[3px] bg-white/5";
-    const fill = document.createElement("div");
-    fill.className = "h-full w-full origin-left bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
-    fill.style.transform = "scaleX(0)";
-    track.append(fill);
-    bar.prepend(track);
-
-    let ticking = false;
-    const update = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      fill.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
-      ticking = false;
-    };
-    window.addEventListener("scroll", () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener("resize", update);
-    update();
+    select(open ? "departments" : pageKey());
   }
 
   toggle.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
@@ -93,5 +129,37 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setOpen(false);
   });
-  window.addEventListener("resize", place);
+
+  // ---------- Scroll progress + scroll-spy ----------
+  let fill = null;
+  if (bar) {
+    bar.classList.add("overflow-hidden");
+    const track = document.createElement("div");
+    track.setAttribute("aria-hidden", "true");
+    track.className = "absolute top-0 left-0 right-0 h-[3px] bg-white/5";
+    fill = document.createElement("div");
+    fill.className = "h-full w-full origin-left bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
+    fill.style.transform = "scaleX(0)";
+    track.append(fill);
+    bar.prepend(track);
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (fill) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      fill.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+    }
+    const sheetOpen = toggle.getAttribute("aria-expanded") === "true";
+    if (isHome && !sheetOpen && Date.now() > lockUntil) {
+      const key = pageKey();
+      if (key !== selected) select(key);
+    }
+    ticking = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  window.addEventListener("resize", () => { placeSheet(); select(selected); onScroll(); });
+  onScroll();
 })();
