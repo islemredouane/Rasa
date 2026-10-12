@@ -8,7 +8,7 @@
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-2026-10-13";
+const VERSION = "rasa-2026-10-13b";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
@@ -16,20 +16,19 @@ const MAX_IMAGES = 150;
 
 const PRECACHE_URLS = [
   "/",
-  "/index.html",
-  "/events.html",
-  "/literature.html",
-  "/art.html",
-  "/music.html",
-  "/chess.html",
-  "/gaming.html",
-  "/charity.html",
-  "/recruitment.html",
-  "/noregistrations.html",
-  "/arabic.html",
-  "/english.html",
-  "/frensh.html",
-  "/offline.html",
+  "/events",
+  "/literature",
+  "/art",
+  "/music",
+  "/chess",
+  "/activities",
+  "/charity",
+  "/recruitment",
+  "/noregistrations",
+  "/arabic",
+  "/english",
+  "/french",
+  "/offline",
   "/manifest.webmanifest",
   "/js/mobile-nav.js",
   "/js/events.js",
@@ -100,9 +99,8 @@ async function networkFirstPage(event) {
     const url = new URL(request.url);
     return (
       (await caches.match(request, { ignoreSearch: true })) ||
-      (url.pathname === "/" ? await caches.match("/index.html") : undefined) ||
-      (await caches.match(url.pathname, { ignoreSearch: true })) ||
-      (await caches.match("/offline.html"))
+      (await caches.match(url.pathname.replace(/\.html$/, "").replace(/\/index$/, "/") || "/", { ignoreSearch: true })) ||
+      (await caches.match("/offline"))
     );
   }
 }

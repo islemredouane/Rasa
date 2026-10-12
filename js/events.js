@@ -131,7 +131,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${highlights.map((e) => card(e)).join("")}</div>` : ""}
       <div class="mt-12 flex justify-center">
-        <a href="events.html" class="inline-flex items-center gap-2 h-14 px-10 rounded-full bg-white text-black hover:bg-primary hover:text-white font-bold font-display transition-all hover:shadow-[0_0_24px_rgba(234,106,31,0.45)]">
+        <a href="/events" class="inline-flex items-center gap-2 h-14 px-10 rounded-full bg-white text-black hover:bg-primary hover:text-white font-bold font-display transition-all hover:shadow-[0_0_24px_rgba(234,106,31,0.45)]">
           See all events<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
         </a>
       </div>`;

@@ -5,15 +5,15 @@
 // To add a department, add it to DEPARTMENTS below — no page needs editing.
 (function () {
   const DEPARTMENTS = [
-    { href: "literature.html", icon: "menu_book", label: "Literature" },
-    { href: "art.html", icon: "palette", label: "Art" },
-    { href: "music.html", icon: "music_note", label: "Music" },
-    { href: "chess.html", icon: "chess", label: "Chess" },
-    { href: "gaming.html", icon: "sports_esports", label: "Activities" },
-    { href: "charity.html", icon: "volunteer_activism", label: "Charity" },
+    { href: "/literature", icon: "menu_book", label: "Literature" },
+    { href: "/art", icon: "palette", label: "Art" },
+    { href: "/music", icon: "music_note", label: "Music" },
+    { href: "/chess", icon: "chess", label: "Chess" },
+    { href: "/activities", icon: "sports_esports", label: "Activities" },
+    { href: "/charity", icon: "volunteer_activism", label: "Charity" },
   ];
   // Pages that belong to a department (libraries are part of Literature).
-  const DEPARTMENT_PAGES = DEPARTMENTS.map((d) => d.href).concat(["arabic.html", "english.html", "frensh.html"]);
+  const DEPARTMENT_PAGES = DEPARTMENTS.map((d) => d.href).concat(["/arabic", "/english", "/french"]);
 
   const toggle = document.querySelector("[data-dept-toggle]");
   const row = document.querySelector("[data-nav-row]");
@@ -24,8 +24,10 @@
   const items = [...row.querySelectorAll("[data-nav]")];
   const toggleIcon = toggle.querySelector(".material-symbols-outlined");
 
-  const page = (location.pathname.split("/").pop() || "index.html").replace(/^(?!.*\.html$)(.+)$/, "$1.html");
-  const isHome = page === "index.html";
+  // Current page as a clean path: "/", "/events", "/chess" (works with or without ".html").
+  const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
+  const page = !slug || slug === "index" ? "/" : "/" + slug;
+  const isHome = page === "/";
   const isCurrent = (href) => href === page;
 
   // ---------- Departments sheet ----------
