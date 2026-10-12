@@ -226,7 +226,7 @@
 
     <!-- Top navigation -->
     <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
-      <nav class="glass-panel rounded-full px-6 py-3 flex items-center justify-between gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]" >
+      <nav class="glass-panel rounded-full px-6 md:px-4 lg:px-6 py-3 flex items-center justify-between gap-8 md:gap-4 lg:gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]" >
       <div class="flex items-center gap-3">
         <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
           <img 
@@ -235,16 +235,17 @@
             class="w-full h-full object-cover"
           />
         </div>
-        <span class="text-xl font-display font-bold tracking-tight text-white">Rasa</span>
+        <span class="text-xl font-display font-bold tracking-tight text-white md:hidden lg:inline">Rasa</span>
       </div>
 
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-3 lg:gap-6">
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="index.html">Home</a>
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="literature.html">Literature</a>
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="art.html">Art</a>
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="music.html">Music</a>
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="chess.html">Chess</a>
         <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="gaming.html">Activities</a>
+        <a class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider" href="charity.html">Charity</a>
       </div>
 
       <a
@@ -717,34 +718,40 @@
     <!-- Mobile bottom navigation -->
     <div class="glass-panel rounded-t-[20px] rounded-b-none border-x-0 border-b-0 fixed bottom-0 inset-x-0 w-full z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
       <div class="flex justify-around items-center py-3 px-2">
-        <a href="index.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">home</span>
-          <span class="text-[11px] font-semibold tracking-wide">Home</span>
+        <a href="index.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">home</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Home</span>
         </a>
 
-        <a href="literature.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">menu_book</span>
-          <span class="text-[11px] font-semibold tracking-wide">Literature</span>
+        <a href="literature.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">menu_book</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Literature</span>
         </a>
 
-        <a href="art.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">palette</span>
-          <span class="text-[11px] font-semibold tracking-wide">Art</span>
+        <a href="art.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">palette</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Art</span>
         </a>
 
-        <a href="music.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">music_note</span>
-          <span class="text-[11px] font-semibold tracking-wide">Music</span>
+        <a href="music.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">music_note</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Music</span>
         </a>
 
-        <a href="chess.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">chess</span>
-          <span class="text-[11px] font-semibold tracking-wide">Chess</span>
+        <a href="chess.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">chess</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Chess</span>
         </a>
 
-        <a href="gaming.html" class="flex flex-col items-center gap-1 text-white/70 hover:text-primary transition">
-          <span class="material-symbols-outlined flex items-center justify-center w-11 h-11 text-[26px]">sports_esports</span>
-          <span class="text-[11px] font-semibold tracking-wide">Activities</span>
+        <a href="gaming.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">sports_esports</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Activities</span>
+        </a>
+
+        <!-- Charity -->
+        <a href="charity.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">volunteer_activism</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Charity</span>
         </a>
       </div>
     </div>

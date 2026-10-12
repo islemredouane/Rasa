@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rasa — Charity</title>
+    <meta name="description" content="RASA Charity Department at ESTIN Béjaïa: solidarity campaigns for children with cancer, blood donation, Ramadan and winter support, run with accredited associations." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Offside&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Tailwind config -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ea6a1f",
+              "primary-dark": "#c5520e",
+              "background-dark": "#000000",
+              surface: "#0f0f0f",
+            },
+            fontFamily: {
+              display: ["Offside", "Space Grotesk", "sans-serif"],
+              body: ["Quicksand", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              "3xl": "3rem",
+              full: "9999px",
+            },
+            keyframes: {
+              shine: {
+                "0%": { backgroundPosition: "200% center" },
+                "100%": { backgroundPosition: "-200% center" },
+              },
+            },
+            animation: { shine: "shine 4s linear infinite" },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ea6a1f;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #000;
+        overflow-x: hidden;
+      }
+
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 14px 50px rgba(0, 0, 0, 0.55);
+      }
+      .glass-card {
+        background: rgba(18, 18, 18, 0.62);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .glass-card:hover {
+        border-color: rgba(234, 106, 31, 0.5);
+        box-shadow: 0 0 26px rgba(234, 106, 31, 0.16);
+        transform: translateY(-4px);
+      }
+      .text-metallic {
+        background: linear-gradient(
+          to right,
+          #ea6a1f 20%,
+          #ffb74d 40%,
+          #ea6a1f 60%,
+          #ffb74d 80%
+        );
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shine 4s linear infinite;
+      }
+
+      /* Responsive masonry */
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 14px;
+      }
+      @media (min-width: 640px) {
+        .masonry-grid {
+          column-count: 2;
+          column-gap: 18px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .masonry-grid {
+          column-count: 3;
+          column-gap: 22px;
+        }
+      }
+      .masonry-item {
+        break-inside: avoid;
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 14px;
+      }
+
+      /* Fixed bars spacing */
+      :root {
+        --nav-m: 80px;
+        --nav-d: 96px;
+        --bottom: 96px;
+      }
+      .page-pad {
+        padding-top: var(--nav-d);
+      }
+      @media (max-width: 767px) {
+        .page-pad {
+          padding-top: var(--nav-m);
+        }
+      }
+      .bottom-safe {
+        padding-bottom: var(--bottom);
+      }
+
+      .tap {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black"
+  >
+    <!-- Top navigation -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
+      <nav
+        class="glass-panel rounded-full px-6 md:px-4 lg:px-6 py-3 flex items-center justify-between gap-8 md:gap-4 lg:gap-8 shadow-[0_8px_32px_rgba(0,0,0,0.8)] max-w-4xl w-full transition-transform duration-300 hover:scale-[1.01]"
+      >
+        <div class="flex items-center gap-3">
+          <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+            <img src="/rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+          </div>
+          <span class="text-xl font-display font-bold tracking-tight text-white md:hidden lg:inline">Rasa</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-3 lg:gap-6">
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="literature.html"
+            >Literature</a
+          >
+          <a
+            class="text-sm font-medium text-primary transition-colors font-display uppercase tracking-wider"
+            href="art.html"
+            >Art</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="music.html"
+            >Music</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="chess.html"
+            >Chess</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="gaming.html"
+            >Activities</a
+          >
+          <a
+            class="text-sm font-medium text-white/70 hover:text-primary transition-colors font-display uppercase tracking-wider"
+            href="charity.html"
+            >Charity</a
+          >
+        </div>
+
+        <a
+          href="recruitment.html"
+          class="bg-white text-black hover:bg-primary hover:text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,106,31,0.6)] flex items-center gap-2 font-display"
+        >
+          <span>Register</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <main class="pt-24 md:pt-20 lg:pt-16">
+      <!-- Hero -->
+      <section
+        class="relative min-h-screen flex items-center overflow-hidden -mt-24 md:-mt-20 lg:-mt-16 pt-24 md:pt-20 lg:pt-16"
+      >
+        <div
+          class="absolute inset-0 -z-10"
+          style="
+            background-image: radial-gradient(circle at 30% 25%, rgba(234, 106, 31, 0.22), transparent 55%),
+              radial-gradient(circle at 75% 80%, rgba(249, 168, 37, 0.10), transparent 50%),
+              linear-gradient(to top, rgba(0, 0, 0, 1), rgba(10, 6, 4, 0.92), rgba(0, 0, 0, 1));
+          "
+        ></div>
+        <div
+          class="absolute inset-0 -z-10 opacity-[0.10] pointer-events-none"
+          style="
+            background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 42px 42px;
+          "
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+          <div class="flex justify-center py-14 sm:py-20">
+            <div class="w-full max-w-[620px] text-center">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/25 bg-primary/10"
+              >
+                <span class="material-symbols-outlined text-primary text-[16px]">volunteer_activism</span>
+                <span class="text-[11px] tracking-[0.35em] uppercase font-bold text-primary">Feel it. Share it.</span>
+              </div>
+
+              <h1
+                class="mt-6 font-display font-bold leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl"
+              >
+                <span class="text-metallic">Charity</span>
+                <span class="text-white"> Department</span>
+              </h1>
+
+              <p class="mt-5 text-white/70 text-sm sm:text-base leading-relaxed">
+                Culture is how we feel together. Solidarity is how we act together. RASA’s newest department turns
+                our events, our talents and our community into real help, starting with children fighting cancer.
+              </p>
+
+              <div class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a
+                  href="#help"
+                  class="h-12 rounded-full bg-primary hover:bg-orange-500 text-black font-bold text-sm transition-all hover:shadow-[0_0_26px_rgba(234,106,31,0.45)] flex items-center justify-center gap-2 font-display"
+                >
+                  <span>How you can help</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+
+                <a
+                  href="#team"
+                  class="h-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/35 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 font-display"
+                >
+                  <span>Our Team</span>
+                </a>
+              </div>
+
+              <div class="mt-7 flex justify-center opacity-70">
+                <span class="material-symbols-outlined animate-bounce">expand_more</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-background-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-20 sm:py-24 pb-32 md:pb-24">
+          <!-- Team -->
+          <section id="team" class="mb-16 sm:mb-24 scroll-mt-28">
+            <div class="flex items-end justify-between gap-4">
+              <div>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">The Leaders</h2>
+                <div class="mt-3 h-1 w-16 bg-primary rounded-full"></div>
+              </div>
+            </div>
+
+            <div class="relative mt-10">
+              <button
+                onclick="scrollCurators(-1)"
+                class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-black/50 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-primary transition"
+                aria-label="Scroll left"
+              >
+                <span class="material-symbols-outlined text-lg">chevron_left</span>
+              </button>
+
+              <button
+                onclick="scrollCurators(1)"
+                class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-black/50 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-primary transition"
+                aria-label="Scroll right"
+              >
+                <span class="material-symbols-outlined text-lg">chevron_right</span>
+              </button>
+
+              <div
+                id="curatorsScroller"
+                class="overflow-x-auto no-scrollbar pb-8 scroll-smooth -mx-6 md:mx-0 px-[calc((100vw-18rem)/2)] md:px-0"
+              >
+                <div class="flex gap-6 w-max md:w-full justify-center">
+                  <div
+                    class="group relative w-64 sm:w-72 md:w-[260px] snap-center bg-background-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_24px_rgba(234,106,31,0.15)]"
+                  >
+                    <div class="aspect-[3/4] overflow-hidden">
+                      <img
+                        alt="Adam Bouakkache"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        src="/images/board-2026-27/adam-bouakkache.webp" loading="lazy" decoding="async"
+                      />
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-black/10 to-transparent opacity-95"
+                      ></div>
+                    </div>
+
+                    <div class="absolute bottom-0 w-full p-4">
+                      <h3 class="text-white text-base sm:text-lg font-bold mb-1">Adam Bouakkache</h3>
+                      <p class="text-primary text-xs sm:text-sm font-medium mb-2">Department Manager</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="group relative w-64 sm:w-72 md:w-[260px] snap-center bg-background-dark border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_24px_rgba(234,106,31,0.15)]"
+                  >
+                    <div class="aspect-[3/4] overflow-hidden">
+                      <img
+                        alt="Belgacem Nourhane"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        src="/images/board-2026-27/belgacem-nourhane.webp" loading="lazy" decoding="async"
+                      />
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-black/10 to-transparent opacity-95"
+                      ></div>
+                    </div>
+
+                    <div class="absolute bottom-0 w-full p-4">
+                      <h3 class="text-white text-base sm:text-lg font-bold mb-1">Belgacem Nourhane</h3>
+                      <p class="text-primary text-xs sm:text-sm font-medium mb-2">Department Manager</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Mission -->
+          <section class="py-16 sm:py-20 relative overflow-hidden">
+            <div
+              class="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-full bg-gradient-to-l from-primary/8 to-transparent pointer-events-none"
+            ></div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row gap-14 lg:gap-16 items-start">
+              <div class="lg:w-1/3">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-5 font-display leading-tight">
+                  Small hands, <span class="text-primary italic">big hearts</span>
+                </h2>
+                <div class="w-16 h-1 bg-primary rounded-full"></div>
+
+                <p class="mt-5 text-white/60 text-sm sm:text-base leading-relaxed max-w-md">
+                  We are students, not a charity organisation. That is exactly why we work hand in hand with those
+                  who are.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="glass-panel rounded-full px-4 py-2 text-xs font-bold tracking-widest uppercase text-white/70">Solidarity</span>
+                  <span class="glass-panel rounded-full px-4 py-2 text-xs font-bold tracking-widest uppercase text-white/70">Transparency</span>
+                  <span class="glass-panel rounded-full px-4 py-2 text-xs font-bold tracking-widest uppercase text-white/70">Dignity</span>
+                </div>
+              </div>
+
+              <div class="lg:w-2/3">
+                <div class="flex gap-6 sm:gap-8">
+                  <div class="w-1 bg-gradient-to-b from-primary to-transparent rounded-full flex-shrink-0 self-stretch"></div>
+
+                  <div class="space-y-8">
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+                      Our mission is to bring the energy of ESTIN students to the people who need it most in Béjaïa and
+                      beyond. Every RASA department can give something: an evening of music, a painting, a chess
+                      challenge, a video that moves people to act. We turn that into support for sick children,
+                      families in need and the causes that matter to our community.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                      <div class="glass-card rounded-2xl p-5">
+                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                          <span class="material-symbols-outlined text-primary">diversity_3</span>
+                          Culture for a cause
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                          Concerts, exhibitions and tournaments organised by our departments, with the solidarity
+                          at the heart of the event.
+                        </p>
+                      </div>
+
+                      <div class="glass-card rounded-2xl p-5">
+                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                          <span class="material-symbols-outlined text-primary">handshake</span>
+                          With accredited associations
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                          Money is collected and managed by registered associations. We bring the people, the
+                          ideas and the time.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Flagship campaign -->
+          <section id="flagship" class="py-16 sm:py-20 scroll-mt-28">
+            <div class="glass-card rounded-[2rem] p-8 sm:p-12 relative overflow-hidden border border-primary/20">
+              <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+              <div class="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+                <div class="lg:col-span-3">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[11px] font-bold tracking-[0.25em] uppercase">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Flagship campaign · in preparation
+                  </div>
+
+                  <h2 class="mt-5 text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight">
+                    Hope for <span class="text-metallic">little fighters</span>
+                  </h2>
+
+                  <p class="mt-5 text-gray-300 text-base sm:text-lg leading-relaxed">
+                    Behind every hospital door in a paediatric oncology ward there is a child who would rather be
+                    drawing, playing or laughing. This season we want to raise funds and smiles for children fighting
+                    cancer, through a RASA solidarity evening and visits to children in treatment, together with an
+                    accredited cancer-support association.
+                  </p>
+
+                  <ul class="mt-6 space-y-3 text-gray-300 text-sm sm:text-base">
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">music_note</span>A solidarity evening: music, art auction and chess challenges by RASA’s departments.</li>
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">redeem</span>Gifts, books and art kits for children in treatment on special days.</li>
+                    <li class="flex gap-3"><span class="material-symbols-outlined text-primary text-[20px] shrink-0">medication</span>Funds for medicines and care, collected and spent by our partner association.</li>
+                  </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                  <div class="rounded-3xl bg-black/40 border border-white/10 p-6 sm:p-8 text-center">
+                    <span class="material-symbols-outlined text-primary text-[56px]">favorite</span>
+                    <div class="mt-3 font-display font-bold text-2xl">15 February</div>
+                    <div class="mt-1 text-gray-400 text-sm">International Childhood Cancer Day</div>
+                    <div class="my-6 h-px bg-white/10"></div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                      Our target date to give the campaign its biggest moment. Dates and partner will be announced on
+                      Instagram.
+                    </p>
+                    <a
+                      href="https://www.instagram.com/rasa.estin/"
+                      target="_blank"
+                      rel="noopener"
+                      class="mt-6 h-12 rounded-full bg-primary hover:bg-orange-500 text-black font-bold text-sm transition-all flex items-center justify-center gap-2 font-display"
+                    >
+                      Follow the campaign
+                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Causes -->
+          <section id="causes" class="py-16 sm:py-20 scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">The causes we stand for</h2>
+              <div class="mt-3 h-1 w-16 bg-primary rounded-full mx-auto"></div>
+              <p class="mt-5 text-gray-400 text-sm sm:text-base">
+                Six actions we want to carry through the year, each one close to the reality of Algerian families.
+              </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="glass-card rounded-2xl p-6 border-t-2 border-t-primary">
+                <span class="material-symbols-outlined text-primary text-[32px]">child_care</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Children with cancer</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Fundraising with a cancer-support association, gifts and creative workshops for children in
+                  paediatric oncology.
+                </p>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">bloodtype</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Blood donation</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  On-campus blood drives organised with the blood transfusion services. One donation can help
+                  several patients.
+                </p>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">nightlight</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Ramadan solidarity</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Food baskets and iftar support for families in need, prepared with local associations.
+                </p>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">ac_unit</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Winter warmth</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Collecting coats, blankets and shoes for families in the mountain villages of Béjaïa when the cold
+                  sets in.
+                </p>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">backpack</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Back to school</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  School bags and supplies for orphans and children from low-income families before the new school
+                  year.
+                </p>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">campaign</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Health awareness</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Awareness actions such as Pink October for breast cancer screening, made with our Design and
+                  Multimedia teams.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Year plan -->
+          <section id="calendar" class="py-16 sm:py-20 scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Our solidarity calendar</h2>
+              <div class="mt-3 h-1 w-16 bg-primary rounded-full mx-auto"></div>
+              <p class="mt-5 text-gray-400 text-sm sm:text-base">
+                Planned moments for 2026/27. Exact dates are announced on Instagram.
+              </p>
+            </div>
+
+            <ol class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <li class="glass-card rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">October</div>
+                <div class="mt-2 text-white font-bold">Pink October</div>
+                <p class="mt-1 text-gray-400 text-sm">Breast cancer screening awareness on campus.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">December – January</div>
+                <div class="mt-2 text-white font-bold">Winter warmth collection</div>
+                <p class="mt-1 text-gray-400 text-sm">Clothes and blankets for families in need.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-6 border border-primary/40">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">15 February</div>
+                <div class="mt-2 text-white font-bold">Hope for little fighters</div>
+                <p class="mt-1 text-gray-400 text-sm">Our flagship campaign on International Childhood Cancer Day.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">Ramadan</div>
+                <div class="mt-2 text-white font-bold">Ramadan solidarity</div>
+                <p class="mt-1 text-gray-400 text-sm">Food baskets and iftar support with local associations.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">1 June</div>
+                <div class="mt-2 text-white font-bold">Children’s Day</div>
+                <p class="mt-1 text-gray-400 text-sm">Gifts and activities for children in hospital.</p>
+              </li>
+              <li class="glass-card rounded-2xl p-6">
+                <div class="text-primary text-xs font-bold uppercase tracking-widest">14 June</div>
+                <div class="mt-2 text-white font-bold">World Blood Donor Day</div>
+                <p class="mt-1 text-gray-400 text-sm">A blood drive at ESTIN before the summer.</p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Trust -->
+          <section id="trust" class="py-16 sm:py-20 scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">How we keep it clean</h2>
+              <div class="mt-3 h-1 w-16 bg-primary rounded-full mx-auto"></div>
+              <p class="mt-5 text-gray-400 text-sm sm:text-base">
+                Giving takes trust. These are our four rules for every campaign.
+              </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="glass-card rounded-2xl p-6">
+                <div class="font-display text-4xl font-bold text-primary/80">01</div>
+                <h3 class="mt-3 text-white font-bold">Accredited partners</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Money campaigns run with associations registered under Algerian law (Law 12-06).
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6">
+                <div class="font-display text-4xl font-bold text-primary/80">02</div>
+                <h3 class="mt-3 text-white font-bold">No cash in our pockets</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Donations go to the partner association’s official channels. RASA never collects money online.
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6">
+                <div class="font-display text-4xl font-bold text-primary/80">03</div>
+                <h3 class="mt-3 text-white font-bold">Approved by ESTIN</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  Every campus action is planned with the school’s cultural activities service.
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6">
+                <div class="font-display text-4xl font-bold text-primary/80">04</div>
+                <h3 class="mt-3 text-white font-bold">Public report</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed">
+                  After each campaign we share what was collected and where it went, while protecting the privacy
+                  of the people we help.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- How you can help -->
+          <section id="help" class="py-16 sm:py-20 scroll-mt-28">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold">How you can help</h2>
+              <div class="mt-3 h-1 w-16 bg-primary rounded-full mx-auto"></div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <span class="material-symbols-outlined text-primary text-[32px]">front_hand</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Volunteer</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed flex-1">
+                  Help us prepare, sort donations, visit and animate. Every hour counts.
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <span class="material-symbols-outlined text-primary text-[32px]">inventory_2</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Give in kind</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed flex-1">
+                  Clothes, books, toys and school supplies during our collections at the RASA room, ground floor of
+                  the ESTIN library.
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <span class="material-symbols-outlined text-primary text-[32px]">bloodtype</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Give blood</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed flex-1">
+                  Join our campus blood drives. It takes less than an hour.
+                </p>
+              </div>
+              <div class="glass-card rounded-2xl p-6 flex flex-col">
+                <span class="material-symbols-outlined text-primary text-[32px]">share</span>
+                <h3 class="mt-4 text-white font-bold text-lg">Spread the word</h3>
+                <p class="mt-2 text-gray-400 text-sm leading-relaxed flex-1">
+                  Share our campaigns. Visibility brings donors, and donors bring help.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://www.instagram.com/rasa.estin/"
+                target="_blank"
+                rel="noopener"
+                class="h-14 px-10 rounded-full bg-primary hover:bg-orange-500 text-black font-bold transition-all hover:shadow-[0_0_30px_rgba(234,106,31,0.5)] flex items-center justify-center gap-2 font-display"
+              >
+                Follow our campaigns
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+              <a
+                href="index.html#contact"
+                class="h-14 px-10 rounded-full bg-transparent hover:bg-white/5 border border-white/20 hover:border-white/50 text-white font-medium transition-all flex items-center justify-center gap-2 font-display"
+              >
+                <span class="material-symbols-outlined text-[20px]">mail</span>
+                Contact the team
+              </a>
+            </div>
+          </section>
+
+          <!-- Partner call -->
+          <section class="pt-8 sm:pt-12">
+            <div class="rounded-[2rem] bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border border-primary/20 p-8 sm:p-12 text-center">
+              <span class="material-symbols-outlined text-primary text-[44px]">handshake</span>
+              <h2 class="mt-4 text-2xl sm:text-3xl md:text-4xl font-display font-bold">Associations, sponsors: let’s work together</h2>
+              <p class="mt-4 text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                You are a registered association or a company that wants to support a cause? RASA brings an engaged
+                student community, creative teams and events that people come to. Write to us and let’s build a
+                campaign together.
+              </p>
+              <a
+                href="mailto:rasa@estin.dz?subject=Charity%20partnership%20with%20RASA"
+                class="mt-8 inline-flex h-14 px-10 rounded-full bg-white text-black hover:bg-primary hover:text-white font-bold transition-all items-center justify-center gap-2 font-display"
+              >
+                <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+                rasa@estin.dz
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/5 bg-black py-16 text-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="flex items-center gap-3">
+            <div class="size-9 rounded-full overflow-hidden shadow-lg shadow-orange-500/30">
+              <img src="/rasa-logo.png" alt="Rasa logo" class="w-full h-full object-cover" />
+            </div>
+            <span class="text-2xl font-display font-bold text-white">Rasa</span>
+          </div>
+
+          <div class="flex gap-10">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/rasa.estin/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.24 3.5 3.5 5.24 3.5 7.75v8.5c0 2.51 1.74 4.25 4.25 4.25h8.5c2.51 0 4.25-1.74 4.25-4.25v-8.5c0-2.51-1.74-4.25-4.25-4.25h-8.5z"
+                />
+                <path
+                  d="M12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 0 1 0-7z"
+                />
+                <circle cx="17.5" cy="6.5" r="1.25" />
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/rasa-club/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.6v1.7h.05c.5-.95 1.75-1.95 3.6-1.95C20 8.75 21 11.1 21 14.2V21h-4v-6c0-1.45-.03-3.3-2-3.3c-2 0-2.3 1.55-2.3 3.2V21H9z"
+                />
+              </svg>
+            </a>
+
+            <!-- Discord -->
+            <a
+              href="https://discord.gg/YOUR_INVITE"
+              target="_blank"
+              rel="noopener"
+              aria-label="Discord"
+              class="group size-11 rounded-full flex items-center justify-center bg-white/5 hover:bg-primary transition-all duration-300"
+            >
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.211.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.249a.077.077 0 0 0-.078-.037a19.736 19.736 0 0 0-4.885 1.515a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.9a.077.077 0 0 1-.008-.128c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.118.099.243.197.368.291a.077.077 0 0 1-.006.128a12.299 12.299 0 0 1-1.873.899a.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.077.077 0 0 0 .084.028a19.876 19.876 0 0 0 5.993-3.03a.077.077 0 0 0 .031-.055c.5-5.177-.838-9.673-3.548-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.955 2.419-2.156 2.419zm7.975 0c-1.183 0-2.156-1.085-2.156-2.419c0-1.333.955-2.418 2.156-2.418c1.21 0 2.175 1.094 2.156 2.418c0 1.334-.946 2.419-2.156 2.419z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="text-gray-600">© 2026 Rasa Club. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile bottom navigation -->
+    <div class="glass-panel rounded-t-[20px] rounded-b-none border-x-0 border-b-0 fixed bottom-0 inset-x-0 w-full z-50 md:hidden pb-[env(safe-area-inset-bottom)]">
+      <div class="flex justify-around items-center py-3 px-2">
+        <a href="index.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">home</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Home</span>
+        </a>
+
+        <a href="literature.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">menu_book</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Literature</span>
+        </a>
+
+        <a href="art.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">palette</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Art</span>
+        </a>
+
+        <a href="music.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">music_note</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Music</span>
+        </a>
+
+        <a href="chess.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">chess</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Chess</span>
+        </a>
+
+        <a href="gaming.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">sports_esports</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Activities</span>
+        </a>
+
+        <!-- Charity -->
+        <a href="charity.html" class="flex flex-1 min-w-0 flex-col items-center gap-1 text-white/70 hover:text-primary transition">
+          <span class="material-symbols-outlined flex items-center justify-center w-10 h-10 text-[24px]">volunteer_activism</span>
+          <span class="text-[10px] font-semibold tracking-tight truncate max-w-full">Charity</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function scrollCurators(direction) {
+        const scroller = document.getElementById("curatorsScroller");
+        if (!scroller) return;
+        scroller.scrollBy({ left: direction * 290, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
+
