@@ -10,6 +10,7 @@
 //   summary   one or two sentences
 //   stat      optional highlight, e.g. "24 players"
 //   cover     optional photo path; leave null until a photo exists
+//   coverFit  optional "contain" to show the whole image (logos, mascot) instead of cropping
 //   link      optional { href, label } to a page or Instagram post
 //   highlight true = shown on the homepage (keep it to 3 per season)
 //
@@ -18,15 +19,16 @@
 window.RASA_EVENTS = {
   upcoming: [
     {
-      id: "open-day-2026",
-      title: "RASA's Open Day",
+      id: "welcome-day-2026",
+      title: "RASA's Welcome Day",
       date: "Date coming soon",
       place: "ESTIN, Amizour",
       tags: ["All departments"],
-      icon: "celebration",
+      icon: "waving_hand",
       summary:
-        "Meet the 2026/27 board, discover every department and find your place in the club. Come curious, leave with a new family.",
-      cover: "/images/events/upcoming/open-day-2026/cover.webp",
+        "Our welcome day for the new students: meet the 2026/27 board, discover every department and find your place in the club. ROSO is waiting for you!",
+      cover: "/images/events/upcoming/welcome-day-2026/cover.webp",
+      coverFit: "contain",
       link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow for the date" },
     },
   ],
@@ -47,7 +49,7 @@ window.RASA_EVENTS = {
           summary:
             "Our first contact with the new students: every department presented, social games and new members recruited.",
           stat: "568 likes on the video",
-          cover: null,
+          cover: "/images/events/2025-26/welcome-day/cover.webp",
           highlight: true,
         },
         {
