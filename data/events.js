@@ -92,7 +92,7 @@ window.RASA_EVENTS = {
           icon: "record_voice_over",
           summary:
             "Guided discussions in English and French to build confidence, communication and public speaking.",
-          cover: null,
+          cover: "/images/events/2025-26/speaking-club/cover.webp",
         },
         {
           id: "yennayer",
