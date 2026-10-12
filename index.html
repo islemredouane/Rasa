@@ -111,6 +111,13 @@
             filter: grayscale(100%) invert(90%) contrast(120%);
         }
     </style>
+    <!-- Phones: no page scrollbar, so the fixed bottom bar spans the full width -->
+    <style>
+      @media (max-width: 767px) {
+        html { scrollbar-width: none; }
+        html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
+      }
+    </style>
 </head>
 
 <body class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black">
