@@ -198,30 +198,6 @@
         animation: shine 4s linear infinite;
       }
 
-      /* Responsive masonry */
-      .masonry-grid {
-        column-count: 1;
-        column-gap: 14px;
-      }
-      @media (min-width: 640px) {
-        .masonry-grid {
-          column-count: 2;
-          column-gap: 18px;
-        }
-      }
-      @media (min-width: 1024px) {
-        .masonry-grid {
-          column-count: 3;
-          column-gap: 22px;
-        }
-      }
-      .masonry-item {
-        break-inside: avoid;
-        display: inline-block;
-        width: 100%;
-        margin: 0 0 14px;
-      }
-
       /* Fixed bars spacing */
       :root {
         --nav-m: 80px;
@@ -260,7 +236,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/art.css?v=19a60c7af1" />
+  <link rel="stylesheet" href="/css/art.css?v=d3e3043a25" />
 </head>
 
   <body
@@ -556,97 +532,74 @@
               </div>
             </div>
 
-            <div class="mt-8 masonry-grid">
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="images/photo_5782752836901866851_w.jpg"
-                    alt="Coloured drawing of a woman in traditional Kabyle dress and jewellery"
-                  />
-                </div>
-              </div>
+            <p class="mt-4 text-gray-500 text-sm">9 artworks · tap to enlarge</p>
 
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866853_w.jpg"
-                    alt="Pencil and colour portrait of Gyro Zeppeli"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="images/photo_5782752836901866854_w.jpg"
-                    alt="Pencil portrait of an anime character"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866855_w.jpg"
-                    alt="Pencil drawing of an owl flying under a full moon"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="images/photo_5782752836901866859_w.jpg"
-                    alt="Quilled paper artwork of a fox"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866857_w.jpg"
-                    alt="Quilled paper artwork of a yellow lily"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866856_w.jpg"
-                    alt="Purple ink portrait with a hummingbird"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866858_w.jpg"
-                    alt="Quilled paper artwork of a hoopoe bird"
-                  />
-                </div>
-              </div>
-
-              <div class="masonry-item">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                  <img
-                    class="w-full block"
-                    src="/images/photo_5782752836901866860_w.jpg"
-                    alt="Quilled paper artwork of a tiger"
-                  />
-                </div>
-              </div>
-
+            <!-- Gallery: /images/art-showcase/<n>.webp, same layout and lightbox as the Chess Cup gallery -->
+            <div class="relative mt-8">
+              <button type="button" onclick="scrollArtGallery(-1)" aria-label="Previous artwork"
+                class="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-primary transition">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button type="button" onclick="scrollArtGallery(1)" aria-label="Next artwork"
+                class="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-black/60 backdrop-blur border border-white/10 text-white flex items-center justify-center hover:bg-primary transition">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            <div id="artGallery" class="flex md:grid md:grid-cols-3 md:mx-0 gap-4 lg:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-6 px-[calc((100vw-16rem)/2)] sm:px-[calc((100vw-18rem)/2)] md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <button type="button" data-lightbox="0" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/1.webp" alt="Coloured drawing of a woman in traditional Kabyle dress and jewellery" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="1" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/2.webp" alt="Pencil and colour portrait of Gyro Zeppeli" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="2" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/3.webp" alt="Pencil portrait of an anime character" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="3" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/4.webp" alt="Pencil drawing of an owl flying under a full moon" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="4" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/5.webp" alt="Quilled paper artwork of a fox" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="5" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/6.webp" alt="Quilled paper artwork of a yellow lily" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="6" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/7.webp" alt="Purple ink portrait with a hummingbird" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="7" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/8.webp" alt="Quilled paper artwork of a hoopoe bird" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+              <button type="button" data-lightbox="8" class="group relative shrink-0 w-64 sm:w-72 md:w-auto snap-center aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <img src="/images/art-showcase/9.webp" alt="Quilled paper artwork of a tiger" width="900" height="1200" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async"/>
+                <span class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span class="material-symbols-outlined text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+                </span>
+              </button>
+            </div>
             </div>
           </section>
         </div>
@@ -728,12 +681,83 @@
       </div>
     </div>
 
+    <!-- Gallery lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button type="button" id="lbClose" aria-label="Close" class="absolute top-5 right-5 size-12 rounded-full bg-white/10 hover:bg-primary text-white flex items-center justify-center transition">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <button type="button" id="lbPrev" aria-label="Previous photo" class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/10 hover:bg-primary text-white flex items-center justify-center transition">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <figure class="max-w-[min(92vw,900px)] max-h-[88vh] flex flex-col items-center">
+        <img id="lbImg" src="" alt="" class="max-h-[80vh] w-auto rounded-2xl object-contain"/>
+        <figcaption id="lbCaption" class="mt-3 text-sm text-gray-400 text-center"></figcaption>
+      </figure>
+      <button type="button" id="lbNext" aria-label="Next photo" class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 size-12 rounded-full bg-white/10 hover:bg-primary text-white flex items-center justify-center transition">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+
     <script>
       function scrollCurators(direction) {
         const scroller = document.getElementById("curatorsScroller");
         if (!scroller) return;
         scroller.scrollBy({ left: direction * 290, behavior: "smooth" });
       }
+
+      // Members Showcase: mobile prev/next scroll by one photo
+      function scrollArtGallery(direction) {
+        const gallery = document.getElementById('artGallery');
+        const tile = gallery?.querySelector('[data-lightbox]');
+        if (!tile) return;
+        const gap = 16; // gap-4
+        gallery.scrollBy({ left: direction * (tile.offsetWidth + gap), behavior: 'smooth' });
+      }
+
+      // Members Showcase lightbox
+      (function () {
+        const tiles = [...document.querySelectorAll('#artGallery [data-lightbox]')];
+        const box = document.getElementById('lightbox');
+        const img = document.getElementById('lbImg');
+        const cap = document.getElementById('lbCaption');
+        if (!tiles.length || !box) return;
+        let current = 0;
+        let opener = null;
+
+        function show(i) {
+          current = (i + tiles.length) % tiles.length;
+          const src = tiles[current].querySelector('img');
+          img.src = src.src;
+          img.alt = src.alt;
+          cap.textContent = `${src.alt} · ${current + 1} / ${tiles.length}`;
+        }
+        function open(i) {
+          opener = document.activeElement;
+          show(i);
+          box.classList.remove('hidden');
+          box.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+          document.getElementById('lbClose').focus();
+        }
+        function close() {
+          box.classList.add('hidden');
+          box.classList.remove('flex');
+          document.body.style.overflow = '';
+          opener?.focus();
+        }
+
+        tiles.forEach((t, i) => t.addEventListener('click', () => open(i)));
+        document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
+        document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
+        document.getElementById('lbClose').addEventListener('click', close);
+        box.addEventListener('click', (e) => { if (e.target === box) close(); });
+        document.addEventListener('keydown', (e) => {
+          if (box.classList.contains('hidden')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') show(current - 1);
+          if (e.key === 'ArrowRight') show(current + 1);
+        });
+      })();
     </script>
     <script src="/js/mobile-nav.js?v=d31a5caa3d" defer></script>
     <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
