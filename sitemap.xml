@@ -141,12 +141,15 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/og/art.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/benhaoua-boualam.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/banahcen-mohamed-ishak.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866853_w.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866855_w.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866857_w.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866856_w.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866858_w.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866860_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/1.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/2.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/3.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/4.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/5.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/6.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/7.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/8.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/art-showcase/9.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/music</loc>
