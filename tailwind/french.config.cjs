@@ -1,7 +1,7 @@
-// Tailwind settings for french.html (moved here from the page's former inline config).
+// Tailwind settings for literature/french.html (moved here from the page's former inline config).
 // Compiled into css/french.css by: node scripts/build-css.mjs
 module.exports = {
-  content: ["./french.html", "./js/**/*.js", "./data/**/*.js"],
+  content: ["./literature/french.html", "./js/**/*.js", "./data/**/*.js"],
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/container-queries")],
   ...{
     "darkMode": "class",

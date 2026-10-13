@@ -4,8 +4,14 @@
   "redirects": [
     { "source": "/gaming", "destination": "/activities", "permanent": true },
     { "source": "/gaming.html", "destination": "/activities", "permanent": true },
-    { "source": "/frensh", "destination": "/french", "permanent": true },
-    { "source": "/frensh.html", "destination": "/french", "permanent": true },
+    { "source": "/frensh", "destination": "/literature/french", "permanent": true },
+    { "source": "/frensh.html", "destination": "/literature/french", "permanent": true },
+    { "source": "/arabic", "destination": "/literature/arabic", "permanent": true },
+    { "source": "/arabic.html", "destination": "/literature/arabic", "permanent": true },
+    { "source": "/english", "destination": "/literature/english", "permanent": true },
+    { "source": "/english.html", "destination": "/literature/english", "permanent": true },
+    { "source": "/french", "destination": "/literature/french", "permanent": true },
+    { "source": "/french.html", "destination": "/literature/french", "permanent": true },
     { "source": "/chess-tournament-regisrations", "destination": "/chess", "permanent": true },
     { "source": "/chess-tournament-regisrations.html", "destination": "/chess", "permanent": true }
   ],

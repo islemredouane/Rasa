@@ -66,7 +66,7 @@ partners and photos, all generated from one data file.<br>
 ### 📚 Literature & libraries
 Reading, book fairs and the Speaking Club, plus English, French and Arabic libraries.
 Books open in a **polished in-page reader** (Google Drive viewer, download, full screen).<br>
-<sub>`/literature` · `/english` · `/french` · `/arabic`</sub>
+<sub>`/literature` · `/literature/english` · `/literature/french` · `/literature/arabic`</sub>
 
 ### ♟️ Chess
 Training, puzzles and the **RASA Chess Cup 2026** recap: key figures, podium,
