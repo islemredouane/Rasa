@@ -420,7 +420,9 @@ function versioned(ref) {
 const versionAssets = (html) =>
   html
     .replace(/(<script\b[^>]*\bsrc=")(\/(?:js|data)\/[^"]+\.js)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b)
-    .replace(/(<link\b[^>]*\bhref=")(\/css\/[^"]+\.css)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b);
+    .replace(/(<link\b[^>]*\bhref=")(\/css\/[^"]+\.css)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b)
+    // favicons: browsers cache them very hard, so a changed icon needs a new URL
+    .replace(/(<link\b[^>]*\bhref=")(\/favicon\.ico|\/icons\/(?:favicon-\d+|apple-touch-icon)\.png)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b);
 
 const pageImages = new Map(); // page path -> image URLs, for the image sitemap
 const libraryCatalogue = new Map(); // library path -> books, for llms-full.txt
