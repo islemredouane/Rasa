@@ -1,23 +1,41 @@
-# Rasa Club — https://rasa-off.vercel.app
+# Rasa Club — robots.txt
+# Site: https://rasa-off.vercel.app · Maintained by the Rasa Design Department
+#
+# AI policy — "answers yes, training no":
+#   - Search engines, AI search and AI assistants are welcome, so Rasa can be found and cited
+#     in Google, Bing, ChatGPT, Perplexity, Claude, DuckDuckGo, Apple and Gemini answers.
+#     They follow the "*" rules below.
+#   - Crawlers that collect content only to TRAIN AI models are not allowed.
+#   - Google-Extended stays allowed on purpose: it also decides whether Gemini can use the site
+#     to answer questions (grounding), not only training.
+
 User-agent: *
-Allow: /
 Disallow: /api/
-Disallow: /offline
+# /offline and /noregistrations stay crawlable so search engines can read their noindex tags
 
-# AI assistants and answer engines are welcome: a plain summary lives at /llms.txt
+# -------------------------------------------------------------
+# AI training crawlers: not allowed
+# -------------------------------------------------------------
 User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
+User-agent: anthropic-ai
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: TikTokSpider
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: Amazonbot
+User-agent: Applebot-Extended
+User-agent: PetalBot
+User-agent: Google-CloudVertexBot
+User-agent: Timpibot
+Disallow: /
 
-User-agent: Google-Extended
-Allow: /
-
+# -------------------------------------------------------------
+# Sitemap and machine-readable guides (llmstxt.org)
+# -------------------------------------------------------------
 Sitemap: https://rasa-off.vercel.app/sitemap.xml
+
+# LLM context files:
+# Concise index: https://rasa-off.vercel.app/llms.txt
+# Full guide:    https://rasa-off.vercel.app/llms-full.txt

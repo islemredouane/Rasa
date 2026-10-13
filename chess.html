@@ -6,8 +6,10 @@
   <title>Chess Department | Rasa</title>
   <meta name="description" content="Rasa's Chess Department at ESTIN Béjaïa: training, puzzles and the RASA Chess Cup, with 24 players at its first edition in 2026." />
   <meta name="theme-color" content="#000000" />
-  <link rel="icon" type="image/png" href="/rasa-favicon.png" />
-  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,6 +18,9 @@
   <!-- seo:start -->
     <link rel="canonical" href="https://rasa-off.vercel.app/chess" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
@@ -25,11 +30,13 @@
     <meta property="og:image" content="https://rasa-off.vercel.app/images/og/chess.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="Chess Department | Rasa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Chess Department | Rasa" />
     <meta name="twitter:description" content="Rasa's Chess Department at ESTIN Béjaïa: training, puzzles and the RASA Chess Cup, with 24 players at its first edition in 2026." />
     <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/chess.jpg" />
+    <meta name="twitter:image:alt" content="Chess Department | Rasa" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,6 +89,66 @@
           "item": "https://rasa-off.vercel.app/chess"
         }
       ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://rasa-off.vercel.app/chess#department",
+      "name": "Rasa Chess Department",
+      "url": "https://rasa-off.vercel.app/chess",
+      "parentOrganization": {
+        "@id": "https://rasa-off.vercel.app/#organization"
+      },
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Chess Department Manager",
+          "startDate": "2026",
+          "member": {
+            "@type": "Person",
+            "name": "Dr Salim Benslimane"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Chess Department Manager",
+          "startDate": "2026",
+          "member": {
+            "@type": "Person",
+            "name": "Zekagh Ishak"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SportsEvent",
+      "@id": "https://rasa-off.vercel.app/chess#chess-cup",
+      "name": "RASA Chess Cup 2026",
+      "description": "First edition of Rasa's chess tournament at ESTIN: 24 players over three days. Champion Sameur Adel, 2nd Boukendoul Mahdi, 3rd Lahmar Mouaiz.",
+      "sport": "Chess",
+      "startDate": "2026-02-15",
+      "endDate": "2026-02-17",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "ESTIN — École Supérieure en Sciences et Technologies de l'Informatique et du Numérique",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Amizour",
+          "addressRegion": "Béjaïa",
+          "addressCountry": "DZ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.66364687538598,
+          "longitude": 4.909960575296492
+        }
+      },
+      "image": "https://rasa-off.vercel.app/images/chess-cup-2026/9.webp",
+      "organizer": {
+        "@id": "https://rasa-off.vercel.app/#organization"
+      },
+      "url": "https://rasa-off.vercel.app/chess#chess-cup"
     }
   ]
 }
@@ -198,7 +265,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/chess.css" />
+  <link rel="stylesheet" href="/css/chess.css?v=6d808ef53f" />
 </head>
 
 <body class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black">
@@ -919,8 +986,8 @@
       });
     })();
   </script>
-  <script src="/js/mobile-nav.js" defer></script>
-  <script src="/js/pwa.js" defer></script>
+  <script src="/js/mobile-nav.js?v=52cdcfac26" defer></script>
+  <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
 </body>
 </html>
 

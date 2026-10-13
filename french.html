@@ -6,8 +6,10 @@
     <title>French Library | Rasa</title>
     <meta name="description" content="French books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/png" href="/rasa-favicon.png" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,26 +18,31 @@
     <!-- seo:start -->
     <link rel="canonical" href="https://rasa-off.vercel.app/french" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://rasa-off.vercel.app/french" />
     <meta property="og:title" content="French Library | Rasa" />
     <meta property="og:description" content="French books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/french.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="French Library | Rasa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="French Library | Rasa" />
     <meta name="twitter:description" content="French books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/french.jpg" />
+    <meta name="twitter:image:alt" content="French Library | Rasa" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "@id": "https://rasa-off.vercel.app/french#webpage",
       "url": "https://rasa-off.vercel.app/french",
       "name": "French Library | Rasa",
@@ -49,7 +56,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://rasa-off.vercel.app/images/og/default.jpg",
+        "url": "https://rasa-off.vercel.app/images/og/french.jpg",
         "width": 1200,
         "height": 630
       },
@@ -86,6 +93,158 @@
           "position": 3,
           "name": "French Library",
           "item": "https://rasa-off.vercel.app/french"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://rasa-off.vercel.app/french#books",
+      "name": "French Library | Rasa",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Book",
+            "name": "Discours sur la colonisation",
+            "author": {
+              "@type": "Person",
+              "name": "Aimé Césaire"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/AC.png",
+            "url": "https://drive.google.com/file/d/1vB2fG4QS3zBfEMLTcGU_pg_oFT9sruSC/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Book",
+            "name": "gentleman cambrioleur",
+            "author": {
+              "@type": "Person",
+              "name": "Maurice Leblanc"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/AL.png",
+            "url": "https://drive.google.com/file/d/1bpXlndkoBUKWyWavCTShIXXV3mFMwpXk/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "La Peste",
+            "author": {
+              "@type": "Person",
+              "name": "Albert Camus"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/peste.png",
+            "url": "https://drive.google.com/file/d/10wk-pzI7pW6OWJjfYmt1hxs4CNVDFXO7/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Book",
+            "name": "Le fils du pauvre",
+            "author": {
+              "@type": "Person",
+              "name": "Mouloud Feraoun"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/MF.png",
+            "url": "https://drive.google.com/file/d/1DqJo4kBXDUBaWhDqMUdnRWhlcsDBZKIA/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Book",
+            "name": "Les nuits Blanches",
+            "author": {
+              "@type": "Person",
+              "name": "Fiodor Dostoïevski"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/nuitsblanches.png",
+            "url": "https://drive.google.com/file/d/1fX0sx3TQN1_GG1R95kKoyeBtV0hhDpRL/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Book",
+            "name": "L'Étranger",
+            "author": {
+              "@type": "Person",
+              "name": "Albert Camus"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/etranger.png",
+            "url": "https://drive.google.com/file/d/1vUszyKdDWBWAKDFRGYtnLDQwrA0AmvAf/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Book",
+            "name": "La métamorphose",
+            "author": {
+              "@type": "Person",
+              "name": "Franz Kafka"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/m%C3%A9tamorphose.png",
+            "url": "https://drive.google.com/file/d/11VFS5Fgc1pnX1TYDeb2_817agaB6xGzm/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Book",
+            "name": "L'Alchimiste",
+            "author": {
+              "@type": "Person",
+              "name": "Paulo Coelho"
+            },
+            "inLanguage": "fr",
+            "image": "https://rasa-off.vercel.app/images/L'Alchimiste.png",
+            "url": "https://drive.google.com/file/d/1d4n8CUr4vR7DBeb62MuzLjGTzDLt2iDV/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
         }
       ]
     }
@@ -235,7 +394,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/french.css" />
+  <link rel="stylesheet" href="/css/french.css?v=78dc409ff1" />
 </head>
 
   <body
@@ -861,9 +1020,9 @@
         update();
       })();
     </script>
-    <script src="/js/mobile-nav.js" defer></script>
-    <script src="/js/pwa.js" defer></script>
-    <script src="/js/book-reader.js" defer></script>
+    <script src="/js/mobile-nav.js?v=52cdcfac26" defer></script>
+    <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
+    <script src="/js/book-reader.js?v=8e908f0860" defer></script>
 </body>
 </html>
 

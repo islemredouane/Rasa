@@ -7,10 +7,14 @@
 //   <!-- seo:start --> … <!-- seo:end -->            in every page's <head>
 //   <!-- prerender:start --> … <!-- prerender:end -->  inside the events containers
 //   <!-- faq:start --> … <!-- faq:end -->              the homepage FAQ section
-// and regenerates sitemap.xml and llms.txt. No dependencies; Node 18+.
+// It also versions CSS/JS links (?v=<content hash>) and the service worker, and regenerates
+// sitemap.xml (with images), llms.txt and llms-full.txt. No dependencies; Node 18+.
+// Run scripts/build-css.mjs first when Tailwind classes changed.
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -24,18 +28,20 @@ const WEBSITE_ID = `${SITE}/#website`;
 const PAGES = [
   { file: "index.html", path: "/", og: "default", type: "WebPage" },
   { file: "events.html", path: "/events", og: "events", type: "CollectionPage", crumbs: [["Events", "/events"]] },
-  { file: "literature.html", path: "/literature", og: "default", crumbs: [["Literature", "/literature"]] },
-  { file: "arabic.html", path: "/arabic", og: "default", crumbs: [["Literature", "/literature"], ["Arabic Library", "/arabic"]] },
-  { file: "english.html", path: "/english", og: "default", crumbs: [["Literature", "/literature"], ["English Library", "/english"]] },
-  { file: "french.html", path: "/french", og: "default", crumbs: [["Literature", "/literature"], ["French Library", "/french"]] },
-  { file: "art.html", path: "/art", og: "default", crumbs: [["Art", "/art"]] },
-  { file: "music.html", path: "/music", og: "default", crumbs: [["Music", "/music"]] },
-  { file: "chess.html", path: "/chess", og: "chess", crumbs: [["Chess", "/chess"]] },
-  { file: "activities.html", path: "/activities", og: "default", crumbs: [["Activities", "/activities"]] },
-  { file: "charity.html", path: "/charity", og: "charity", crumbs: [["Charity", "/charity"]] },
+  { file: "literature.html", path: "/literature", og: "literature", dept: "Literature", crumbs: [["Literature", "/literature"]] },
+  { file: "arabic.html", path: "/arabic", og: "arabic", library: "ar", type: "CollectionPage", crumbs: [["Literature", "/literature"], ["Arabic Library", "/arabic"]] },
+  { file: "english.html", path: "/english", og: "english", library: "en", type: "CollectionPage", crumbs: [["Literature", "/literature"], ["English Library", "/english"]] },
+  { file: "french.html", path: "/french", og: "french", library: "fr", type: "CollectionPage", crumbs: [["Literature", "/literature"], ["French Library", "/french"]] },
+  { file: "art.html", path: "/art", og: "art", dept: "Art", crumbs: [["Art", "/art"]] },
+  { file: "music.html", path: "/music", og: "music", dept: "Music", crumbs: [["Music", "/music"]] },
+  { file: "chess.html", path: "/chess", og: "chess", dept: "Chess", crumbs: [["Chess", "/chess"]] },
+  { file: "activities.html", path: "/activities", og: "activities", dept: "Activities", crumbs: [["Activities", "/activities"]] },
+  { file: "charity.html", path: "/charity", og: "charity", dept: "Charity", crumbs: [["Charity", "/charity"]] },
   { file: "recruitment.html", path: "/recruitment", og: "recruitment", crumbs: [["Join the Core Team", "/recruitment"]] },
   { file: "noregistrations.html", path: "/noregistrations", og: "default", noindex: true },
 ];
+// Pages outside PAGES that still get versioned asset links.
+const EXTRA_PAGES = ["offline.html", "404.html"];
 
 const DEPARTMENTS = [
   ["Literature Department", "/literature"],
@@ -68,6 +74,18 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
 const text = (html) => html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 const url = (p) => SITE + p;
+const hash = (buf) => crypto.createHash("sha256").update(buf).digest("hex").slice(0, 10);
+
+// Last commit date of a file (YYYY-MM-DD); today if it has uncommitted changes.
+// lastmod / dateModified then only move when a page really changes.
+function git(args) {
+  try {
+    return execFileSync("git", args, { cwd: ROOT, encoding: "utf8" }).trim();
+  } catch {
+    return "";
+  }
+}
+const modified = (f) => (git(["status", "--porcelain", "--", f]) ? TODAY : git(["log", "-1", "--format=%cs", "--", f]) || TODAY);
 
 function replaceBlock(s, start, end, content, where) {
   const re = new RegExp(`${start}[\\s\\S]*?${end}`);
@@ -150,6 +168,9 @@ const ORGANIZATION = {
   logo: { "@type": "ImageObject", url: url("/icons/icon-512.png"), width: 512, height: 512 },
   image: url("/images/og/default.jpg"),
   slogan: "Feel the emotion. Live the expression.",
+  keywords: "Rasa Club, club culturel ESTIN, ESTIN Béjaïa, student club Algeria, literature, art, music, chess, charity",
+  knowsAbout: ["Literature", "Reading and book fairs", "Visual art", "Music", "Chess", "Games and student activities", "Charity and solidarity", "Amazigh culture and Yennayer", "Student life at ESTIN"],
+  areaServed: [{ "@type": "City", name: "Béjaïa" }, { "@type": "Country", name: "Algeria" }],
   email: "rasa@estin.dz",
   foundingDate: "2024",
   address: ADDRESS,
@@ -170,6 +191,65 @@ const ORGANIZATION = {
   })),
   contactPoint: { "@type": "ContactPoint", email: "rasa@estin.dz", contactType: "general enquiries", availableLanguage: ["en", "fr", "ar"] },
 };
+
+// ---------------------------------------------------------------- page-specific structured data
+// A department, with its managers from the board.
+function departmentNode(page) {
+  const managers = BOARD.filter((m) => new RegExp(`\\b${page.dept}\\b`, "i").test(m.role));
+  return {
+    "@type": "Organization",
+    "@id": `${url(page.path)}#department`,
+    name: `Rasa ${page.dept} Department`,
+    url: url(page.path),
+    parentOrganization: { "@id": ORG_ID },
+    ...(managers.length
+      ? { member: managers.map((m) => ({ "@type": "OrganizationRole", roleName: m.role, startDate: "2026", member: { "@type": "Person", name: m.name } })) }
+      : {}),
+  };
+}
+
+// The books of a library page, read from the page's own cards.
+function libraryBooks(html, page) {
+  const books = [];
+  const re = /<h3\b[^>]*>([\s\S]*?)<\/h3>\s*<p\s+class="text-primary[^"]*"[^>]*>([\s\S]*?)<\/p>/g;
+  for (const m of html.matchAll(re)) {
+    const before = html.slice(0, m.index);
+    const cover = [...before.matchAll(/background-image:\s*url\((['"]?)(.*?)\1\)/g)].pop();
+    const read = html.slice(m.index).match(/href="(https:\/\/drive\.google\.com\/file\/d\/[^"]+)"/);
+    const coverPath = cover ? cover[2].replace(/\\'/g, "'").replace(/\\ /g, " ") : null;
+    books.push({
+      "@type": "Book",
+      name: decode(text(m[1])),
+      author: { "@type": "Person", name: decode(text(m[2])) },
+      inLanguage: page.library,
+      ...(coverPath ? { image: url(encodeURI(coverPath)) } : {}),
+      ...(read ? { url: read[1].split("?")[0] } : {}),
+      provider: { "@id": ORG_ID },
+    });
+  }
+  return books;
+}
+
+// The RASA Chess Cup and its podium, for the chess page.
+function chessCupNode() {
+  const e = EVENTS.seasons.flatMap((s) => s.events).find((x) => x.id === "chess-cup");
+  if (!e) return null;
+  return {
+    "@type": "SportsEvent",
+    "@id": `${SITE}/chess#chess-cup`,
+    name: "RASA Chess Cup 2026",
+    description: "First edition of Rasa's chess tournament at ESTIN: 24 players over three days. Champion Sameur Adel, 2nd Boukendoul Mahdi, 3rd Lahmar Mouaiz.",
+    sport: "Chess",
+    startDate: e.start,
+    endDate: e.end,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: ESTIN_PLACE,
+    image: url(e.cover),
+    organizer: { "@id": ORG_ID },
+    url: `${SITE}/chess#chess-cup`,
+  };
+}
 
 const WEBSITE = {
   "@type": "WebSite",
@@ -227,7 +307,7 @@ function breadcrumb(page) {
 }
 
 // ---------------------------------------------------------------- head block
-function headBlock(page, title, description) {
+function headBlock(page, title, description, html) {
   const pageUrl = url(page.path);
   const image = url(`/images/og/${page.og}.jpg`);
   const graph = [
@@ -241,7 +321,7 @@ function headBlock(page, title, description) {
       isPartOf: { "@id": WEBSITE_ID },
       about: { "@id": ORG_ID },
       primaryImageOfPage: { "@type": "ImageObject", url: image, width: 1200, height: 630 },
-      dateModified: TODAY,
+      dateModified: modified(page.file),
       ...(page.crumbs ? { breadcrumb: { "@id": `${pageUrl}#breadcrumb` } } : {}),
     },
   ];
@@ -249,12 +329,28 @@ function headBlock(page, title, description) {
   else graph.push(ORG_REF);
   if (page.crumbs) graph.push(breadcrumb(page));
   if (page.path === "/events") graph.push(eventItems());
+  if (page.dept) graph.push(departmentNode(page));
+  if (page.path === "/chess") graph.push(chessCupNode());
+  if (page.library) {
+    const books = libraryBooks(html, page);
+    if (books.length)
+      graph.push({
+        "@type": "ItemList",
+        "@id": `${url(page.path)}#books`,
+        name: title,
+        numberOfItems: books.length,
+        itemListElement: books.map((b, i) => ({ "@type": "ListItem", position: i + 1, item: b })),
+      });
+  }
 
   const json = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }, null, 2).replace(/<\//g, "<\\/");
   const robots = page.noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1";
   return `
     <link rel="canonical" href="${pageUrl}" />
     <meta name="robots" content="${robots}" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
@@ -264,11 +360,13 @@ function headBlock(page, title, description) {
     <meta property="og:image" content="${image}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="${attr(title)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${attr(title)}" />
     <meta name="twitter:description" content="${attr(description)}" />
     <meta name="twitter:image" content="${image}" />
+    <meta name="twitter:image:alt" content="${attr(title)}" />
     <script type="application/ld+json">
 ${json}
     </script>
@@ -306,6 +404,27 @@ function faqSection() {
 }
 
 // ---------------------------------------------------------------- run
+// ---------------------------------------------------------------- asset versions
+// Every local CSS/JS file referenced by the pages gets ?v=<hash of its content>, so browsers can cache
+// it for a long time and still get the new file as soon as it changes.
+const assetVersion = new Map();
+function versioned(ref) {
+  const clean = ref.split("?")[0];
+  if (!assetVersion.has(clean)) {
+    const f = file(clean.replace(/^\//, ""));
+    assetVersion.set(clean, fs.existsSync(f) ? hash(fs.readFileSync(f)) : null);
+  }
+  const v = assetVersion.get(clean);
+  return v ? `${clean}?v=${v}` : ref;
+}
+const versionAssets = (html) =>
+  html
+    .replace(/(<script\b[^>]*\bsrc=")(\/(?:js|data)\/[^"]+\.js)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b)
+    .replace(/(<link\b[^>]*\bhref=")(\/css\/[^"]+\.css)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b);
+
+const pageImages = new Map(); // page path -> image URLs, for the image sitemap
+const libraryCatalogue = new Map(); // library path -> books, for llms-full.txt
+
 const results = [];
 for (const page of PAGES) {
   const { s: original, crlf } = load(page.file);
@@ -313,7 +432,7 @@ for (const page of PAGES) {
   const title = decode(s.match(/<title>([\s\S]*?)<\/title>/)[1].trim());
   const description = decode(s.match(/<meta name="description" content="([^"]*)"/)[1]);
 
-  s = replaceBlock(s, "<!-- seo:start -->", "<!-- seo:end -->", headBlock(page, title, description), (src, block) => {
+  s = replaceBlock(s, "<!-- seo:start -->", "<!-- seo:end -->", headBlock(page, title, description, s), (src, block) => {
     const anchor = src.match(/\n([ \t]*)<meta name="apple-mobile-web-app-status-bar-style"[^>]*>/);
     if (!anchor) throw new Error(`${page.file}: no anchor for the SEO block`);
     const at = anchor.index + anchor[0].length;
@@ -338,20 +457,59 @@ for (const page of PAGES) {
     });
   }
 
+  s = versionAssets(s);
+
+  // images on the page (img src and inline background images), for the image sitemap
+  const imgs = new Set([url(`/images/og/${page.og}.jpg`)]);
+  for (const m of s.matchAll(/<img\b[^>]*\bsrc="(\/(?:images|icons)\/[^"?]+)"/g)) imgs.add(url(encodeURI(m[1])));
+  for (const m of s.matchAll(/background-image:\s*url\((['"]?)(\/images\/.*?)\1\)/g)) imgs.add(url(encodeURI(m[2].replace(/\\'/g, "'").replace(/\\ /g, " "))));
+  pageImages.set(page.path, [...imgs].filter((u) => !/\/icons\//.test(u)).slice(0, 60));
+  if (page.library) libraryCatalogue.set(page.path, libraryBooks(s, page));
+
   if (s !== original) save(page.file, s, crlf);
   results.push(`${page.file.padEnd(22)} ${s !== original ? "updated" : "unchanged"}`);
 }
 
-// sitemap.xml
+for (const extra of EXTRA_PAGES) {
+  if (!fs.existsSync(file(extra))) continue;
+  const { s: original, crlf } = load(extra);
+  const s = versionAssets(original);
+  if (s !== original) save(extra, s, crlf);
+  results.push(`${extra.padEnd(22)} ${s !== original ? "updated" : "unchanged"}`);
+}
+
+// ---------------------------------------------------------------- service worker
+// Precache the versioned CSS/JS URLs and derive VERSION from everything precached,
+// so installed apps update by themselves after each deploy (no manual bump).
+{
+  const { s: original, crlf } = load("sw.js");
+  let sw = original.replace(/"(\/(?:css|js|data)\/[^"?]+\.(?:css|js))(?:\?v=[^"]*)?"/g, (_, ref) => `"${versioned(ref)}"`);
+  const list = sw.match(/const PRECACHE_URLS = \[([\s\S]*?)\];/)[1];
+  const fingerprint = hash(
+    [...list.matchAll(/"([^"]+)"/g)]
+      .map(([, u]) => {
+        const f = file((u === "/" ? "index" : u.split("?")[0].replace(/^\//, "")) + (/\.[a-z0-9]+$/i.test(u.split("?")[0]) ? "" : ".html"));
+        return fs.existsSync(f) ? fs.readFileSync(f) : u;
+      })
+      .join("|")
+  );
+  sw = sw.replace(/const VERSION = "[^"]*";/, `const VERSION = "rasa-${fingerprint}";`);
+  if (sw !== original) save("sw.js", sw, crlf);
+  results.push(`${"sw.js".padEnd(22)} ${sw !== original ? `updated (rasa-${fingerprint})` : "unchanged"}`);
+}
+
+// sitemap.xml — real last-modified dates from git, plus the images of each page
+const xml = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${PAGES.filter((p) => !p.noindex)
   .map(
     (p) => `  <url>
     <loc>${url(p.path)}</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${modified(p.file)}</lastmod>
     <changefreq>${p.path === "/" || p.path === "/events" ? "weekly" : "monthly"}</changefreq>
     <priority>${p.path === "/" ? "1.0" : p.path === "/events" ? "0.9" : "0.7"}</priority>
+${(pageImages.get(p.path) || []).map((i) => `    <image:image><image:loc>${xml(i)}</image:loc></image:image>`).join("\n")}
   </url>`
   )
   .join("\n")}
@@ -396,5 +554,89 @@ ${FAQ.map(([q, a]) => `### ${q}\n\n${text(a)}`).join("\n\n")}
 `;
 fs.writeFileSync(file("llms.txt"), llms);
 
+// llms-full.txt — the complete knowledge file: every page, the whole board, every event with its details,
+// the Chess Cup results and the library catalogue.
+const byDept = (d) => BOARD.filter((m) => new RegExp(`\\b${d}\\b`, "i").test(m.role)).map((m) => m.name);
+const pageList = PAGES.filter((p) => !p.noindex).map((p) => {
+  const { s: html } = load(p.file);
+  const t = decode(html.match(/<title>([\s\S]*?)<\/title>/)[1].trim());
+  const d = decode(html.match(/<meta name="description" content="([^"]*)"/)[1]);
+  return `### ${t}\n\nURL: ${url(p.path)}\n\n${d}`;
+});
+const llmsFull = `# Rasa Club — full guide
+
+> Rasa is the cultural and artistic student club of ESTIN (École Supérieure en Sciences et Technologies de l'Informatique et du Numérique) in Amizour, Béjaïa, Algeria. Motto: “Feel the emotion. Live the expression.” Website: ${SITE}/ · Email: rasa@estin.dz · Instagram: @rasa.estin
+
+This file is the long version of ${SITE}/llms.txt, for AI assistants and answer engines that want the full context.
+Generated by scripts/build.mjs on ${TODAY}.
+
+## About the club
+
+Rasa was created by students to ease the pressure of studies by giving the student community a cultural, musical and convivial space: reading, music, art, games of thought and cultural exchange. The club room is on the ground floor of the ESTIN library, where many of its meetings and evenings take place. Rasa works with other ESTIN clubs (LDC, ORIGO) and has had outside support (Sinay Travel, the Orca club).
+
+## Departments
+
+${DEPARTMENTS.map(([name, p]) => {
+  const d = name.replace(" Department", "");
+  const m = byDept(d);
+  return `- [${name}](${url(p)})${m.length ? `: managers ${m.join(", ")}` : ""}`;
+}).join("\n")}
+- Support teams: Multimedia (${byDept("Multimedia").join(", ")}), Communication (${byDept("Communication").join(", ")}), Logistics (${byDept("Logistics").join(", ")}), Human Resources (${byDept("Human Resources").join(", ")})
+
+## Board 2026/27
+
+${BOARD.map((m) => `- ${m.name}: ${m.role}`).join("\n")}
+
+## Upcoming
+
+${EVENTS.upcoming.map((e) => `- **${e.title}** — ${e.date}, ${e.place}. ${e.summary}`).join("\n") || "- Nothing announced yet."}
+
+${EVENTS.seasons
+  .map(
+    (sn) => `## ${sn.title} (${sn.events.length} activities)
+
+${sn.intro || ""}
+
+${sn.events
+  .map((e) => `- **${e.title}** — ${e.date}, ${e.place}${e.tags?.length ? ` (${e.tags.join(", ")})` : ""}. ${e.summary}${e.stat ? ` ${e.stat}.` : ""}`)
+  .join("\n")}`
+  )
+  .join("\n\n")}
+
+## RASA Chess Cup 2026
+
+First edition of the club's chess tournament, at ESTIN from 15 to 17 February 2026, with 24 players and registrations from 8 to 14 February. Winners announced on 18 February 2026: champion Sameur Adel, 2nd Boukendoul Mahdi, 3rd Lahmar Mouaiz. Details: ${SITE}/chess#chess-cup
+
+## Charity
+
+The Charity Department runs solidarity campaigns with accredited associations (Algerian law 12-06), starting with support for children with cancer, plus blood donation, Ramadan solidarity, winter clothing, back-to-school supplies and health awareness. Rasa never collects money online; donations go through the partner association. Details: ${SITE}/charity
+
+## Libraries
+
+${[...libraryCatalogue.entries()]
+  .map(([p, books]) => `### ${PAGES.find((x) => x.path === p).crumbs.at(-1)[0]} (${url(p)})
+
+${books.map((b) => `- ${b.name} — ${b.author.name}`).join("\n")}`)
+  .join("\n\n")}
+
+Books open in an in-page reader on the website (Google Drive viewer) and can be downloaded.
+
+## Pages
+
+${pageList.join("\n\n")}
+
+## FAQ
+
+${FAQ.map(([q, a]) => `### ${q}\n\n${text(a)}`).join("\n\n")}
+
+## Contact
+
+- Email: rasa@estin.dz
+- Instagram: https://www.instagram.com/rasa.estin/
+- LinkedIn: https://www.linkedin.com/company/rasa-club/
+- Contact form: ${SITE}/#contact
+`;
+fs.writeFileSync(file("llms-full.txt"), llmsFull);
+
 console.log(results.join("\n"));
-console.log(`sitemap.xml: ${PAGES.filter((p) => !p.noindex).length} URLs · llms.txt written · board: ${BOARD.length} members · events: ${eventCount}`);
+console.log(`sitemap.xml: ${PAGES.filter((p) => !p.noindex).length} URLs, ${[...pageImages.values()].reduce((n, l) => n + l.length, 0)} images · llms.txt + llms-full.txt · board: ${BOARD.length} · events: ${eventCount}`);
