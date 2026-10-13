@@ -12,3 +12,4 @@ scripts/
 tailwind/
 node_modules/
 docs/
+.github/

@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- Helper for scripts/render-readme-assets.py: shows a page of the site inside an exact phone-size
+     frame (headless browsers can't make windows narrower than ~500 px) and hides the install card. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>html, body { margin: 0; background: #000; } iframe { display: block; border: 0; }</style>
+</head>
+<body>
+<script>
+  const p = new URLSearchParams(location.search);
+  try { localStorage.setItem("rasa-install-dismissed", String(Date.now())); } catch {}
+  const f = document.createElement("iframe");
+  f.width = p.get("w") || 390; f.height = p.get("h") || 844; f.src = p.get("u") || "/";
+  document.body.append(f);
+</script>
+</body>
+</html>
