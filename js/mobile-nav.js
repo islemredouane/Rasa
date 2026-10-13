@@ -13,7 +13,7 @@
     { href: "/charity", icon: "volunteer_activism", label: "Charity" },
   ];
   // Pages that belong to a department (libraries are part of Literature).
-  const DEPARTMENT_PAGES = DEPARTMENTS.map((d) => d.href).concat(["/arabic", "/english", "/french"]);
+  const DEPARTMENT_PAGES = DEPARTMENTS.map((d) => d.href).concat(["/literature/arabic", "/literature/english", "/literature/french"]);
 
   const toggle = document.querySelector("[data-dept-toggle]");
   const row = document.querySelector("[data-nav-row]");
@@ -24,9 +24,8 @@
   const items = [...row.querySelectorAll("[data-nav]")];
   const toggleIcon = toggle.querySelector(".material-symbols-outlined");
 
-  // Current page as a clean path: "/", "/events", "/chess" (works with or without ".html").
-  const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
-  const page = !slug || slug === "index" ? "/" : "/" + slug;
+  // Current page as a clean path: "/", "/events", "/literature/arabic" (works with or without ".html").
+  const page = location.pathname.replace(/\.html$/, "").replace(/\/index$/, "/").replace(/(.)\/$/, "$1") || "/";
   const isHome = page === "/";
   const isCurrent = (href) => href === page;
 

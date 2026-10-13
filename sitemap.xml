@@ -94,7 +94,7 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/sawsen-aouzellag.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://rasa-off.vercel.app/arabic</loc>
+    <loc>https://rasa-off.vercel.app/literature/arabic</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -107,7 +107,7 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/killed%20student.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://rasa-off.vercel.app/english</loc>
+    <loc>https://rasa-off.vercel.app/literature/english</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -119,7 +119,7 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/ASH.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://rasa-off.vercel.app/french</loc>
+    <loc>https://rasa-off.vercel.app/literature/french</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

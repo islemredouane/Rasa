@@ -72,7 +72,7 @@ The Charity Department runs solidarity campaigns with accredited associations (A
 
 ## Libraries
 
-### Arabic Library (https://rasa-off.vercel.app/arabic)
+### Arabic Library (https://rasa-off.vercel.app/literature/arabic)
 
 - أرسس — أحمد آل حمدان
 - الجريمة والعقاب — فيودور دوستويفسكي
@@ -81,7 +81,7 @@ The Charity Department runs solidarity campaigns with accredited associations (A
 - ليطمئن قلبي — أدهم شرقاوي
 - مقتل طالبة مدرسة — جوانا كامبل سلان
 
-### English Library (https://rasa-off.vercel.app/english)
+### English Library (https://rasa-off.vercel.app/literature/english)
 
 - Harry potter — J.K.Rowling
 - 1984 — George Orwell
@@ -90,7 +90,7 @@ The Charity Department runs solidarity campaigns with accredited associations (A
 - The Adventures of Sherlock Holmes — Arthur Conan Doyle
 - Book Title 6 — Author Name
 
-### French Library (https://rasa-off.vercel.app/french)
+### French Library (https://rasa-off.vercel.app/literature/french)
 
 - Discours sur la colonisation — Aimé Césaire
 - gentleman cambrioleur — Maurice Leblanc
@@ -125,19 +125,19 @@ Rasa's Literature Department at ESTIN Béjaïa: reading, book fairs, the Speakin
 
 ### Arabic Library | Rasa
 
-URL: https://rasa-off.vercel.app/arabic
+URL: https://rasa-off.vercel.app/literature/arabic
 
 Arabic books recommended by Rasa's Literature Department at ESTIN Béjaïa.
 
 ### English Library | Rasa
 
-URL: https://rasa-off.vercel.app/english
+URL: https://rasa-off.vercel.app/literature/english
 
 English books recommended by Rasa's Literature Department at ESTIN Béjaïa.
 
 ### French Library | Rasa
 
-URL: https://rasa-off.vercel.app/french
+URL: https://rasa-off.vercel.app/literature/french
 
 French books recommended by Rasa's Literature Department at ESTIN Béjaïa.
 

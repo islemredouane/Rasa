@@ -1,7 +1,7 @@
-// Tailwind settings for english.html (moved here from the page's former inline config).
+// Tailwind settings for literature/english.html (moved here from the page's former inline config).
 // Compiled into css/english.css by: node scripts/build-css.mjs
 module.exports = {
-  content: ["./english.html", "./js/**/*.js", "./data/**/*.js"],
+  content: ["./literature/english.html", "./js/**/*.js", "./data/**/*.js"],
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/container-queries")],
   ...{
     "darkMode": "class",
