@@ -475,6 +475,11 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
         }
+        /* Phones: the board card centred in the carousel gets the hover look (see the board script) */
+        .glass-card.is-active {
+            border-color: rgba(234, 106, 31, 0.5);
+            box-shadow: 0 0 20px rgba(234, 106, 31, 0.15);
+        }
         .glass-card:hover {
             border-color: rgba(234, 106, 31, 0.5);
             box-shadow: 0 0 20px rgba(234, 106, 31, 0.15);
@@ -1034,11 +1039,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Kernou Abdellah"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/kernou-abdellah.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_kernou@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1052,7 +1057,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Kernou Abdellah
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">President</p>
@@ -1064,11 +1069,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zamoum Chemseddine"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/zamoum-chemseddine.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:c_zamoum@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1082,7 +1087,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zamoum Chemseddine
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Vice President</p>
@@ -1094,11 +1099,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Slimani Sabrina"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/slimani-sabrina.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:s_slimani@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1112,7 +1117,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Slimani Sabrina
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Secretary</p>
@@ -1124,11 +1129,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Redouane Mohamed Islem"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/redouane-mohamed-islem.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_redouane@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1158,7 +1163,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Redouane Mohamed Islem
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Human Resources Manager &amp; Website Developer</p>
@@ -1170,11 +1175,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Abid Khalida"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/abid-khalida.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:k_abid@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1188,7 +1193,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Abid Khalida
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Literature Department Manager</p>
@@ -1200,11 +1205,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Sawsen Aouzellag"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/sawsen-aouzellag.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:s_aouzellag@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1218,7 +1223,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Sawsen Aouzellag
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Literature Department Manager</p>
@@ -1230,11 +1235,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Benhaoua Boualam"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/benhaoua-boualam.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:b_benhaoua@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1248,7 +1253,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Benhaoua Boualam
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Art Department Manager</p>
@@ -1260,11 +1265,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Banahcen Mohamed Ishak"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/banahcen-mohamed-ishak.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:bm_benahcene@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1278,7 +1283,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Banahcen Mohamed Ishak
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Art Department Manager</p>
@@ -1290,13 +1295,13 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zemali Boudjemaa"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/zemali-boudjemaa.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zemali Boudjemaa
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Music Department Manager</p>
@@ -1308,13 +1313,13 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Dr Salim Benslimane"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/dr-salim-benslimane.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Dr Salim Benslimane
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Chess Department Manager</p>
@@ -1326,11 +1331,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zekagh Ishak"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/zekagh-ishak.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:bm_zekagh@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1344,7 +1349,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zekagh Ishak
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Chess Department Manager</p>
@@ -1356,11 +1361,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Adam Bouakkache"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/adam-bouakkache.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:ba_bouakkache@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1374,7 +1379,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Adam Bouakkache
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Charity Department Manager</p>
@@ -1386,11 +1391,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Belgacem Nourhane"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/belgacem-nourhane.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:an_belgacem@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1404,7 +1409,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Belgacem Nourhane
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Charity Department Manager</p>
@@ -1416,11 +1421,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Bekhouche Ahmed Ziad"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/bekhouche-ahmed-ziad.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_bekhouche@gmail.com"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1434,7 +1439,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Bekhouche Ahmed Ziad
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Activities Department Manager</p>
@@ -1446,11 +1451,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Hamdi Adem"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/hamdi-adem.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:A_hamdi@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1480,7 +1485,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Hamdi Adem
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Activities Department Manager</p>
@@ -1492,11 +1497,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Hocine Thiziri"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/hocine-thiziri.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:t_hocine@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1510,7 +1515,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Hocine Thiziri
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Multimedia Department Manager</p>
@@ -1522,11 +1527,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zaidi Yanis"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/zaidi-yanis.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:y_zaidi@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1540,7 +1545,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zaidi Yanis
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Multimedia Department Manager</p>
@@ -1552,13 +1557,13 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Benkahla Redouane"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/benkahla-redouane.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Benkahla Redouane
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Communication Department Manager</p>
@@ -1570,13 +1575,13 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Bendjama Fadi"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/bendjama-fadi.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Bendjama Fadi
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Communication Department Manager</p>
@@ -1588,11 +1593,11 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Arbouche Feriel"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/board-2026-27/arbouche-feriel.webp" width="600" height="600" loading="lazy" decoding="async"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:af_arbouche@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1622,7 +1627,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Arbouche Feriel
               </h3>
               <p class="text-sm text-gray-400 uppercase tracking-widest text-[10px]">Logistics Department Manager</p>
@@ -1643,12 +1648,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Kouas Youcef Abdelmoumen"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/youcef.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:Y_kouas@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1680,7 +1685,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Kouas Youcef Abdelmoumen
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Leader</p>
@@ -1692,12 +1697,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zerrouki Lyamine"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/lyamine.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:ly_zerrouki@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1728,7 +1733,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zerrouki Lyamine
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Vice president</p>
@@ -1740,12 +1745,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Khechfoud Maya"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/maya.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_khechfoud@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1776,7 +1781,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Khechfoud Maya
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Secritary</p>
@@ -1788,12 +1793,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Bellahcene Hamza"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/hamza.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:h_bellahsene@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1824,7 +1829,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Bellahcene Hamza
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Human Resources</p>
@@ -1836,12 +1841,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Chelouah Mounia"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/chelouah.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_chelouah@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1872,7 +1877,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Chelouah Mounia
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Literature Departement Manager</p>
@@ -1884,12 +1889,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Mounia Mazit"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/mazit.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_mazit@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1920,7 +1925,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Mounia Mazit
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Literature Departement Co-Manager</p>
@@ -1932,12 +1937,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Messaoudi Alicia"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/alicia.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:al_messaoudi@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -1968,7 +1973,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Messaoudi Alicia
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Art Departement Manager</p>
@@ -1980,12 +1985,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Hebib kenza"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/kenza.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:k_hebib@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2016,7 +2021,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Hebib kenza
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Art Departement Co-Manager</p>
@@ -2028,12 +2033,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Messilia Sofia Lachi"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/sofia.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_lachi@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2064,7 +2069,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Messilia Sofia Lachi
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Music Departement Manager</p>
@@ -2076,12 +2081,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Akrouche Ahmed Rayan"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/rayane.JPG"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_akrouche@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2112,7 +2117,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Akrouche Ahmed Rayan
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Chess Departement Manager</p>
@@ -2124,12 +2129,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Habelhames Hana"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/Hana.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:h_habelhames@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2160,7 +2165,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Habelhames Hana
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Chess Departement Co-Manager</p>
@@ -2172,12 +2177,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Kaddour Djebbar Abderahim"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/rahim.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_keddourdjebbar@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2208,7 +2213,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Kaddour Djebbar Abderahim
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Gaming Departement Manager</p>
@@ -2220,12 +2225,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Bekhouche Ahmed Ziad"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/ahmed.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_bekhouche@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2256,7 +2261,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Bekhouche Ahmed Ziad
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Gaming Departement Co-Manager</p>
@@ -2268,12 +2273,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Redouane Mohamed Islem"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/islem.png"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:m_redouane@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2304,7 +2309,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Redouane Mohamed Islem
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Design Departement Manager & Website Developer</p>
@@ -2316,12 +2321,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Boukhroufa Insaf"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/insaf.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:i_boukhrofa@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2352,7 +2357,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Boukhroufa Insaf
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Design Departement Manager</p>
@@ -2364,12 +2369,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Kernou Abdellah Amine"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/abdellah.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:a_kernou@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2400,7 +2405,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Kernou Abdellah Amine
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Multimedia Departement Manager</p>
@@ -2412,12 +2417,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Zamoum Chamsedine"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/shemsou.JPG"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:#"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2448,7 +2453,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Zamoum Chamsedine
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">Multimedia Departement Co-Manager</p>
@@ -2460,12 +2465,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="Houcine Thiziri"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/Thiziri.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:t_hocine@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2496,7 +2501,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 Hocine Thiziri
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">communication Departement Manager</p>
@@ -2508,12 +2513,12 @@
                       snap-center md:snap-start shrink-0 w-[260px] sm:w-[280px] lg:w-[300px]">
             <div class="h-[280px] w-full rounded-[1.5rem] overflow-hidden bg-surface mb-3 relative">
               <img alt="MOULOUDJ Sara "
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  class="w-full h-full object-cover transition-[transform,filter] duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 group-[.is-active]:scale-110 group-[.is-active]:grayscale-0"
                   src="/images/girl-avatar.jpg"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
 
-              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 group-[.is-active]:translate-y-0 transition-transform duration-300">
+                <div class="flex gap-3 justify-center opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300 delay-75">
                   <a
                       href="mailto:s_mouloudj@estin.dz"
                       class="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center
@@ -2544,7 +2549,7 @@
             </div>
 
             <div class="text-center pb-4">
-              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary transition-colors">
+              <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-primary group-[.is-active]:text-primary transition-colors">
                 MOULOUDJ Sara 
               </h3>
               <p class="text-sm text-gray-500 uppercase tracking-widest text-[10px]">communication Departement Co-Manager</p>
@@ -2917,6 +2922,31 @@
         behavior: 'smooth'
       });
     }
+
+    // ✅ Board cards on phones: no hover there, so the card in the middle of the carousel
+    //    gets the hover look (colour, border, icons). IntersectionObserver keeps it cheap:
+    //    the browser reports when a card enters the central strip, no work on every scroll frame.
+    (function () {
+      const mq = window.matchMedia("(hover: none), (max-width: 767px)");
+      const scrollers = ["membersScroll", "pastBoardScroll"].map((id) => document.getElementById(id)).filter(Boolean);
+      let observers = [];
+      function setup() {
+        observers.forEach((o) => o.disconnect());
+        observers = [];
+        scrollers.forEach((s) => s.querySelectorAll(".glass-card.is-active").forEach((c) => c.classList.remove("is-active")));
+        if (!mq.matches || !("IntersectionObserver" in window)) return;
+        for (const scroller of scrollers) {
+          const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => e.target.classList.toggle("is-active", e.isIntersecting)),
+            { root: scroller, rootMargin: "0px -40% 0px -40%", threshold: 0 }
+          );
+          scroller.querySelectorAll(".glass-card").forEach((card) => io.observe(card));
+          observers.push(io);
+        }
+      }
+      setup();
+      mq.addEventListener ? mq.addEventListener("change", setup) : mq.addListener(setup);
+    })();
 
     // ✅ Board season tabs
     document.querySelectorAll('.board-tab').forEach((tab) => {
