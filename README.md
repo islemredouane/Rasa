@@ -2,6 +2,10 @@
 
 Static site deployed on Vercel from `main` (https://rasa-off.vercel.app). Clean URLs (`/events`, not `/events.html`).
 
+## Setup
+
+`npm install` once (Tailwind CLI for the CSS build, nodemailer for the contact function).
+
 ## Everyday tasks
 
 | Task | How |
@@ -10,6 +14,7 @@ Static site deployed on Vercel from `main` (https://rasa-off.vercel.app). Clean 
 | Add / edit an event | edit `data/events.js`, then `node scripts/build.mjs` |
 | Change the board | edit the cards in `index.html` (`#membersScroll`), then `node scripts/build.mjs` |
 | Edit the FAQ | edit `FAQ` in `scripts/build.mjs`, then run it |
+| Styles (after changing Tailwind classes) | `node scripts/build-css.mjs` → `css/<page>.css` (settings in `tailwind/<page>.config.cjs`) |
 | Add a department to the phone menu | edit `DEPARTMENTS` in `js/mobile-nav.js` |
 | New board photos | `python scripts/optimize-board.py "../2026-2027 Board" images/board-2026-27` |
 | New event photos | `python scripts/optimize-gallery.py "../Events/<season>/<event>" images/events/<season>/<id>` |
