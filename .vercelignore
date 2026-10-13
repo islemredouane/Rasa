@@ -11,3 +11,4 @@ scripts/
 .env*
 tailwind/
 node_modules/
+docs/
