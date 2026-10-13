@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- README banner. Rendered to ../banner.webp by scripts/render-readme-assets.py (1280x440 at 2x, saved 1760 wide). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Offside&family=Quicksand:wght@500;600;700&display=swap">
+<style>
+  :root { --orange: #ea6a1f; --orange-dark: #c5520e; --gold: #ffb74d; --gold-2: #f9a825; --black: #000; --surface: #0f0f0f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 440px; background: transparent; }
+  .banner {
+    position: relative; width: 1280px; height: 440px; overflow: hidden; border-radius: 28px;
+    background: var(--black); border: 1px solid rgba(255,255,255,.08);
+    font-family: 'Quicksand', sans-serif; color: #fff;
+  }
+  /* warm glows, like the site's hero */
+  .glow { position: absolute; border-radius: 50%; filter: blur(70px); }
+  .glow.a { width: 520px; height: 520px; left: -160px; top: -220px; background: rgba(234,106,31,.28); }
+  .glow.b { width: 420px; height: 420px; right: 40px; top: 40px; background: rgba(234,106,31,.22); }
+  .glow.c { width: 260px; height: 260px; left: 520px; bottom: -180px; background: rgba(249,168,37,.14); }
+  /* the site's grid texture */
+  .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse at 30% 50%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse at 30% 50%, #000 0%, transparent 70%); }
+
+  .content { position: absolute; left: 72px; top: 0; bottom: 0; width: 700px; display: flex; flex-direction: column; justify-content: center; }
+  .eyebrow { display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px;
+    background: rgba(234,106,31,.10); border: 1px solid rgba(234,106,31,.35); color: var(--orange);
+    font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+  .eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 4px rgba(234,106,31,.25); }
+  .brand { display: flex; align-items: center; gap: 22px; margin-top: 22px; }
+  .brand img { width: 84px; height: 84px; filter: drop-shadow(0 0 22px rgba(234,106,31,.55)); }
+  h1 { font-family: 'Offside', sans-serif; font-weight: 400; font-size: 92px; line-height: 1; letter-spacing: -1px; }
+  h1 .metal { background: linear-gradient(to right, var(--orange) 20%, var(--gold) 40%, var(--orange) 60%, var(--gold) 80%);
+    background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .motto { margin-top: 18px; font-size: 24px; font-weight: 600; color: rgba(255,255,255,.92); }
+  .sub { margin-top: 6px; font-size: 16px; font-weight: 500; color: #a1a1aa; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .chip { padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
+  .chip.on { background: var(--orange); border-color: var(--orange); color: #000; box-shadow: 0 0 24px rgba(234,106,31,.45); }
+
+  /* ROSO: soft circular mask so his black background fades into the banner */
+  .roso { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); width: 400px; height: 400px; }
+  .roso .card { position: absolute; inset: 40px; border-radius: 44px; background: radial-gradient(circle at 50% 45%, rgba(234,106,31,.18), rgba(0,0,0,.35) 70%); border: 1px solid rgba(255,255,255,.10); transform: rotate(6deg); }
+  .roso img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: lighten;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 70%); mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 70%); }
+  .badge { position: absolute; display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 16px;
+    background: rgba(15,15,15,.88); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(12px);
+    font-size: 14px; font-weight: 700; box-shadow: 0 14px 34px rgba(0,0,0,.55); }
+  .badge b { font-family: 'Offside', sans-serif; font-weight: 400; color: var(--orange); font-size: 20px; }
+  .badge small { display: block; color: #a1a1aa; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+  .badge.t { right: -10px; top: 26px; }
+  .badge.b { left: -40px; bottom: 34px; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+    <div class="grid"></div>
+
+    <div class="content">
+      <span class="eyebrow"><span class="dot"></span>Cultural &amp; artistic club · ESTIN Béjaïa</span>
+      <div class="brand">
+        <img src="../../../rasa-logo.png" alt="">
+        <h1><span class="metal">Rasa</span> Club</h1>
+      </div>
+      <p class="motto">Feel the emotion. Live the expression.</p>
+      <p class="sub">The official website: events, the board, every department, and an installable app.</p>
+      <div class="chips">
+        <span class="chip on">Literature</span><span class="chip">Art</span><span class="chip">Music</span>
+        <span class="chip">Chess</span><span class="chip">Activities</span><span class="chip">Charity</span>
+      </div>
+    </div>
+
+    <div class="roso">
+      <div class="card"></div>
+      <img src="../../../images/rasa ai2.png" alt="">
+      <div class="badge t"><div><small>Season 2025/26</small><b>11</b> activities</div></div>
+      <div class="badge b"><div><small>Board 2026/27</small><b>20</b> members</div></div>
+    </div>
+  </div>
+</body>
+</html>

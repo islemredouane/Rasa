@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- README "by the numbers" card. Rendered to ../stats.webp by scripts/render-readme-assets.py (1280x300 at 2x).
+     Numbers come from the 2025/26 activity report, data/events.js and the board; update them each season. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Offside&family=Quicksand:wght@500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 300px; background: transparent; }
+  .card { position: relative; width: 1280px; height: 300px; border-radius: 28px; overflow: hidden; padding: 34px 40px;
+    background: #0f0f0f; border: 1px solid rgba(255,255,255,.08); font-family: 'Quicksand', sans-serif; color: #fff; }
+  .card::before { content: ""; position: absolute; width: 520px; height: 520px; right: -200px; top: -320px; border-radius: 50%;
+    background: rgba(234,106,31,.22); filter: blur(80px); }
+  .head { position: relative; display: flex; align-items: baseline; justify-content: space-between; }
+  .head h2 { font-family: 'Offside', sans-serif; font-weight: 400; font-size: 26px; }
+  .head h2 span { color: #ea6a1f; }
+  .head p { color: #a1a1aa; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; }
+  .grid { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 26px; }
+  .tile { border-radius: 20px; padding: 22px 18px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); }
+  .tile.hot { background: rgba(234,106,31,.10); border-color: rgba(234,106,31,.40); }
+  .tile b { display: block; font-family: 'Offside', sans-serif; font-weight: 400; font-size: 46px; line-height: 1; color: #ea6a1f; }
+  .tile span { display: block; margin-top: 12px; color: rgba(255,255,255,.85); font-size: 14px; font-weight: 700; line-height: 1.35; }
+  .tile small { display: block; margin-top: 4px; color: #71717a; font-size: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">
+      <h2>By the <span>numbers</span></h2>
+      <p>Rasa Club · October 2026</p>
+    </div>
+    <div class="grid">
+      <div class="tile hot"><b>11</b><span>activities</span><small>season 2025/26</small></div>
+      <div class="tile"><b>6</b><span>departments</span><small>+ 4 support teams</small></div>
+      <div class="tile"><b>20</b><span>board members</span><small>2026/27</small></div>
+      <div class="tile"><b>1,022</b><span>Instagram followers</span><small>@rasa.estin</small></div>
+      <div class="tile"><b>24</b><span>players</span><small>RASA Chess Cup 2026</small></div>
+      <div class="tile"><b>655</b><span>likes on our</span><small>top video</small></div>
+    </div>
+  </div>
+</body>
+</html>
