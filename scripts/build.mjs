@@ -380,13 +380,13 @@ function faqSection() {
           <details class="group glass-card rounded-2xl px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
               <h3 class="text-white font-bold text-lg font-display">${q}</h3>
-              <span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-45 shrink-0">add</span>
+              <span class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-45 group-[.is-closing]:!rotate-0 shrink-0">add</span>
             </summary>
             <p class="mt-4 text-gray-400 leading-relaxed [&_a]:text-primary [&_a]:font-bold hover:[&_a]:underline">${a}</p>
           </details>`
   ).join("");
   return `
-  <div class="py-24 relative bg-black scroll-mt-20" id="faq">
+  <div class="pt-12 pb-12 md:pt-16 md:pb-16 relative bg-black scroll-mt-20" id="faq">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <h2 class="text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3">
@@ -399,6 +399,52 @@ function faqSection() {
         </div>
       </div>
     </div>
+    <script>
+      // Smooth open/close: animate the card's height and fade the answer instead of the instant toggle.
+      (() => {
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+        const ease = "cubic-bezier(.22,.61,.36,1)";
+        document.querySelectorAll("#faq details").forEach((el) => {
+          const summary = el.querySelector("summary");
+          const answer = summary.nextElementSibling;
+          let grow = null, fade = null;
+          const closedHeight = () => {
+            const cs = getComputedStyle(el);
+            return summary.offsetHeight + ["paddingTop", "paddingBottom", "borderTopWidth", "borderBottomWidth"]
+              .reduce((h, k) => h + parseFloat(cs[k]), 0);
+          };
+          summary.addEventListener("click", (e) => {
+            if (reduce.matches || !el.animate) return;
+            e.preventDefault();
+            const from = el.offsetHeight;
+            const opening = !el.open || el.classList.contains("is-closing");
+            grow && grow.cancel();
+            fade && fade.cancel();
+            el.style.overflow = "hidden";
+            el.classList.toggle("is-closing", !opening);
+            if (opening) el.open = true;
+            const to = opening ? el.offsetHeight : closedHeight();
+            const duration = Math.min(420, 220 + Math.abs(to - from) * 0.6);
+            grow = el.animate({ height: [from + "px", to + "px"] }, { duration, easing: ease });
+            fade = answer.animate(
+              opening ? { opacity: [0, 1], transform: ["translateY(-6px)", "none"] }
+                      : { opacity: [1, 0], transform: ["none", "translateY(-6px)"] },
+              { duration: opening ? duration : duration * 0.7, easing: ease, fill: opening ? "none" : "forwards" }
+            );
+            grow.onfinish = () => {
+              grow = null;
+              el.style.overflow = "";
+              if (!opening) {
+                el.open = false;
+                el.classList.remove("is-closing");
+                fade && fade.cancel();
+                fade = null;
+              }
+            };
+          });
+        });
+      })();
+    </script>
   </div>
   `;
 }

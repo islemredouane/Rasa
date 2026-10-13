@@ -83,7 +83,8 @@
   function pageKey() {
     if (DEPARTMENT_PAGES.includes(page)) return "departments";
     if (!isHome) return null;
-    const contact = document.getElementById("contact");
+    // the FAQ sits right above the contact form, so both light up "Contact"
+    const contact = document.getElementById("faq") || document.getElementById("contact");
     const team = document.getElementById("team");
     const line = window.innerHeight * 0.5;
     if (contact && contact.getBoundingClientRect().top < line) return "contact";
