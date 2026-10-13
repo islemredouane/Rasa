@@ -441,48 +441,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Quicksand:wght@300;400;500;600;700&amp;family=Offside&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-  <!-- ✅ Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- ✅ Tailwind Config -->
-  <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#ea6a1f",
-                        "primary-dark": "#c5520e",
-                        "background-light": "#f8f7f6",
-                        "background-dark": "#000000",
-                        "surface": "#0f0f0f",
-                    },
-                    fontFamily: {
-                        "display": ["Offside", "Space Grotesk", "sans-serif"],
-                        "body": ["Quicksand", "sans-serif"],
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "3xl": "3rem", "full": "9999px" },
-                    backgroundImage: {
-                        'gradient-metallic': 'linear-gradient(to right, #ea6a1f, #f9a825, #ea6a1f)',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'shine': 'shine 3s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        shine: {
-                            '0%': { backgroundPosition: '200% center' },
-                            '100%': { backgroundPosition: '-200% center' },
-                        }
-                    }
-                },
-            },
-        }
-    </script>
 
   <!-- ✅ Global Styles -->
   <style>
@@ -543,6 +502,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
+  <link rel="stylesheet" href="/css/index.css" />
 </head>
 
 <body class="bg-background-dark text-white font-body overflow-x-hidden selection:bg-primary selection:text-black">

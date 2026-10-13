@@ -99,54 +99,7 @@
       rel="stylesheet"
     />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#ea6a1f",
-              "primary-dark": "#c5520e",
-              "background-light": "#f8f7f6",
-              "background-dark": "#000000",
-              surface: "#0f0f0f",
-            },
-            fontFamily: {
-              display: ["Offside", "Space Grotesk", "sans-serif"],
-              body: ["Quicksand", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem",
-              lg: "1rem",
-              xl: "1.5rem",
-              "2xl": "2rem",
-              "3xl": "3rem",
-              full: "9999px",
-            },
-            backgroundImage: {
-              "gradient-metallic":
-                "linear-gradient(to right, #ea6a1f, #f9a825, #ea6a1f)",
-            },
-            animation: {
-              float: "float 6s ease-in-out infinite",
-              shine: "shine 3s linear infinite",
-            },
-            keyframes: {
-              float: {
-                "0%, 100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-20px)" },
-              },
-              shine: {
-                "0%": { backgroundPosition: "200% center" },
-                "100%": { backgroundPosition: "-200% center" },
-              },
-            },
-          },
-        },
-      };
-    </script>
 
     <style>
       ::-webkit-scrollbar {
@@ -209,6 +162,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
+  <link rel="stylesheet" href="/css/recruitment.css" />
 </head>
 
   <body

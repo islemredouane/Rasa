@@ -428,44 +428,7 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <!-- Tailwind config -->
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#ea6a1f",
-              "primary-dark": "#c5520e",
-              "background-dark": "#000000",
-              surface: "#0f0f0f",
-            },
-            fontFamily: {
-              display: ["Offside", "Space Grotesk", "sans-serif"],
-              body: ["Quicksand", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem",
-              lg: "1rem",
-              xl: "1.5rem",
-              "2xl": "2rem",
-              "3xl": "3rem",
-              full: "9999px",
-            },
-            keyframes: {
-              shine: {
-                "0%": { backgroundPosition: "200% center" },
-                "100%": { backgroundPosition: "-200% center" },
-              },
-            },
-            animation: { shine: "shine 4s linear infinite" },
-          },
-        },
-      };
-    </script>
 
     <style>
       ::-webkit-scrollbar {
@@ -587,6 +550,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
+  <link rel="stylesheet" href="/css/events.css" />
 </head>
 
   <body

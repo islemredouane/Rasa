@@ -3,12 +3,12 @@
 // Strategy
 //   Pages (navigations)        network first → saved copy → offline page
 //   Images                     cache first (kept to the most recent 150)
-//   Site JS / data / manifest  stale-while-revalidate
-//   Tailwind CDN, Google Fonts stale-while-revalidate (so the site still renders offline)
+//   Site CSS / JS / data       stale-while-revalidate (CSS precached for offline)
+//   Google Fonts               stale-while-revalidate (so the site still renders offline)
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-2026-10-13b";
+const VERSION = "rasa-2026-10-13c";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
@@ -30,6 +30,19 @@ const PRECACHE_URLS = [
   "/french",
   "/offline",
   "/manifest.webmanifest",
+  "/css/activities.css",
+  "/css/arabic.css",
+  "/css/art.css",
+  "/css/charity.css",
+  "/css/chess.css",
+  "/css/english.css",
+  "/css/events.css",
+  "/css/french.css",
+  "/css/index.css",
+  "/css/literature.css",
+  "/css/music.css",
+  "/css/noregistrations.css",
+  "/css/recruitment.css",
   "/js/mobile-nav.js",
   "/js/events.js",
   "/js/pwa.js",
@@ -41,7 +54,7 @@ const PRECACHE_URLS = [
   "/icons/apple-touch-icon.png",
 ];
 
-const CDN_HOSTS = ["cdn.tailwindcss.com", "fonts.googleapis.com", "fonts.gstatic.com"];
+const CDN_HOSTS = ["fonts.googleapis.com", "fonts.gstatic.com"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
