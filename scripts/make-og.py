@@ -1,80 +1,95 @@
-"""Generate the 1200x630 social preview images (Open Graph / Twitter cards).
+"""Render the social preview images (Open Graph / Twitter cards), one per page.
 
 Usage: python scripts/make-og.py
 
-Writes images/og/<name>.jpg. Each card: black background with an orange glow,
-the Rasa logo, a title and a subtitle; some cards add a photo on the right.
+Each card is scripts/og/card.html filled with the values below and rendered at 1200x630 with
+headless Chrome/Edge (real Offside/Quicksand fonts), then saved as images/og/<name>.jpg.
+The names are referenced from PAGES in scripts/build.mjs.
 """
+import shutil
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
+from urllib.parse import urlencode
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image
 
-W, H = 1200, 630
-ORANGE = (234, 106, 31)
-FONTS = Path(__file__).parent / "fonts"
-OUT = Path("images/og")
+ROOT = Path(__file__).resolve().parent.parent
+TEMPLATE = ROOT / "scripts" / "og" / "card.html"
+OUT = ROOT / "images" / "og"
 
 CARDS = {
-    "default": ("Rasa Club", "Cultural club of ESTIN Béjaïa", "Feel the emotion. Live the expression.", None),
-    "events": ("Events", "Rasa Club · ESTIN Béjaïa", "What's next and every moment we lived together", "images/events/upcoming/welcome-day-2026/cover.webp"),
-    "chess": ("Chess", "Rasa Club · ESTIN Béjaïa", "RASA Chess Cup 2026 · 24 players · 3 days", "images/chess-cup-2026/9.webp"),
-    "charity": ("Charity", "Rasa Club · ESTIN Béjaïa", "Small hands, big hearts", None),
-    "recruitment": ("Join the team", "Rasa Club · 2026/27", "Graphic designers · External relations", None),
+    "default": dict(title="Rasa Club", eyebrow="Cultural & artistic club · ESTIN Béjaïa",
+                    line="Feel the emotion. Live the expression.", img="images/rasa ai2.png", fit="contain",
+                    stat="11", statLabel="activities in 2025/26"),
+    "events": dict(title="Events", eyebrow="Rasa Club · ESTIN Béjaïa",
+                   line="What's coming next, and every moment we lived together.",
+                   img="images/events/2025-26/welcome-day/cover.webp", stat="11", statLabel="activities · 2025/26"),
+    "literature": dict(title="Literature Department", eyebrow="Rasa Club · Literature",
+                       line="Reading, book fairs, the Speaking Club and three libraries.",
+                       img="images/events/2025-26/sila/cover.webp"),
+    "english": dict(title="English Library", eyebrow="Rasa Club · Literature",
+                    line="Our English book picks, readable right in the browser.", img="images/harry potter.png"),
+    "french": dict(title="French Library", eyebrow="Rasa Club · Literature",
+                   line="Nos lectures en français, à lire directement sur le site.", img="images/peste.png"),
+    "arabic": dict(title="Arabic Library", eyebrow="Rasa Club · Literature",
+                   line="Our Arabic book picks, readable right in the browser.", img="images/Back to haifa.png"),
+    "art": dict(title="Art Department", eyebrow="Rasa Club · Art",
+                line="Drawing, painting and paper quilling by our members.",
+                img="images/photo_5782752836901866859_w.jpg"),
+    "music": dict(title="Music Department", eyebrow="Rasa Club · Music",
+                  line="Musical evenings, instruments and students who play together.",
+                  img="images/photo_6037583180832902927_y.jpg"),
+    "chess": dict(title="Chess Department", eyebrow="Rasa Club · Chess",
+                  line="Training, puzzles and the RASA Chess Cup.", img="images/chess-cup-2026/9.webp",
+                  stat="24", statLabel="players · Chess Cup 2026"),
+    "activities": dict(title="Activities Department", eyebrow="Rasa Club · Activities",
+                       line="Games, tournaments and fun moments beyond lectures.", img="images/IMG_1252.JPG"),
+    "charity": dict(title="Charity Department", eyebrow="Rasa Club · Charity",
+                    line="Small hands, big hearts: solidarity with accredited associations."),
+    "recruitment": dict(title="Join the core team", eyebrow="Recruitment · 2026/27",
+                        line="Graphic designers · External relations"),
 }
 
-
-def glow(size, center, radius, alpha):
-    layer = Image.new("RGBA", size, (0, 0, 0, 0))
-    ImageDraw.Draw(layer).ellipse(
-        (center[0] - radius, center[1] - radius, center[0] + radius, center[1] + radius), fill=ORANGE + (alpha,)
-    )
-    return layer.filter(ImageFilter.GaussianBlur(radius // 2))
-
-
-def card(title, subtitle, tagline, photo):
-    img = Image.new("RGBA", (W, H), (0, 0, 0, 255))
-    img.alpha_composite(glow((W, H), (200, 120), 260, 90))
-    img.alpha_composite(glow((W, H), (1100, 600), 200, 40))
-
-    text_right = W - 80
-    if photo:
-        ph = ImageOps.fit(ImageOps.exif_transpose(Image.open(photo)).convert("RGB"), (470, H), Image.LANCZOS)
-        mask = Image.new("L", (470, H), 255)
-        fade = Image.linear_gradient("L").rotate(90).resize((160, H))  # fade the photo's left edge into black
-        mask.paste(fade, (0, 0))
-        img.paste(ph, (W - 470, 0), mask)
-        text_right = W - 470
-
-    logo = Image.open("rasa-logo.png").convert("RGBA")
-    logo = logo.crop(logo.getbbox())
-    logo.thumbnail((110, 110), Image.LANCZOS)
-    img.alpha_composite(logo, (80, 70))
-
-    d = ImageDraw.Draw(img)
-    width = text_right - 80
-    size = 120
-    while size > 60:
-        f_title = ImageFont.truetype(str(FONTS / "Offside-Regular.ttf"), size)
-        if d.textlength(title, font=f_title) <= width:
-            break
-        size -= 4
-    f_sub = ImageFont.truetype(str(FONTS / "Quicksand-Bold.ttf"), 38)
-    f_tag = ImageFont.truetype(str(FONTS / "Quicksand-Bold.ttf"), 30)
-
-    d.text((80, 250), title, font=f_title, fill=(255, 255, 255))
-    d.text((80, 250 + size + 24), subtitle, font=f_sub, fill=ORANGE)
-    d.text((80, 250 + size + 84), tagline, font=f_tag, fill=(170, 170, 178))
-    d.rectangle((80, 560, 200, 566), fill=ORANGE)
-    d.text((220, 545), "rasa-off.vercel.app", font=f_tag, fill=(120, 120, 128))
-    return img.convert("RGB")
+CANDIDATES = [
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "google-chrome",
+    "chromium",
+]
 
 
-def main():
+def browser() -> str:
+    for c in CANDIDATES:
+        if Path(c).exists() or shutil.which(c):
+            return c
+    sys.exit("No Chrome/Edge found. Install one or edit CANDIDATES.")
+
+
+def render(name: str, params: dict) -> None:
+    url = TEMPLATE.as_uri() + "?" + urlencode(params)
+    with tempfile.TemporaryDirectory() as tmp:
+        png = Path(tmp) / "card.png"
+        subprocess.run(
+            [browser(), "--headless=new", f"--user-data-dir={Path(tmp) / 'profile'}", "--hide-scrollbars",
+             "--force-device-scale-factor=1", "--window-size=1200,630", "--virtual-time-budget=6000",
+             "--allow-file-access-from-files", f"--screenshot={png}", url],
+            check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120,
+        )
+        dest = OUT / f"{name}.jpg"
+        Image.open(png).convert("RGB").save(dest, "JPEG", quality=88, optimize=True, progressive=True)
+    print(f"{dest.relative_to(ROOT)}: {dest.stat().st_size // 1024} KB")
+
+
+def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, (title, subtitle, tagline, photo) in CARDS.items():
-        path = OUT / f"{name}.jpg"
-        card(title, subtitle, tagline, photo).save(path, "JPEG", quality=86, optimize=True, progressive=True)
-        print(f"{path}: {path.stat().st_size // 1024} KB")
+    only = set(sys.argv[1:])
+    for name, params in CARDS.items():
+        if not only or name in only:
+            render(name, params)
 
 
 if __name__ == "__main__":

@@ -238,15 +238,17 @@ soft glass surfaces and generous rounded shapes.
 
 | Area | How it works |
 |---|---|
-| **Metadata** | Every page has its own title and description, a canonical URL, robots rules, Open Graph and Twitter cards with branded 1200×630 images (`images/og/`). |
-| **Structured data** | JSON-LD on every page: `WebPage`, `BreadcrumbList`, and on the homepage `Organization` (the board as `OrganizationRole` members), `WebSite` and `FAQPage`; `/events` lists dated `Event`s in an `ItemList`. |
+| **Metadata** | Every page has its own title and description, a canonical URL, robots rules, author, and Open Graph / Twitter cards with its **own branded 1200×630 preview** (`images/og/`, rendered from `scripts/og/card.html` by `scripts/make-og.py`). Full favicon set: `favicon.ico`, 16/32 px PNG, 180 px touch icon. |
+| **Structured data** | JSON-LD on every page: `WebPage` (with its real last-modified date), `BreadcrumbList`; the homepage adds `Organization` (topics, area served, the board as `OrganizationRole` members), `WebSite` and `FAQPage`; `/events` lists dated `Event`s; each department page declares the department and its managers; libraries list every `Book` with author and language; `/chess` describes the RASA Chess Cup as a `SportsEvent`. |
 | **Pre-rendered content** | Events are written into the HTML at build time, so crawlers that don't run JavaScript still read them. |
 | **Visible FAQ** | Nine questions on the homepage, generated from the same source as the `FAQPage` schema. |
-| **Sitemap** | `sitemap.xml` lists the 12 indexable pages; `/noregistrations` and `/offline` are `noindex`. |
-| **robots.txt** | Everything is crawlable except `/api/` and `/offline`; AI assistants (GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended) are welcome. |
-| **llms.txt** | [`llms.txt`](https://rasa-off.vercel.app/llms.txt) describes the club, the pages, the board, the events and the FAQ for AI assistants ([llmstxt.org](https://llmstxt.org)). |
+| **Sitemap** | `sitemap.xml` lists the 12 indexable pages with their **last git commit date** and an **image sitemap** of each page's photos; `/noregistrations`, `/offline` and the 404 page are `noindex`. |
+| **robots.txt** | *Answers yes, training no*: search engines and AI assistants are welcome; crawlers that only collect AI training data are blocked. `/api/` is not crawled. |
+| **llms.txt** | [`llms.txt`](https://rasa-off.vercel.app/llms.txt) (short index) and [`llms-full.txt`](https://rasa-off.vercel.app/llms-full.txt) (full guide: board, every event, Chess Cup results, library catalogue, FAQ) for AI assistants ([llmstxt.org](https://llmstxt.org)). |
 | **Clean URLs** | `/events`, not `/events.html`. Old addresses answer `308` redirects so shared links keep working. |
 | **Images** | Descriptive `alt` text everywhere; photos compressed to WebP. |
+| **Security** | `nosniff`, `SAMEORIGIN` framing, strict referrer and a locked-down `Permissions-Policy` on every response (HSTS from Vercel). |
+| **404** | A branded `404.html` with links back into the site, served for any unknown URL. |
 
 </details>
 
@@ -260,10 +262,10 @@ soft glass surfaces and generous rounded shapes.
 
 | Asset | How it's cached |
 |---|---|
-| HTML pages | Always revalidated by the browser, so new content shows at once; the service worker fetches them network-first |
-| CSS, JS, data | Precached by the service worker and refreshed in the background (stale-while-revalidate) |
-| Images | Cached by the service worker on first view (cache-first, up to 150) |
-| App icons | 7 days (`vercel.json`) |
+| HTML pages | Always revalidated, so new content shows at once; the service worker fetches them network-first |
+| CSS, JS, data | **1 year, `immutable`**: links carry `?v=<content hash>` (written by `scripts/build.mjs`), so a change gets a new URL |
+| Images, icons | 7 days, then refreshed in the background (up to 30 days); cache-first in the service worker (up to 150) |
+| `robots.txt`, `sitemap.xml`, `llms*.txt` | 1 hour, then refreshed in the background |
 | `sw.js`, manifest | Never cached, so updates reach every visitor |
 
 The **service worker** (`sw.js`) precaches every page, stylesheet and script, so the site opens instantly on repeat
@@ -271,8 +273,8 @@ visits and keeps working without a connection; pages it hasn't seen fall back to
 `/api/` and form submissions are never touched.
 
 > [!TIP]
-> When you ship a change, bump **`VERSION`** in `sw.js`. Installed apps then drop their old caches and fetch
-> the new files on the next visit.
+> No manual cache-busting: `node scripts/build.mjs` versions every CSS/JS link and sets the service worker's
+> **`VERSION`** from the content it precaches, so installed apps update by themselves after each deploy.
 
 <br>
 
@@ -296,7 +298,7 @@ python scripts/serve.py
 
 ```bash
 node scripts/build-css.mjs        # after changing Tailwind classes in a page, js/ or data/
-node scripts/build.mjs            # after editing events, the board, the FAQ or a page title/description
+node scripts/build.mjs            # always last: SEO, JSON-LD, versions, sitemap, llms files
 ```
 
 **Deploy**: push to **`main`**. Vercel publishes it automatically. The contact function needs two environment
@@ -315,7 +317,7 @@ variables in Vercel → Settings → Environment Variables: `EMAIL_USER` (the Gm
 | **Board photos** | `python scripts/optimize-board.py "<source folder>" images/board-2026-27` (600×600 WebP, face-safe crop). |
 | **FAQ** | Edit `FAQ` in `scripts/build.mjs`, then run it. |
 | **Heavy images** | `python scripts/compress-in-place.py 300 1600 <files>` (same names, smaller files). |
-| **Share images / app icons** | `python scripts/make-og.py` · `python scripts/make-icons.py` |
+| **Share images / app icons** | `python scripts/make-og.py` (cards defined in the script) · `python scripts/make-icons.py` (also `favicon.ico`) |
 
 > Edited an original photo? The site never reads the source folders, so re-run the matching script.
 
@@ -329,7 +331,7 @@ variables in Vercel → Settings → Environment Variables: `EMAIL_USER` (the Gm
 2. Give it its own `<title>` and `<meta name="description">`.
 3. Create `tailwind/<page>.config.cjs` (copy a sibling) and run `node scripts/build-css.mjs`; link `/css/<page>.css`.
 4. Add it to `PAGES` in `scripts/build.mjs` (route, share image, breadcrumb) and run the build.
-5. Add it to the precache list in `sw.js` and bump `VERSION`.
+5. Add it to the precache list in `sw.js` (the version is updated by the build).
 6. Link to it with a real `<a href="/page">`. If it's a department, add it to `DEPARTMENTS` in `js/mobile-nav.js`.
 
 </details>

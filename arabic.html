@@ -6,8 +6,10 @@
     <title>Arabic Library | Rasa</title>
     <meta name="description" content="Arabic books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/png" href="/rasa-favicon.png" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,26 +18,31 @@
     <!-- seo:start -->
     <link rel="canonical" href="https://rasa-off.vercel.app/arabic" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://rasa-off.vercel.app/arabic" />
     <meta property="og:title" content="Arabic Library | Rasa" />
     <meta property="og:description" content="Arabic books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/arabic.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="Arabic Library | Rasa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Arabic Library | Rasa" />
     <meta name="twitter:description" content="Arabic books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/arabic.jpg" />
+    <meta name="twitter:image:alt" content="Arabic Library | Rasa" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "@id": "https://rasa-off.vercel.app/arabic#webpage",
       "url": "https://rasa-off.vercel.app/arabic",
       "name": "Arabic Library | Rasa",
@@ -49,7 +56,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://rasa-off.vercel.app/images/og/default.jpg",
+        "url": "https://rasa-off.vercel.app/images/og/arabic.jpg",
         "width": 1200,
         "height": 630
       },
@@ -86,6 +93,122 @@
           "position": 3,
           "name": "Arabic Library",
           "item": "https://rasa-off.vercel.app/arabic"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://rasa-off.vercel.app/arabic#books",
+      "name": "Arabic Library | Rasa",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Book",
+            "name": "أرسس",
+            "author": {
+              "@type": "Person",
+              "name": "أحمد آل حمدان"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/arses.png",
+            "url": "https://drive.google.com/file/d/1Ozg6q6CeUmtvEkiMKeQbdEqe1oLeh2QT/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Book",
+            "name": "الجريمة والعقاب",
+            "author": {
+              "@type": "Person",
+              "name": "فيودور دوستويفسكي"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/crime.png",
+            "url": "https://drive.google.com/file/d/1PLwitUq-4d1dnwAFaitcUNTi-qnlsDGg/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "عائد إلى حيفا",
+            "author": {
+              "@type": "Person",
+              "name": "غسان كنفاني"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/Back%20to%20haifa.png",
+            "url": "https://drive.google.com/file/d/1N7NFoY2ONwnoF_MTWrE6IK1-_0XqX8lt/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Book",
+            "name": "في قلبي أنثى عبرية",
+            "author": {
+              "@type": "Person",
+              "name": "خولة حمدي"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/Fem.png",
+            "url": "https://drive.google.com/file/d/1AtUlkc3kK1sfQfiEn0eu_8seeXrxQHvO/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Book",
+            "name": "ليطمئن قلبي",
+            "author": {
+              "@type": "Person",
+              "name": "أدهم شرقاوي"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/Heart.png",
+            "url": "https://drive.google.com/file/d/1EJRLMFvZV9-UJj50xIDz033gs15kU3yP/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Book",
+            "name": "مقتل طالبة مدرسة",
+            "author": {
+              "@type": "Person",
+              "name": "جوانا كامبل سلان"
+            },
+            "inLanguage": "ar",
+            "image": "https://rasa-off.vercel.app/images/killed%20student.png",
+            "url": "https://drive.google.com/file/d/1KREYsxyCrikgVR0J3itJpxJAHJeRe3ry/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
         }
       ]
     }
@@ -238,7 +361,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/arabic.css" />
+  <link rel="stylesheet" href="/css/arabic.css?v=0f9b8411ce" />
 </head>
 
   <body
@@ -985,9 +1108,9 @@
         update();
       })();
     </script>
-    <script src="/js/mobile-nav.js" defer></script>
-    <script src="/js/pwa.js" defer></script>
-    <script src="/js/book-reader.js" defer></script>
+    <script src="/js/mobile-nav.js?v=52cdcfac26" defer></script>
+    <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
+    <script src="/js/book-reader.js?v=8e908f0860" defer></script>
 </body>
 </html>
 

@@ -6,8 +6,10 @@
     <title>Literature Department | Rasa</title>
     <meta name="description" content="Rasa's Literature Department at ESTIN Béjaïa: reading, book fairs, the Speaking Club and our English, French and Arabic libraries." />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/png" href="/rasa-favicon.png" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,20 +18,25 @@
     <!-- seo:start -->
     <link rel="canonical" href="https://rasa-off.vercel.app/literature" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://rasa-off.vercel.app/literature" />
     <meta property="og:title" content="Literature Department | Rasa" />
     <meta property="og:description" content="Rasa's Literature Department at ESTIN Béjaïa: reading, book fairs, the Speaking Club and our English, French and Arabic libraries." />
-    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/literature.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="Literature Department | Rasa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Literature Department | Rasa" />
     <meta name="twitter:description" content="Rasa's Literature Department at ESTIN Béjaïa: reading, book fairs, the Speaking Club and our English, French and Arabic libraries." />
-    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/literature.jpg" />
+    <meta name="twitter:image:alt" content="Literature Department | Rasa" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +56,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://rasa-off.vercel.app/images/og/default.jpg",
+        "url": "https://rasa-off.vercel.app/images/og/literature.jpg",
         "width": 1200,
         "height": 630
       },
@@ -80,6 +87,35 @@
           "position": 2,
           "name": "Literature",
           "item": "https://rasa-off.vercel.app/literature"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://rasa-off.vercel.app/literature#department",
+      "name": "Rasa Literature Department",
+      "url": "https://rasa-off.vercel.app/literature",
+      "parentOrganization": {
+        "@id": "https://rasa-off.vercel.app/#organization"
+      },
+      "member": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Literature Department Manager",
+          "startDate": "2026",
+          "member": {
+            "@type": "Person",
+            "name": "Abid Khalida"
+          }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Literature Department Manager",
+          "startDate": "2026",
+          "member": {
+            "@type": "Person",
+            "name": "Sawsen Aouzellag"
+          }
         }
       ]
     }
@@ -171,7 +207,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/literature.css" />
+  <link rel="stylesheet" href="/css/literature.css?v=376b4f8b4c" />
 </head>
 
   <body
@@ -720,8 +756,8 @@
         });
       }
     </script>
-    <script src="/js/mobile-nav.js" defer></script>
-    <script src="/js/pwa.js" defer></script>
+    <script src="/js/mobile-nav.js?v=52cdcfac26" defer></script>
+    <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
 </body>
 </html>
 

@@ -1,75 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rasa-off.vercel.app/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/default.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/rasa%20ai2.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782932869046012688_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6019345169142368144_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/IMG_1218.JPG</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902926_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/9.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902927_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902928_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902929_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902930_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/1.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5776219620414000289_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5778383442117594544_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5776131642303909249_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5776131642303909250_x.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5778383442117594545_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/10.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5776131642303909251_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_6037583180832902925_y.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/IMG_1235.JPG</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/IMG_1252.JPG</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/4.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/IMG_1302.JPG</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/upcoming/welcome-day-2026/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/welcome-day/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/tikjda/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/kernou-abdellah.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zamoum-chemseddine.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/slimani-sabrina.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/redouane-mohamed-islem.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/abid-khalida.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/sawsen-aouzellag.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/benhaoua-boualam.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/banahcen-mohamed-ishak.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zemali-boudjemaa.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/dr-salim-benslimane.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zekagh-ishak.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/adam-bouakkache.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/belgacem-nourhane.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/bekhouche-ahmed-ziad.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/hamdi-adem.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/hocine-thiziri.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zaidi-yanis.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/benkahla-redouane.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/bendjama-fadi.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/arbouche-feriel.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/youcef.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/lyamine.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/maya.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/hamza.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chelouah.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/mazit.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/alicia.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/kenza.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/sofia.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/rayane.JPG</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Hana.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/rahim.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/ahmed.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/events</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/events.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/upcoming/welcome-day-2026/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/welcome-day/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/movie-night/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/sila/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/1-november/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/speaking-club/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/yennayer/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/movie-night-2/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/qa3da-musicale/cover.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/9.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/events/2025-26/tikjda/cover.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/literature</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/literature.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/abid-khalida.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/sawsen-aouzellag.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/arabic</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/arabic.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/arses.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/crime.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Back%20to%20haifa.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Fem.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Heart.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/killed%20student.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/english</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/english.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/harry%20potter.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Orwell.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/Midnight%20library.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/were%20none.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/ASH.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/french</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/french.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/AC.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/AL.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/peste.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/MF.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/nuitsblanches.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/etranger.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/m%C3%A9tamorphose.png</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/L'Alchimiste.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/art</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/art.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/benhaoua-boualam.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/banahcen-mohamed-ishak.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866853_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866855_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866857_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866856_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866858_w.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/photo_5782752836901866860_w.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/music</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/music.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/mandolin.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/darbuka.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/flute.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zemali-boudjemaa.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/chess</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/chess.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/dr-salim-benslimane.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zekagh-ishak.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/winner-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/winner-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/winner-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/11.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/1.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/2.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/3.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/4.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/5.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/6.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/7.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/8.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/10.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/chess-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/chess-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/img-5663.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/img-5664.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/img-5665.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/img-5670.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/img-5675.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/chess-cup-2026/9.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/activities</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/activities.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/bekhouche-ahmed-ziad.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/hamdi-adem.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/charity</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/charity.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/belgacem-nourhane.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/adam-bouakkache.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/recruitment</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/og/recruitment.jpg</image:loc></image:image>
   </url>
 </urlset>

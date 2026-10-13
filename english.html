@@ -6,8 +6,10 @@
     <title>English Library | Rasa</title>
     <meta name="description" content="English books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/png" href="/rasa-favicon.png" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,26 +18,31 @@
     <!-- seo:start -->
     <link rel="canonical" href="https://rasa-off.vercel.app/english" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="Rasa Club" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Rasa Club" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://rasa-off.vercel.app/english" />
     <meta property="og:title" content="English Library | Rasa" />
     <meta property="og:description" content="English books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta property="og:image" content="https://rasa-off.vercel.app/images/og/english.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="English Library | Rasa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="English Library | Rasa" />
     <meta name="twitter:description" content="English books recommended by Rasa's Literature Department at ESTIN Béjaïa." />
-    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/default.jpg" />
+    <meta name="twitter:image" content="https://rasa-off.vercel.app/images/og/english.jpg" />
+    <meta name="twitter:image:alt" content="English Library | Rasa" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "@id": "https://rasa-off.vercel.app/english#webpage",
       "url": "https://rasa-off.vercel.app/english",
       "name": "English Library | Rasa",
@@ -49,7 +56,7 @@
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://rasa-off.vercel.app/images/og/default.jpg",
+        "url": "https://rasa-off.vercel.app/images/og/english.jpg",
         "width": 1200,
         "height": 630
       },
@@ -86,6 +93,121 @@
           "position": 3,
           "name": "English Library",
           "item": "https://rasa-off.vercel.app/english"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://rasa-off.vercel.app/english#books",
+      "name": "English Library | Rasa",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Book",
+            "name": "Harry potter",
+            "author": {
+              "@type": "Person",
+              "name": "J.K.Rowling"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.app/images/harry%20potter.png",
+            "url": "https://drive.google.com/file/d/1INm3i77fkqRAw8_5ccqHV7YmeZJ8s3H3/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Book",
+            "name": "1984",
+            "author": {
+              "@type": "Person",
+              "name": "George Orwell"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.app/images/Orwell.png",
+            "url": "https://drive.google.com/file/d/1ZYp2GTfTqrVPI54kJbIKy35koFrWew63/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "The Midnight Library",
+            "author": {
+              "@type": "Person",
+              "name": "Matt Haig"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.app/images/Midnight%20library.png",
+            "url": "https://drive.google.com/file/d/1s0BSypwX-K4WF5SOFmbtuG9zpdkSgip6/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Book",
+            "name": "And Then There Were None",
+            "author": {
+              "@type": "Person",
+              "name": "Agatha Christie"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.app/images/were%20none.png",
+            "url": "https://drive.google.com/file/d/1nPv5Hjopq-STQtalop72x-q109fyORTX/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Book",
+            "name": "The Adventures of Sherlock Holmes",
+            "author": {
+              "@type": "Person",
+              "name": "Arthur Conan Doyle"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.app/images/ASH.png",
+            "url": "https://drive.google.com/file/d/1W5P5eUU-yZe9Mfh6S7Tc2ln7UvNVXaPf/view",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Book",
+            "name": "Book Title 6",
+            "author": {
+              "@type": "Person",
+              "name": "Author Name"
+            },
+            "inLanguage": "en",
+            "image": "https://rasa-off.vercel.apphttps://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+            "provider": {
+              "@id": "https://rasa-off.vercel.app/#organization"
+            }
+          }
         }
       ]
     }
@@ -235,7 +357,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/english.css" />
+  <link rel="stylesheet" href="/css/english.css?v=78dc409ff1" />
 </head>
 
   <body
@@ -768,9 +890,9 @@
         update();
       })();
     </script>
-    <script src="/js/mobile-nav.js" defer></script>
-    <script src="/js/pwa.js" defer></script>
-    <script src="/js/book-reader.js" defer></script>
+    <script src="/js/mobile-nav.js?v=52cdcfac26" defer></script>
+    <script src="/js/pwa.js?v=1ccf834cdb" defer></script>
+    <script src="/js/book-reader.js?v=8e908f0860" defer></script>
 </body>
 </html>
 

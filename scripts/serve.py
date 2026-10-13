@@ -53,6 +53,20 @@ class Handler(SimpleHTTPRequestHandler):
                 self.path = path + ".html" + query
         return super().do_GET()
 
+    def send_error(self, code, message=None, explain=None):
+        # Like Vercel: unknown URLs get the branded 404.html (with a 404 status)
+        page = ROOT / "404.html"
+        if code == 404 and page.is_file():
+            body = page.read_bytes()
+            self.send_response(404)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return
+        super().send_error(code, message, explain)
+
     def end_headers(self):
         if self.path.split("?")[0].endswith(("sw.js", ".webmanifest")):
             self.send_header("Cache-Control", "no-cache")
