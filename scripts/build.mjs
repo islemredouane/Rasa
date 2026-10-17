@@ -386,15 +386,15 @@ function faqSection() {
           </details>`
   ).join("");
   return `
-  <div class="pt-12 pb-12 md:pt-16 md:pb-16 relative bg-black scroll-mt-20" id="faq">
+  <div class="py-12 md:py-16 relative bg-black scroll-mt-20" id="faq">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4 flex items-center justify-center gap-3">
+        <h2 class="text-sm font-bold text-primary tracking-[0.2em] uppercase mb-3 md:mb-4 flex items-center justify-center gap-3">
           <span class="h-px w-8 bg-primary"></span>
           Good to know
           <span class="h-px w-8 bg-primary"></span>
         </h2>
-        <p class="text-4xl md:text-5xl font-display font-bold text-white text-center mb-12">Frequently asked questions</p>
+        <p class="text-4xl md:text-5xl font-display font-bold text-white text-center mb-8 md:mb-10">Frequently asked questions</p>
         <div class="space-y-4">${items}
         </div>
       </div>
@@ -629,7 +629,7 @@ ${DEPARTMENTS.map(([name, p]) => {
   const m = byDept(d);
   return `- [${name}](${url(p)})${m.length ? `: managers ${m.join(", ")}` : ""}`;
 }).join("\n")}
-- Support teams: Multimedia (${byDept("Multimedia").join(", ")}), Communication (${byDept("Communication").join(", ")}), Logistics (${byDept("Logistics").join(", ")}), Human Resources (${byDept("Human Resources").join(", ")})
+- Support teams: Multimedia (${byDept("Multimedia").join(", ")})${byDept("Graphic Design").length ? `, Graphic Design (${byDept("Graphic Design").join(", ")})` : ""}, Communication (${byDept("Communication").join(", ")}), Logistics (${byDept("Logistics").join(", ")}), Human Resources (${byDept("Human Resources").join(", ")})
 
 ## Board 2026/27
 

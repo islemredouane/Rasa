@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rasa-off.vercel.app/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://rasa-off.vercel.app/images/og/default.jpg</image:loc></image:image>
@@ -49,6 +49,7 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/hamdi-adem.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/hocine-thiziri.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/zaidi-yanis.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/mehtour-abderrahman.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/benkahla-redouane.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/bendjama-fadi.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/board-2026-27/arbouche-feriel.webp</image:loc></image:image>
@@ -64,7 +65,6 @@
     <image:image><image:loc>https://rasa-off.vercel.app/images/rayane.JPG</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/Hana.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa-off.vercel.app/images/rahim.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa-off.vercel.app/images/ahmed.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa-off.vercel.app/events</loc>
