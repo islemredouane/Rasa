@@ -11,6 +11,7 @@
 //   stat      optional highlight, e.g. "24 players"
 //   cover     optional photo path; leave null until a photo exists
 //   coverFit  optional "contain" to show the whole image (logos, mascot) instead of cropping
+//   coverPosition optional object-position, e.g. "center 20%"
 //   link      optional { href, label } to a page or Instagram post
 //   highlight true = shown on the homepage (keep it to 3 per season)
 //   start/end machine-readable date for search engines: "2026-02", "2026-02-15" or "2026-02-12T20:30:00+01:00"
@@ -32,7 +33,8 @@ window.RASA_EVENTS = {
       icon: "waving_hand",
       summary:
         "You're invited to our Welcome Day: meet the 2026/27 board, discover every department, enjoy games and performances, and find your place in the Rasa community.",
-      cover: "/images/events/upcoming/welcome-day-2026/cover.webp",
+      cover: "/images/events/upcoming/welcome-day-2026/welcome-day-poster.webp",
+      coverPosition: "center 20%",
       link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow on Instagram" },
     },
   ],
