@@ -68,8 +68,9 @@ class Handler(SimpleHTTPRequestHandler):
         super().send_error(code, message, explain)
 
     def end_headers(self):
-        if self.path.split("?")[0].endswith(("sw.js", ".webmanifest")):
-            self.send_header("Cache-Control", "no-cache")
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
         super().end_headers()
 
 
