@@ -55,7 +55,7 @@ window.RASA_EVENTS = {
           icon: "waving_hand",
           summary:
             "Our first contact with the new students: every department presented, social games and new members recruited.",
-          stat: "659 likes on the reel",
+          stat: "659 likes on the video",
           cover: "/images/events/2025-26/welcome-day/cover.webp",
           link: { href: "https://www.instagram.com/rasa.estin/reel/DP4PbizDB-x/", label: "Watch reel" },
           highlight: true,
@@ -70,9 +70,7 @@ window.RASA_EVENTS = {
           icon: "movie",
           summary:
             "A horror film chosen by the students themselves in an Instagram poll, to breathe before exam season.",
-          stat: "572 likes on the reel",
           cover: "/images/events/2025-26/movie-night/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DP62-8-jE31/", label: "Watch reel" },
         },
         {
           id: "sila",
@@ -84,9 +82,7 @@ window.RASA_EVENTS = {
           icon: "menu_book",
           summary:
             "A cultural trip to SILA: visiting the stands, meeting authors and publishers, and bringing books home.",
-          stat: "509 likes on the reel",
           cover: "/images/events/2025-26/sila/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DPwWIEAjG9P/", label: "Watch reel" },
         },
         {
           id: "1-november",
@@ -98,9 +94,7 @@ window.RASA_EVENTS = {
           icon: "flag",
           summary:
             "Speeches on the meaning of the Revolution of 1 November 1954 and heritage music, in a solemn atmosphere.",
-          stat: "367 likes on the reel",
           cover: "/images/events/2025-26/1-november/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DPzRFesDD8u/", label: "Watch reel" },
         },
         {
           id: "speaking-club",
@@ -113,9 +107,7 @@ window.RASA_EVENTS = {
           icon: "record_voice_over",
           summary:
             "Guided discussions in English and French to build confidence, communication and public speaking.",
-          stat: "337 likes on the reel",
           cover: "/images/events/2025-26/speaking-club/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DQHedlBDPvf/", label: "Watch reel" },
         },
         {
           id: "yennayer",
@@ -127,9 +119,7 @@ window.RASA_EVENTS = {
           icon: "festival",
           summary:
             "Tifinagh workshop, “Guess the Word” in Tamazight, a Yennayer quiz, traditional Kabyle dishes and clothes, and music.",
-          stat: "408 likes on the reel",
           cover: "/images/events/2025-26/yennayer/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DecfxCXsb4b/", label: "Watch reel" },
         },
         {
           id: "movie-night-2",
@@ -140,9 +130,7 @@ window.RASA_EVENTS = {
           tags: ["Relaxation"],
           icon: "movie",
           summary: "A second movie night, with Dune: Part One on the big screen.",
-          stat: "219 likes on the reel",
           cover: "/images/events/2025-26/movie-night-2/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DZX3TzcsS0u/", label: "Watch reel" },
         },
         {
           id: "qa3da-musicale",
@@ -153,9 +141,7 @@ window.RASA_EVENTS = {
           tags: ["Music", "with LDC"],
           icon: "music_note",
           summary: "An open musical evening in our room to decompress after a heavy week.",
-          stat: "206 likes on the reel",
           cover: "/images/events/2025-26/qa3da-musicale/cover.webp",
-          link: { href: "https://www.instagram.com/rasa.estin/reel/DUyIMw7DByJ/", label: "Watch reel" },
         },
         {
           id: "chess-cup",
@@ -182,7 +168,7 @@ window.RASA_EVENTS = {
           tags: ["Outing", "Sinay Travel · Orca club"],
           icon: "landscape",
           summary: "Discovering the Djurdjura mountains together, with the support of Sinay Travel and the Orca club.",
-          stat: "656 likes on the reel",
+          stat: "656 likes on the video",
           cover: "/images/events/2025-26/tikjda/cover.webp",
           link: { href: "https://www.instagram.com/rasa.estin/reel/DW_1HyADGjc/", label: "Watch reel" },
           highlight: true,
@@ -198,7 +184,6 @@ window.RASA_EVENTS = {
           summary:
             "Ramadan, 8 March and Eid el-Fitr wishes, and a retrospective video thanking every member of the team.",
           cover: null,
-          link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow on Instagram" },
         },
       ],
     },
