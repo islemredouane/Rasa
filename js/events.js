@@ -27,9 +27,10 @@
     const fallback = `<span data-fallback class="material-symbols-outlined text-primary/70 ${sizeClass}">${esc(e.icon || "event")}</span>`;
     // "contain" images (logos, mascot on black) blend into the card instead of showing a dark box
     const fit = e.coverFit === "contain" ? "object-contain p-4 mix-blend-lighten" : "object-cover";
+    const pos = e.coverPosition ? ` style="object-position: ${esc(e.coverPosition)}"` : "";
     const img = e.cover
       ? `<img src="${esc(e.cover)}" alt="${esc(e.title)}" loading="lazy" decoding="async"
-           class="absolute inset-0 w-full h-full ${fit} transition-transform duration-700 group-hover:scale-105"
+           class="absolute inset-0 w-full h-full ${fit} transition-transform duration-700 group-hover:scale-105"${pos}
            onload="this.parentElement.querySelector('[data-fallback]')?.remove()"
            onerror="this.remove()"/>`
       : "";
