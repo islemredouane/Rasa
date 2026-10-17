@@ -24,15 +24,16 @@ window.RASA_EVENTS = {
   upcoming: [
     {
       id: "welcome-day-2026",
+      start: "2026-10-19T16:30:00+01:00",
       title: "RASA's Welcome Day",
-      date: "Date coming soon",
-      place: "ESTIN, Amizour",
-      tags: ["All departments"],
+      date: "Monday 19 Oct 2026 · 16:30",
+      place: "Salle de théâtre, ESTIN",
+      tags: ["All departments", "Welcome Day"],
       icon: "waving_hand",
       summary:
-        "Our welcome day for the new students: meet the 2026/27 board, discover every department and find your place in the club. ROSO is waiting for you!",
+        "You're invited to our Welcome Day: meet the 2026/27 board, discover every department, enjoy games and performances, and find your place in the Rasa community.",
       cover: "/images/events/upcoming/welcome-day-2026/cover.webp",
-      link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow for the date" },
+      link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow on Instagram" },
     },
   ],
 
