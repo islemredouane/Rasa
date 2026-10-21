@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/join", "destination": "/registrations", "permanent": false },
     { "source": "/gaming", "destination": "/activities", "permanent": true },
     { "source": "/gaming.html", "destination": "/activities", "permanent": true },
     { "source": "/frensh", "destination": "/literature/french", "permanent": true },

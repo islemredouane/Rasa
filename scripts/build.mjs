@@ -37,7 +37,9 @@ const PAGES = [
   { file: "chess.html", path: "/chess", og: "chess", dept: "Chess", crumbs: [["Chess", "/chess"]] },
   { file: "activities.html", path: "/activities", og: "activities", dept: "Activities", crumbs: [["Activities", "/activities"]] },
   { file: "charity.html", path: "/charity", og: "charity", dept: "Charity", crumbs: [["Charity", "/charity"]] },
-  { file: "recruitment.html", path: "/recruitment", og: "recruitment", crumbs: [["Join the Core Team", "/recruitment"]] },
+  { file: "registrations.html", path: "/registrations", og: "registrations", crumbs: [["Register", "/registrations"]] },
+  // old core-team page: kept as it was, but no longer linked from the site or listed in the sitemap
+  { file: "recruitment.html", path: "/recruitment", og: "recruitment", noindex: true },
   { file: "noregistrations.html", path: "/noregistrations", og: "default", noindex: true },
 ];
 // Pages outside PAGES that still get versioned asset links.
@@ -142,7 +144,7 @@ const FAQ = [
   ],
   [
     "How can I join Rasa?",
-    `Follow <a href="https://www.instagram.com/rasa.estin/" target="_blank" rel="noopener">@rasa.estin</a> on Instagram for every call. For 2026/27 the club is recruiting graphic designers and an external relations member for its core team: <a href="/recruitment">apply here</a>.`,
+    `Follow <a href="https://www.instagram.com/rasa.estin/" target="_blank" rel="noopener">@rasa.estin</a> on Instagram for every call. Registrations for 2026/27 are open to all ESTIN students: <a href="/registrations">register here</a>.`,
   ],
   [
     "What does Rasa's Charity Department do?",
@@ -582,7 +584,7 @@ Rasa was created by students to ease the pressure of studies with a space for li
 - [Chess](${SITE}/chess): training and the RASA Chess Cup
 - [Activities](${SITE}/activities): games and tournaments
 - [Charity](${SITE}/charity): solidarity campaigns with accredited associations
-- [Join the core team](${SITE}/recruitment): open positions for 2026/27
+- [Register](${SITE}/registrations): join Rasa Club 2026/27 and pick a department
 
 ## Board 2026/27
 

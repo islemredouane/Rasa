@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -50,6 +51,8 @@ CARDS = {
                     line="Small hands, big hearts: solidarity with accredited associations."),
     "recruitment": dict(title="Join the core team", eyebrow="Recruitment · 2026/27",
                         line="Graphic designers · External relations"),
+    "registrations": dict(title="Join Rasa Club", eyebrow="Registrations open · 2026/27",
+                          line="Pick your department and register in under a minute."),
 }
 
 CANDIDATES = [
@@ -74,11 +77,17 @@ def render(name: str, params: dict) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         png = Path(tmp) / "card.png"
         subprocess.run(
-            [browser(), "--headless=new", f"--user-data-dir={Path(tmp) / 'profile'}", "--hide-scrollbars",
+            [browser(), "--headless=new", "--disable-gpu", f"--user-data-dir={Path(tmp) / 'profile'}", "--hide-scrollbars",
              "--force-device-scale-factor=1", "--window-size=1200,630", "--virtual-time-budget=6000",
              "--allow-file-access-from-files", f"--screenshot={png}", url],
             check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120,
         )
+        # the browser can exit before the screenshot file is fully written: wait for it
+        for _ in range(60):
+            if png.exists() and png.stat().st_size > 0:
+                time.sleep(0.3)
+                break
+            time.sleep(0.5)
         dest = OUT / f"{name}.jpg"
         Image.open(png).convert("RGB").save(dest, "JPEG", quality=88, optimize=True, progressive=True)
     print(f"{dest.relative_to(ROOT)}: {dest.stat().st_size // 1024} KB")

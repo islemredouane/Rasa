@@ -86,10 +86,11 @@ Solidarity campaigns with accredited associations, starting with children with c
 and the ways students can help. Rasa never collects money online.<br>
 <sub>`/charity`</sub>
 
-### 🙋 Recruitment
-Open core-team positions for 2026/27 with a one-tap application form.
-The **Register** button switches to `/noregistrations` when nothing is open.<br>
-<sub>`/recruitment` · `/noregistrations`</sub>
+### 🙋 Registration
+Member registration for 2026/27: the seven departments, how it works and a one-tap Google Form.
+The **Register** button points to `/registrations` (short link `/join`) and switches to `/noregistrations` when nothing is open.
+The earlier core-team page `/recruitment` is kept as it was but is no longer linked.<br>
+<sub>`/registrations` · `/join` · `/noregistrations` · `/recruitment`</sub>
 
 ### 📱 App experience
 Installable PWA with shortcuts, offline pages, a phone bottom bar with a sliding highlight,
