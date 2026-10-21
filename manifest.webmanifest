@@ -80,10 +80,10 @@
       ]
     },
     {
-      "name": "Join the core team",
-      "short_name": "Join",
-      "description": "Open positions in the 2026/27 core team",
-      "url": "/recruitment",
+      "name": "Register for Rasa Club",
+      "short_name": "Register",
+      "description": "Join Rasa Club 2026/27 and pick your department",
+      "url": "/registrations",
       "icons": [
         {
           "src": "/icons/icon-192.png",
