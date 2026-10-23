@@ -363,7 +363,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/arabic.css?v=74dc32fe74" />
+  <link rel="stylesheet" href="/css/arabic.css?v=2f399535f1" />
 </head>
 
   <body
@@ -928,7 +928,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-black pt-16 pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-16 text-sm">
+    <footer class="border-t border-white/5 bg-black pt-16 pb-[calc(6.5rem+env(safe-area-inset-bottom))] md:pb-16 text-sm">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="flex flex-col md:flex-row justify-between items-center gap-8"
@@ -997,22 +997,22 @@
     </footer>
 
     <!-- Mobile bottom navigation -->
-    <div class="glass-panel rounded-[32px] bg-black/75 fixed left-1/2 -translate-x-1/2 bottom-[calc(0.75rem+env(safe-area-inset-bottom))] w-[calc(100%-2rem)] max-w-[22rem] z-50 md:hidden shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
-      <div data-nav-row class="relative flex items-center max-w-sm mx-auto px-2 py-2">
-        <span data-nav-pill aria-hidden="true" class="absolute left-0 top-2 bottom-2 rounded-[28px] bg-white/10 border border-white/10 opacity-0 transition-[transform,width,opacity] duration-300 ease-out"></span>
-        <a href="/" data-nav="home" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+    <div class="glass-panel rounded-full fixed left-1/2 -translate-x-1/2 bottom-[calc(0.5rem+env(safe-area-inset-bottom))] w-[calc(100%-2rem)] max-w-[22rem] z-50 md:hidden shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
+      <div data-nav-row class="relative flex items-center max-w-sm mx-auto px-2 py-2.5">
+        <span data-nav-pill aria-hidden="true" class="absolute left-0 top-2.5 bottom-2.5 rounded-full bg-white/10 border border-white/10 opacity-0 transition-[transform,width,opacity] duration-300 ease-out"></span>
+        <a href="/" data-nav="home" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">home</span>
           <span class="text-[10px] font-semibold tracking-wide">Home</span>
         </a>
-        <a href="/#team" data-nav="board" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+        <a href="/#team" data-nav="board" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">groups</span>
           <span class="text-[10px] font-semibold tracking-wide">Board</span>
         </a>
-        <button type="button" data-nav="departments" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+        <button type="button" data-nav="departments" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">grid_view</span>
           <span class="text-[10px] font-semibold tracking-wide">Departments</span>
         </button>
-        <a href="/#contact" data-nav="contact" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-1.5 text-white/60 hover:text-white transition-colors">
+        <a href="/#contact" data-nav="contact" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">mail</span>
           <span class="text-[10px] font-semibold tracking-wide">Contact</span>
         </a>
@@ -1110,7 +1110,7 @@
         update();
       })();
     </script>
-    <script src="/js/mobile-nav.js?v=8be4e2105b" defer></script>
+    <script src="/js/mobile-nav.js?v=995b756a43" defer></script>
     <script src="/js/pwa.js?v=50e3fcbef8" defer></script>
     <script src="/js/book-reader.js?v=8e908f0860" defer></script>
 </body>
