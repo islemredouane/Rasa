@@ -1,4 +1,4 @@
-// Phone bottom bar: Home · Board · Departments · Contact.
+// Phone bottom bar: Home · Board · Departments · Contact (a floating pill, like YouTube and Instagram).
 // - A highlight pill slides to the selected item (filled icon, white label).
 // - "Departments" opens a sheet listing every department.
 // - A thin line along the bar's top edge shows scroll progress.
@@ -48,8 +48,8 @@
   sheet.id = "deptSheet";
   sheet.setAttribute("role", "dialog");
   sheet.setAttribute("aria-label", "Departments");
-  sheet.className = "fixed inset-x-0 z-40 md:hidden translate-y-full opacity-0 pointer-events-none transition-all duration-300 " +
-    "rounded-t-[20px] border border-b-0 border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl px-5 pt-3 pb-5 shadow-[0_-20px_60px_rgba(0,0,0,0.6)]";
+  sheet.className = "fixed inset-x-4 mx-auto max-w-[22rem] z-40 md:hidden translate-y-full opacity-0 pointer-events-none transition-all duration-300 " +
+    "rounded-[28px] border border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl px-5 pt-3 pb-5 shadow-[0_-20px_60px_rgba(0,0,0,0.6)]";
   sheet.innerHTML = `
     <div class="mx-auto mb-4 h-1 w-10 rounded-full bg-white/20"></div>
     <div class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-white/50 text-center font-display">Departments</div>
@@ -110,7 +110,7 @@
 
   // ---------- Sheet open / close ----------
   function placeSheet() {
-    sheet.style.bottom = (bar ? bar.offsetHeight : 0) + "px";
+    sheet.style.bottom = (bar ? Math.round(window.innerHeight - bar.getBoundingClientRect().top + 8) : 0) + "px";
   }
 
   function setOpen(open) {
@@ -138,9 +138,9 @@
     bar.classList.add("overflow-hidden");
     const track = document.createElement("div");
     track.setAttribute("aria-hidden", "true");
-    track.className = "absolute top-0 left-0 right-0 h-[3px] bg-white/5";
+    track.className = "absolute top-[3px] left-[22px] right-[22px] h-[3px] rounded-full bg-white/5";
     fill = document.createElement("div");
-    fill.className = "h-full w-full origin-left bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
+    fill.className = "h-full w-full origin-left rounded-full bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
     fill.style.transform = "scaleX(0)";
     track.append(fill);
     bar.prepend(track);

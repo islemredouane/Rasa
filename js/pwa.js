@@ -37,7 +37,8 @@
   function bottomOffset() {
     const bar = document.querySelector("[data-nav-row]")?.closest(".fixed");
     const visible = bar && getComputedStyle(bar).display !== "none";
-    return (visible ? bar.offsetHeight : 0) + 16;
+    // the bar floats above the bottom edge, so measure from its top, not from its height
+    return (visible ? Math.round(window.innerHeight - bar.getBoundingClientRect().top) : 0) + 12;
   }
 
   function showCard({ title, text, action }) {
@@ -46,7 +47,7 @@
     card.setAttribute("role", "dialog");
     card.setAttribute("aria-label", title);
     card.className =
-      "fixed z-[60] left-4 right-4 md:left-auto md:right-6 md:w-[360px] glass-panel rounded-2xl p-4 flex items-center gap-3 " +
+      "fixed z-[60] left-4 right-4 mx-auto max-w-[22rem] md:mx-0 md:max-w-none md:left-auto md:right-6 md:w-[360px] glass-panel rounded-2xl p-4 flex items-center gap-3 " +
       "border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] bg-black/80 backdrop-blur-xl " +
       "transition-all duration-300 opacity-0 translate-y-4";
     card.style.bottom = bottomOffset() + "px";
