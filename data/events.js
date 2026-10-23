@@ -43,7 +43,7 @@ window.RASA_EVENTS = {
             "The 2026/27 season opened with our Welcome Day: about 200 students met the new board, discovered every department, enjoyed games and performances, and found their place in the Rasa community.",
           stat: "~200 attendees",
           cover: "/images/events/2026-27/welcome-day/cover.webp",
-          coverPosition: "center",
+          coverPosition: "28% center",
           link: { href: "/registrations", label: "Join Rasa" },
           highlight: true,
         },
