@@ -1,7 +1,7 @@
 // Phone bottom bar: Home · Board · Departments · Contact (a floating pill, like YouTube and Instagram).
 // - A highlight pill slides to the selected item (filled icon, white label).
 // - "Departments" opens a sheet listing every department.
-// - A thin line along the bar's top edge shows scroll progress.
+// - A thin line on the screen's right edge shows scroll progress.
 // To add a department, add it to DEPARTMENTS below — no page needs editing.
 (function () {
   const DEPARTMENTS = [
@@ -133,24 +133,23 @@
   });
 
   // ---------- Scroll progress + scroll-spy ----------
+  // A thin vertical line on the right edge of the screen (fixed, so it never pushes the content sideways).
   let fill = null;
-  if (bar) {
-    bar.classList.add("overflow-hidden");
-    const track = document.createElement("div");
-    track.setAttribute("aria-hidden", "true");
-    track.className = "absolute top-[3px] left-6 right-6 h-[3px] rounded-full bg-white/5";
-    fill = document.createElement("div");
-    fill.className = "h-full w-full origin-left rounded-full bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
-    fill.style.transform = "scaleX(0)";
-    track.append(fill);
-    bar.prepend(track);
-  }
+  const rail = document.createElement("div");
+  rail.setAttribute("aria-hidden", "true");
+  rail.className = "fixed right-1 top-28 bottom-36 w-[3px] rounded-full bg-white/10 z-40 md:hidden pointer-events-none";
+  fill = document.createElement("div");
+  fill.className = "h-full w-full origin-top rounded-full bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
+  fill.style.transform = "scaleY(0)";
+  rail.append(fill);
+  document.body.append(rail);
+  if (bar) bar.classList.add("overflow-hidden");
 
   let ticking = false;
   function onScroll() {
     if (fill) {
       const max = document.documentElement.scrollHeight - window.innerHeight;
-      fill.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+      fill.style.transform = `scaleY(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
     }
     const sheetOpen = toggle.getAttribute("aria-expanded") === "true";
     if (isHome && !sheetOpen && Date.now() > lockUntil) {
