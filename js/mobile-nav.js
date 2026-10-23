@@ -49,7 +49,7 @@
   sheet.setAttribute("role", "dialog");
   sheet.setAttribute("aria-label", "Departments");
   sheet.className = "fixed inset-x-4 mx-auto max-w-[22rem] z-40 md:hidden translate-y-full opacity-0 pointer-events-none transition-all duration-300 " +
-    "rounded-[28px] border border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl px-5 pt-3 pb-5 shadow-[0_-20px_60px_rgba(0,0,0,0.6)]";
+    "rounded-[32px] border border-white/10 bg-[#0f0f0f]/95 backdrop-blur-xl px-5 pt-3 pb-5 shadow-[0_-20px_60px_rgba(0,0,0,0.6)]";
   sheet.innerHTML = `
     <div class="mx-auto mb-4 h-1 w-10 rounded-full bg-white/20"></div>
     <div class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-white/50 text-center font-display">Departments</div>
@@ -138,7 +138,7 @@
     bar.classList.add("overflow-hidden");
     const track = document.createElement("div");
     track.setAttribute("aria-hidden", "true");
-    track.className = "absolute top-[3px] left-[22px] right-[22px] h-[3px] rounded-full bg-white/5";
+    track.className = "absolute top-[3px] left-6 right-6 h-[3px] rounded-full bg-white/5";
     fill = document.createElement("div");
     fill.className = "h-full w-full origin-left rounded-full bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
     fill.style.transform = "scaleX(0)";
