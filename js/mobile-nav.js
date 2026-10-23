@@ -81,15 +81,21 @@
   let lockUntil = 0;
   function pageKey() {
     if (DEPARTMENT_PAGES.includes(page)) return "departments";
+    if (page === "/events") return "events";
     if (!isHome) return null;
     // the FAQ sits right above the contact form, so both light up "Contact"
     const contact = document.getElementById("faq") || document.getElementById("contact");
     const team = document.getElementById("team");
     const line = window.innerHeight * 0.5;
     if (contact && contact.getBoundingClientRect().top < line) return "contact";
+    const events = document.getElementById("events");
     if (team && team.getBoundingClientRect().top < line) return "board";
+    if (events && events.getBoundingClientRect().top < line) return "events";
     return "home";
   }
+
+  // Off the homepage the Events tab opens the full page; on the homepage it scrolls to the section.
+  if (!isHome) items.find((el) => el.dataset.nav === "events")?.setAttribute("href", "/events");
 
   // Place the pill without animating on first paint.
   if (pill) {
