@@ -19,29 +19,39 @@
 //
 // After editing, run:  node scripts/build.mjs   (updates SEO data, pre-rendered HTML and the sitemap)
 //
-// Upcoming events go in RASA_EVENTS.upcoming; when an event is over, move it into its season.
+// Upcoming events go in RASA_EVENTS.upcoming (leave it empty when nothing is announced); when an event is over,
+// move it into its season. A season that is over gets  ended: true  (the FAQ quotes the latest ended season).
 
 window.RASA_EVENTS = {
-  upcoming: [
-    {
-      id: "welcome-day-2026",
-      start: "2026-10-19T16:30:00+01:00",
-      title: "RASA's Welcome Day",
-      date: "Monday 19 Oct 2026 · 16:30",
-      place: "Salle de théâtre, ESTIN",
-      tags: ["All departments", "Welcome Day"],
-      icon: "waving_hand",
-      summary:
-        "You're invited to our Welcome Day: meet the 2026/27 board, discover every department, enjoy games and performances, and find your place in the Rasa community.",
-      cover: "/images/events/upcoming/welcome-day-2026/welcome-day-poster.webp",
-      coverPosition: "center 20%",
-      link: { href: "https://www.instagram.com/rasa.estin/", label: "Follow on Instagram" },
-    },
-  ],
+  upcoming: [],
 
   seasons: [
     {
+      id: "2026-27",
+      title: "Season 2026/27",
+      intro: "The new board's first year: it opened with a Welcome Day for about 200 students.",
+      events: [
+        {
+          id: "welcome-day-2026",
+          start: "2026-10-19T16:30:00+01:00",
+          title: "RASA's Welcome Day",
+          date: "19 Oct 2026",
+          place: "Salle de théâtre, ESTIN",
+          tags: ["All departments", "Welcome Day"],
+          icon: "waving_hand",
+          summary:
+            "The 2026/27 season opened with our Welcome Day: about 200 students met the new board, discovered every department, enjoyed games and performances, and found their place in the Rasa community.",
+          stat: "About 200 attendees",
+          cover: "/images/events/2026-27/welcome-day/cover.webp",
+          coverPosition: "center",
+          link: { href: "/registrations", label: "Join the Rasa family" },
+          highlight: true,
+        },
+      ],
+    },
+    {
       id: "2025-26",
+      ended: true,
       title: "Season 2025/26",
       intro: "Eleven activities across literature, music, chess, heritage and outings: the year RASA grew up.",
       events: [

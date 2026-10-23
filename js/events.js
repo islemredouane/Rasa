@@ -1,7 +1,7 @@
 // Renders RASA events from data/events.js (in the browser, and in scripts/build.mjs for pre-rendering) into:
 //   [data-events-upcoming]  upcoming events (events page)
 //   [data-events-seasons]   one timeline per season (events page)
-//   [data-events-home]      homepage teaser: next event + highlights
+//   [data-events-home]      homepage teaser: next event (if any) + highlights
 (function () {
   const data = window.RASA_EVENTS;
   if (!data) return;
@@ -106,7 +106,7 @@
               <div class="mt-3 h-1 w-16 bg-primary rounded-full"></div>
               ${s.intro ? `<p class="mt-4 text-gray-400 max-w-2xl">${esc(s.intro)}</p>` : ""}
             </div>
-            <span class="text-sm text-gray-500 uppercase tracking-widest">${s.events.length} activities</span>
+            <span class="text-sm text-gray-500 uppercase tracking-widest">${s.events.length} ${s.events.length === 1 ? "activity" : "activities"}</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             ${s.events.map((e, i) => card(e, i + 1)).join("")}
@@ -118,13 +118,12 @@
 
   function homeHTML() {
     const next = data.upcoming[0];
-    const latest = data.seasons[0];
-    const highlights = latest ? latest.events.filter((e) => e.highlight).slice(0, 3) : [];
+    const highlights = data.seasons.flatMap((s) => s.events.filter((e) => e.highlight)).slice(0, 3);
     return `
       ${next ? upcomingCard(next) : ""}
       ${highlights.length ? `
-        <div class="mt-14 flex items-end justify-between gap-4 mb-8">
-          <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">${esc(latest.title)} highlights</h3>
+        <div class="${next ? "mt-14 " : ""}flex items-end justify-between gap-4 mb-8">
+          <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">Highlights</h3>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${highlights.map((e) => card(e)).join("")}</div>` : ""}
       <div class="mt-8 md:mt-10 flex justify-center">
