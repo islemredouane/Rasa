@@ -1,7 +1,7 @@
 // Phone bottom bar: Home · Board · Departments · Contact (a floating pill, like YouTube and Instagram).
 // - A highlight pill slides to the selected item (filled icon, white label).
 // - "Departments" opens a sheet listing every department.
-// - A thin line on the screen's right edge shows scroll progress.
+// - A scrollbar on the screen's right edge (like the desktop one) replaces the hidden page scrollbar.
 // To add a department, add it to DEPARTMENTS below — no page needs editing.
 (function () {
   const DEPARTMENTS = [
@@ -132,25 +132,64 @@
     if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") setOpen(false);
   });
 
-  // ---------- Scroll progress + scroll-spy ----------
-  // A thin vertical line on the right edge of the screen (fixed, so it never pushes the content sideways).
-  let fill = null;
+  // ---------- Scrollbar + scroll-spy ----------
+  // The page scrollbar is hidden on phones, so this fixed overlay takes its place with the desktop scrollbar's
+  // look (8px, #333 thumb, orange when held). It floats over the page, so it never pushes the content sideways.
   const rail = document.createElement("div");
   rail.setAttribute("aria-hidden", "true");
-  rail.className = "fixed right-1 top-28 bottom-36 w-[3px] rounded-full bg-white/10 z-40 md:hidden pointer-events-none";
-  fill = document.createElement("div");
-  fill.className = "h-full w-full origin-top rounded-full bg-primary shadow-[0_0_8px_rgba(234,106,31,0.8)]";
-  fill.style.transform = "scaleY(0)";
-  rail.append(fill);
+  rail.className = "fixed right-0 top-0 bottom-0 w-2 z-40 md:hidden pointer-events-none transition-opacity duration-200";
+  const thumb = document.createElement("div");
+  thumb.className =
+    "absolute right-0 top-0 w-2 rounded-[4px] bg-[#333] pointer-events-auto touch-none transition-colors duration-200 " +
+    "before:content-[''] before:absolute before:inset-y-0 before:-left-4 before:right-0";
+  rail.append(thumb);
   document.body.append(rail);
   if (bar) bar.classList.add("overflow-hidden");
 
+  function metrics() {
+    const height = document.documentElement.scrollHeight;
+    const view = window.innerHeight;
+    const max = Math.max(height - view, 0);
+    const size = max > 0 ? Math.max(44, Math.round((view * view) / height)) : 0;
+    return { max, size, travel: view - size };
+  }
+
+  function updateScrollbar() {
+    const { max, size, travel } = metrics();
+    rail.style.opacity = max > 0 ? "1" : "0";
+    thumb.style.height = size + "px";
+    thumb.style.transform = `translateY(${max > 0 ? Math.round((Math.min(window.scrollY, max) / max) * travel) : 0}px)`;
+  }
+
+  // Drag the thumb to scroll (touch or mouse).
+  let drag = null;
+  const hold = (on) => {
+    thumb.classList.toggle("bg-primary", on);
+    thumb.classList.toggle("bg-[#333]", !on);
+  };
+  thumb.addEventListener("pointerdown", (e) => {
+    drag = { y: e.clientY, top: window.scrollY };
+    try { thumb.setPointerCapture(e.pointerId); } catch { /* synthetic pointer: fine */ }
+    hold(true);
+    e.preventDefault();
+  });
+  thumb.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    const m = metrics();
+    if (m.travel <= 0) return;
+    window.scrollTo({ top: drag.top + (e.clientY - drag.y) * (m.max / m.travel), behavior: "instant" });
+  });
+  const release = () => { drag = null; hold(false); };
+  thumb.addEventListener("pointerup", release);
+  thumb.addEventListener("pointercancel", release);
+
+  // The page height changes as images load and sections open.
+  if ("ResizeObserver" in window) new ResizeObserver(updateScrollbar).observe(document.body);
+  window.addEventListener("load", updateScrollbar);
+
   let ticking = false;
   function onScroll() {
-    if (fill) {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      fill.style.transform = `scaleY(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
-    }
+    updateScrollbar();
     const sheetOpen = toggle.getAttribute("aria-expanded") === "true";
     if (isHome && !sheetOpen && Date.now() > lockUntil) {
       const key = pageKey();
