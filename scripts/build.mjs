@@ -113,7 +113,7 @@ const BOARD = [...boardHtml.matchAll(/<h3[^>]*>\s*([^<]+?)\s*<\/h3>\s*<p[^>]*>([
 }));
 const byRole = (r) => BOARD.find((m) => m.role.toLowerCase() === r)?.name;
 
-const season = EVENTS.seasons[0];
+const season = EVENTS.seasons.find((s) => s.ended) ?? EVENTS.seasons[0]; // latest finished season
 const eventCount = season.events.length;
 
 // ---------------------------------------------------------------- FAQ (visible on the homepage + FAQPage schema)
@@ -594,9 +594,9 @@ ${BOARD.map((m) => `- ${m.name}: ${m.role}`).join("\n")}
 
 ${EVENTS.upcoming.map((e) => `- ${e.title} (${e.date}, ${e.place}): ${e.summary}`).join("\n") || "- Nothing announced yet."}
 
-## ${season.title} (${eventCount} activities)
-
-${season.events.map((e) => `- ${e.title}: ${e.date}, ${e.place}. ${e.summary}${e.stat ? ` (${e.stat})` : ""}`).join("\n")}
+${EVENTS.seasons
+  .map((s) => `## ${s.title} (${s.events.length} ${s.events.length === 1 ? "activity" : "activities"})\n\n${s.events.map((e) => `- ${e.title}: ${e.date}, ${e.place}. ${e.summary}${e.stat ? ` (${e.stat})` : ""}`).join("\n")}`)
+  .join("\n\n")}
 
 ## FAQ
 
