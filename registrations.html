@@ -62,7 +62,7 @@
         "width": 1200,
         "height": 630
       },
-      "dateModified": "2026-10-23",
+      "dateModified": "2026-10-28",
       "breadcrumb": {
         "@id": "https://rasa-off.vercel.app/registrations#breadcrumb"
       }
@@ -171,7 +171,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/registrations.css?v=a5e9274a88" />
+  <link rel="stylesheet" href="/css/registrations.css?v=9a69b9ad16" />
 </head>
 
   <body
@@ -230,7 +230,7 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            <span class="text-xs font-bold tracking-widest uppercase text-primary font-display">Registrations open · 2026/27</span>
+            <span class="text-xs font-bold tracking-widest uppercase text-primary font-display"><span data-reg-closed-text="Registrations closed · 2026/27">Registrations open · 2026/27</span></span>
           </div>
 
           <h1 class="mt-8 font-display font-bold leading-[1.05] text-[clamp(2.25rem,6vw,4.25rem)]">
@@ -242,7 +242,24 @@
             you at Rasa. Register in under a minute and start living the expression with us.
           </p>
 
-          <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <!-- Countdown to the registration deadline (js/registration-deadline.js) -->
+          <div data-reg-countdown class="mt-8 mx-auto max-w-md rounded-3xl border border-primary/30 bg-primary/5 px-5 py-5">
+            <div data-reg-live>
+              <p class="text-xs font-bold uppercase tracking-[0.25em] text-primary font-display">Registrations close tonight at midnight</p>
+              <div class="mt-4 flex items-center justify-center gap-2 sm:gap-3 font-display">
+                <div data-reg-days class="hidden flex-1"><div class="rounded-2xl bg-black/50 border border-white/10 py-3"><span data-reg-d class="block text-3xl sm:text-4xl font-bold tabular-nums">00</span></div><span class="mt-1.5 block text-[10px] uppercase tracking-widest text-gray-400">Days</span></div>
+                <div class="flex-1"><div class="rounded-2xl bg-black/50 border border-white/10 py-3"><span data-reg-h class="block text-3xl sm:text-4xl font-bold tabular-nums">--</span></div><span class="mt-1.5 block text-[10px] uppercase tracking-widest text-gray-400">Hours</span></div>
+                <div class="flex-1"><div class="rounded-2xl bg-black/50 border border-white/10 py-3"><span data-reg-m class="block text-3xl sm:text-4xl font-bold tabular-nums">--</span></div><span class="mt-1.5 block text-[10px] uppercase tracking-widest text-gray-400">Minutes</span></div>
+                <div class="flex-1"><div class="rounded-2xl bg-black/50 border border-primary/40 py-3"><span data-reg-s class="block text-3xl sm:text-4xl font-bold tabular-nums text-primary">--</span></div><span class="mt-1.5 block text-[10px] uppercase tracking-widest text-gray-400">Seconds</span></div>
+              </div>
+            </div>
+            <div data-reg-closed class="hidden">
+              <p class="font-display font-bold text-lg">Registrations are now closed</p>
+              <p class="mt-1 text-sm text-gray-300">Thank you to everyone who joined! Follow <a href="https://www.instagram.com/rasa.estin/" target="_blank" rel="noopener" class="text-primary font-bold hover:underline">@rasa.estin</a> to hear what comes next.</p>
+            </div>
+          </div>
+
+          <div data-reg-cta class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="https://forms.gle/F239SGdYYrRszMCo6"
               target="_blank"
@@ -418,10 +435,10 @@
             <h2 class="mt-6 font-display font-bold text-3xl md:text-4xl leading-tight">
               Ready to <span class="text-metallic">join us</span>?
             </h2>
-            <p class="mt-4 text-gray-300 leading-relaxed max-w-xl mx-auto">
+            <p data-reg-closed-text="Registrations for the 2026/27 season are now closed. Follow us on Instagram to hear about the next call." class="mt-4 text-gray-300 leading-relaxed max-w-xl mx-auto">
               Registrations are open for the 2026/27 season. Use your <strong class="text-white">@estin.dz</strong> email and pick your department.
             </p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div data-reg-cta class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="https://forms.gle/F239SGdYYrRszMCo6"
                 target="_blank"
@@ -522,6 +539,7 @@
         </a>
       </div>
     </div>
+    <script src="/js/registration-deadline.js?v=db4ecfb764" defer></script>
     <script src="/js/mobile-nav.js?v=95a3e7d5b3" defer></script>
     <script src="/js/pwa.js?v=50e3fcbef8" defer></script>
 </body>
