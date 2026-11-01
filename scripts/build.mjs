@@ -43,7 +43,7 @@ const PAGES = [
   { file: "noregistrations.html", path: "/noregistrations", og: "default", noindex: true },
 ];
 // Pages outside PAGES that still get versioned asset links.
-const EXTRA_PAGES = ["offline.html", "404.html"];
+const EXTRA_PAGES = ["offline.html", "404.html", "quiz.html"];
 
 const DEPARTMENTS = [
   ["Literature Department", "/literature"],
