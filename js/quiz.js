@@ -123,8 +123,8 @@
     shuffled.forEach(([text], i) => {
       const b = document.createElement("button");
       b.type = "button";
-      b.className = "opt w-full text-start flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 font-bold";
-      b.innerHTML = `<span class="size-8 shrink-0 rounded-full bg-white/10 flex items-center justify-center text-sm"></span><span class="flex-1 leading-snug"></span><span class="material-symbols-outlined text-[22px] hidden" data-mark></span>`;
+      b.className = "opt w-full text-start flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3.5 lg:px-6 lg:py-5 lg:text-xl font-bold";
+      b.innerHTML = `<span class="size-8 lg:size-11 shrink-0 rounded-full bg-white/10 flex items-center justify-center text-sm"></span><span class="flex-1 leading-snug"></span><span class="material-symbols-outlined text-[22px] hidden" data-mark></span>`;
       b.children[0].textContent = LETTERS[i];
       b.children[1].textContent = text;
       b.addEventListener("click", () => answer(i));
@@ -208,7 +208,7 @@
 
   async function share() {
     const name = el.name.value.trim();
-    const text = `${name ? name + ": " : ""}حصلتُ على ${correct}/${QUESTIONS.length} (${points} نقطة) في مسابقة أول نوفمبر من نادي راسا هل تتحدّاني؟`;
+    const text = `${name ? name + ": " : ""}حصلتُ على ${correct}/${QUESTIONS.length} (${points} نقطة) في مسابقة أول نوفمبر من Rasa Club هل تتحدّاني؟`;
     const url = location.href.split("#")[0];
     const label = $("[data-share-label]");
     try {
