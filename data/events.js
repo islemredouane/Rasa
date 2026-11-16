@@ -44,7 +44,10 @@ window.RASA_EVENTS = {
           stat: "~200 attendees",
           cover: "/images/events/2026-27/welcome-day/cover.webp",
           coverPosition: "28% center",
-          link: { href: "/registrations", label: "Join Rasa" },
+          link: {
+            href: "https://www.instagram.com/p/Df0Jz_wDBoN/",
+            label: "View on Instagram",
+          },
           highlight: true,
         },
         {
