@@ -158,24 +158,7 @@
         box-shadow: 0 0 26px rgba(234, 106, 31, 0.16);
         transform: translateY(-4px);
       }
-      .text-metallic {
-        background: linear-gradient(
-          to right,
-          #ea6a1f 20%,
-          #ffb74d 40%,
-          #ea6a1f 60%,
-          #ffb74d 80%
-        );
-        background-size: 200% auto;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        animation: shine 4s linear infinite;
-      }
-      @keyframes shine {
-        0% { background-position: 200% center; }
-        100% { background-position: -200% center; }
-      }
+
     </style>
 
     <!-- Phones: full width fixed bottom bar -->
@@ -222,21 +205,12 @@
     </div>
 
     <main class="pt-28 md:pt-32 pb-32 md:pb-24">
-      <!-- Breadcrumb & Back Link -->
+      <!-- Back Link -->
       <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-4 pb-2">
-        <div class="flex items-center justify-between flex-wrap gap-4 text-xs font-semibold tracking-wider uppercase text-white/50 font-display">
-          <nav aria-label="Breadcrumb" class="flex items-center gap-2">
-            <a href="/" class="hover:text-primary transition-colors">Home</a>
-            <span class="text-white/30">/</span>
-            <a href="/events" class="hover:text-primary transition-colors">Events</a>
-            <span class="text-white/30">/</span>
-            <span class="text-primary">SILA 2026</span>
-          </nav>
-          <a href="/events" class="inline-flex items-center gap-1.5 text-white/70 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
-            Back to all events
-          </a>
-        </div>
+        <a href="/events" class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white/70 hover:text-primary transition-colors font-display">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          Back to all events
+        </a>
       </div>
 
       <!-- Hero Header -->
@@ -267,7 +241,7 @@
 
             <!-- Title -->
             <h1 class="font-display font-bold leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl text-white">
-              Algiers International Book Fair <span class="text-metallic">(SILA 2026)</span>
+              Algiers International Book Fair <span class="text-primary">(SILA 2026)</span>
             </h1>
 
             <p class="mt-4 font-['Tajawal'] text-2xl sm:text-3xl text-primary font-bold tracking-wide" dir="rtl">
@@ -700,8 +674,8 @@
           <article class="group glass-card rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox(12)">
             <div class="relative aspect-[4/3] overflow-hidden bg-white/[0.02]">
               <img
-                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/13-media-coverage-gimbal.webp"
-                alt="Rasa media team capturing every highlight with the gimbal"
+                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/13-fasila-bookshelves-novels.webp"
+                alt="Shelves packed with novels and literature at Fasila Publishing House"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
@@ -714,8 +688,8 @@
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur text-[11px] font-bold text-white font-display">13 / 18</span>
             </div>
             <div class="p-4">
-              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Media Coverage on the Ground</h3>
-              <p class="text-xs text-white/60 mt-1 line-clamp-2">Rasa's Multimedia team capturing smooth cinematic footage and interviews with the gimbal rig.</p>
+              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Fasila Publishing Bookshelves</h3>
+              <p class="text-xs text-white/60 mt-1 line-clamp-2">Endless rows of novels, literature, and publications at the Fasila Publishing House (فاصلة للنشر والتوزيع) stand.</p>
             </div>
           </article>
 
@@ -723,8 +697,8 @@
           <article class="group glass-card rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox(13)">
             <div class="relative aspect-[4/3] overflow-hidden bg-white/[0.02]">
               <img
-                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/14-central-pavilion-atmosphere.webp"
-                alt="The bustling atmosphere of the central exhibition hall"
+                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/14-members-sharing-moments.webp"
+                alt="Rasa members smiling, chatting, and discussing books together"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
@@ -737,8 +711,8 @@
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur text-[11px] font-bold text-white font-display">14 / 18</span>
             </div>
             <div class="p-4">
-              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Bustling Central Pavilion</h3>
-              <p class="text-xs text-white/60 mt-1 line-clamp-2">The vibrant, crowded atmosphere of Pavilion Central with book lovers and students exploring hundreds of publisher stands.</p>
+              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Members Sharing Smiles &amp; Stories</h3>
+              <p class="text-xs text-white/60 mt-1 line-clamp-2">Candid smiles as Rasa members explore the exhibition aisles, sharing book recommendations and laughs together.</p>
             </div>
           </article>
 
@@ -769,8 +743,8 @@
           <article class="group glass-card rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox(15)">
             <div class="relative aspect-[4/3] overflow-hidden bg-white/[0.02]">
               <img
-                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/16-member-portrait-fair.webp"
-                alt="Portrait of a member with their official SILA badge in the hall"
+                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/16-journey-on-the-bus.webp"
+                alt="Inside the bus on the way to Algiers with Inmir Voyage"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
@@ -783,8 +757,8 @@
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur text-[11px] font-bold text-white font-display">16 / 18</span>
             </div>
             <div class="p-4">
-              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Event Visitor Portrait</h3>
-              <p class="text-xs text-white/60 mt-1 line-clamp-2">Rasa member sporting the official visitor badge while enjoying the atmosphere of the exhibition halls.</p>
+              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">On the Bus with Inmir Voyage</h3>
+              <p class="text-xs text-white/60 mt-1 line-clamp-2">The morning road trip on the delegation bus headed to SAFEX Algiers, organized in partnership with Inmir Voyage.</p>
             </div>
           </article>
 
@@ -792,8 +766,8 @@
           <article class="group glass-card rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox(16)">
             <div class="relative aspect-[4/3] overflow-hidden bg-white/[0.02]">
               <img
-                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/17-exploring-fair-map.webp"
-                alt="Planning the route through the exhibition layout map (جناح الوئام)"
+                src="https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/gallery/17-members-bookshelves-selfie.webp"
+                alt="Members capturing joyful moments by the book fair shelves"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
@@ -806,8 +780,8 @@
               <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur text-[11px] font-bold text-white font-display">17 / 18</span>
             </div>
             <div class="p-4">
-              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Navigating the Fairground Map</h3>
-              <p class="text-xs text-white/60 mt-1 line-clamp-2">Checking the directory map of the exhibition halls (جناح الوئام) to locate international publishers and literary stands.</p>
+              <h3 class="font-display font-bold text-white text-base group-hover:text-primary transition-colors">Memories Between the Bookshelves</h3>
+              <p class="text-xs text-white/60 mt-1 line-clamp-2">Capturing joyful member moments and friendships surrounded by international literature and books.</p>
             </div>
           </article>
 
@@ -849,10 +823,6 @@
             <a href="/literature" class="h-11 px-6 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 hover:border-primary text-white text-xs font-bold font-display uppercase tracking-wider transition-all flex items-center gap-2">
               <span class="material-symbols-outlined text-base text-primary">local_library</span>
               Literature Department
-            </a>
-            <a href="/registrations" class="h-11 px-6 rounded-full bg-primary hover:bg-orange-500 text-black text-xs font-bold font-display uppercase tracking-wider transition-all flex items-center gap-2">
-              <span>Join Rasa 2026/27</span>
-              <span class="material-symbols-outlined text-base">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -1019,11 +989,11 @@
         { file: "10-members-sharing-stories.webp", title: "Sharing Book Recommendations", caption: "Students chatting, comparing wishlists, and sharing reading recommendations along the exhibition aisles." },
         { file: "11-book-discovery-novel.webp", title: "A New Book Discovery", caption: "A proud moment holding up newly acquired literature — adding new treasures to personal bookshelves." },
         { file: "12-mascot-fistbump.webp", title: "Fun at the Youth Pavilion", caption: "A cheerful fistbump with the friendly red mascot welcoming visitors to the interactive youth and children's section." },
-        { file: "13-media-coverage-gimbal.webp", title: "Media Coverage on the Ground", caption: "Rasa's Multimedia team capturing smooth cinematic footage and interviews with the gimbal rig." },
-        { file: "14-central-pavilion-atmosphere.webp", title: "Bustling Central Pavilion", caption: "The vibrant, crowded atmosphere of Pavilion Central with book lovers and students exploring hundreds of publisher stands." },
+        { file: "13-fasila-bookshelves-novels.webp", title: "Fasila Publishing Bookshelves", caption: "Endless rows of novels, literature, and publications at the Fasila Publishing House (فاصلة للنشر والتوزيع) stand in Pavilion Central." },
+        { file: "14-members-sharing-moments.webp", title: "Members Sharing Smiles & Stories", caption: "Candid smiles as Rasa members explore the exhibition aisles, sharing book recommendations and laughs together." },
         { file: "15-anep-literary-conference.webp", title: "ANEP Pavilion & Author Debates", caption: "The grand national pavilion of ANEP hosting literary discussions, press conferences, and signing sessions." },
-        { file: "16-member-portrait-fair.webp", title: "Event Visitor Portrait", caption: "Rasa member sporting the official visitor badge while enjoying the atmosphere of the exhibition halls." },
-        { file: "17-exploring-fair-map.webp", title: "Navigating the Fairground Map", caption: "Checking the directory map of the exhibition halls (جناح الوئام) to locate international publishers and literary stands." },
+        { file: "16-journey-on-the-bus.webp", title: "On the Bus with Inmir Voyage", caption: "The morning road trip on the delegation bus headed to SAFEX Algiers, organized in partnership with Inmir Voyage." },
+        { file: "17-members-bookshelves-selfie.webp", title: "Memories Between the Bookshelves", caption: "Capturing joyful member moments and friendships surrounded by international literature and books." },
         { file: "18-green-library-publishers.webp", title: "The Green Library — المكتبة الخضراء", caption: "Nostalgic memories at the famous Green Library (المكتبة الخضراء) stand, featuring generations of children's and youth literature." }
       ];
 
