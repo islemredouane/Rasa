@@ -60,6 +60,7 @@ window.RASA_EVENTS = {
           icon: "flag",
           summary:
             "Commemorating the outbreak of the Algerian Revolution at ESTIN with an honored veteran guest, student tributes, and an interactive history competition honoring national memory.",
+          stat: "~150 attendees",
           cover:
             "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/1-november/cover.webp",
           highlight: true,
