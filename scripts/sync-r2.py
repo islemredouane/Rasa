@@ -129,18 +129,22 @@ def main():
     if CDN_URL:
         print(f"   Public CDN: {CDN_URL}")
 
-    target_dir = os.path.join(ROOT, "images", "events", "2026-27", "sila")
-    if not os.path.isdir(target_dir):
-        print(f"❌ Directory not found: {target_dir}")
-        return
+    target_dirs = [
+        os.path.join(ROOT, "images", "events"),
+        os.path.join(ROOT, "images", "memories"),
+        os.path.join(ROOT, "images", "chess-cup-2026"),
+    ]
 
     files_to_sync = []
-    for dirpath, _, filenames in os.walk(target_dir):
-        for fn in filenames:
-            if fn.endswith((".webp", ".png", ".jpg", ".jpeg")):
-                full = os.path.join(dirpath, fn)
-                rel = os.path.relpath(full, ROOT).replace("\\", "/")
-                files_to_sync.append((full, rel))
+    for t_dir in target_dirs:
+        if not os.path.isdir(t_dir):
+            continue
+        for dirpath, _, filenames in os.walk(t_dir):
+            for fn in sorted(filenames):
+                if fn.endswith((".webp", ".png", ".jpg", ".jpeg")):
+                    full = os.path.join(dirpath, fn)
+                    rel = os.path.relpath(full, ROOT).replace("\\", "/")
+                    files_to_sync.append((full, rel))
 
     print(f"\nFound {len(files_to_sync)} asset(s) to check:")
 

@@ -42,7 +42,7 @@ window.RASA_EVENTS = {
           summary:
             "The 2026/27 season opened with our Welcome Day: about 200 students met the new board, discovered every department, enjoyed games and performances, and found their place in the Rasa community.",
           stat: "~200 attendees",
-          cover: "/images/events/2026-27/welcome-day/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/welcome-day/cover.webp",
           coverPosition: "28% center",
           link: {
             href: "https://www.instagram.com/p/Df0Jz_wDBoN/",
@@ -86,7 +86,7 @@ window.RASA_EVENTS = {
           summary:
             "Our first contact with the new students: every department presented, social games and new members recruited.",
           stat: "659 likes on the video",
-          cover: "/images/events/2025-26/welcome-day/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/welcome-day/cover.webp",
           link: { href: "https://www.instagram.com/rasa.estin/reel/DP4PbizDB-x/", label: "Watch reel" },
           highlight: true,
         },
@@ -100,7 +100,7 @@ window.RASA_EVENTS = {
           icon: "movie",
           summary:
             "A horror film chosen by the students themselves in an Instagram poll, to breathe before exam season.",
-          cover: "/images/events/2025-26/movie-night/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/movie-night/cover.webp",
         },
         {
           id: "sila",
@@ -112,7 +112,7 @@ window.RASA_EVENTS = {
           icon: "menu_book",
           summary:
             "A cultural trip to SILA: visiting the stands, meeting authors and publishers, and bringing books home.",
-          cover: "/images/events/2025-26/sila/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/sila/cover.webp",
         },
         {
           id: "1-november",
@@ -124,7 +124,7 @@ window.RASA_EVENTS = {
           icon: "flag",
           summary:
             "Speeches on the meaning of the Revolution of 1 November 1954 and heritage music, in a solemn atmosphere.",
-          cover: "/images/events/2025-26/1-november/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/1-november/cover.webp",
         },
         {
           id: "speaking-club",
@@ -137,7 +137,7 @@ window.RASA_EVENTS = {
           icon: "record_voice_over",
           summary:
             "Guided discussions in English and French to build confidence, communication and public speaking.",
-          cover: "/images/events/2025-26/speaking-club/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/speaking-club/cover.webp",
         },
         {
           id: "yennayer",
@@ -149,7 +149,7 @@ window.RASA_EVENTS = {
           icon: "festival",
           summary:
             "Tifinagh workshop, “Guess the Word” in Tamazight, a Yennayer quiz, traditional Kabyle dishes and clothes, and music.",
-          cover: "/images/events/2025-26/yennayer/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/yennayer/cover.webp",
         },
         {
           id: "movie-night-2",
@@ -160,7 +160,7 @@ window.RASA_EVENTS = {
           tags: ["Relaxation"],
           icon: "movie",
           summary: "A second movie night, with Dune: Part One on the big screen.",
-          cover: "/images/events/2025-26/movie-night-2/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/movie-night-2/cover.webp",
         },
         {
           id: "qa3da-musicale",
@@ -171,7 +171,7 @@ window.RASA_EVENTS = {
           tags: ["Music", "with LDC"],
           icon: "music_note",
           summary: "An open musical evening in our room to decompress after a heavy week.",
-          cover: "/images/events/2025-26/qa3da-musicale/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/qa3da-musicale/cover.webp",
         },
         {
           id: "chess-cup",
@@ -185,7 +185,7 @@ window.RASA_EVENTS = {
           summary:
             "Our first chess tournament: three days of games and a champion, Sameur Adel. A new yearly rendezvous was born.",
           stat: "24 players",
-          cover: "/images/chess-cup-2026/9.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/chess-cup-2026/9.webp",
           link: { href: "/chess#chess-cup", label: "See the recap" },
           highlight: true,
         },
@@ -199,7 +199,7 @@ window.RASA_EVENTS = {
           icon: "landscape",
           summary: "Discovering the Djurdjura mountains together, with the support of Sinay Travel and the Orca club.",
           stat: "656 likes on the video",
-          cover: "/images/events/2025-26/tikjda/cover.webp",
+          cover: "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2025-26/tikjda/cover.webp",
           link: { href: "https://www.instagram.com/rasa.estin/reel/DW_1HyADGjc/", label: "Watch reel" },
           highlight: true,
         },
