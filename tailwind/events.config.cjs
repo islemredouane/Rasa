@@ -1,7 +1,7 @@
 // Tailwind settings for events.html (moved here from the page's former inline config).
 // Compiled into css/events.css by: node scripts/build-css.mjs
 module.exports = {
-  content: ["./events.html", "./js/**/*.js", "./data/**/*.js"],
+  content: ["./events.html", "./events/**/*.html", "./js/**/*.js", "./data/**/*.js"],
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/container-queries")],
   ...{
     "darkMode": "class",

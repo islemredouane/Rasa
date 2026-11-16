@@ -47,6 +47,23 @@ window.RASA_EVENTS = {
           link: { href: "/registrations", label: "Join Rasa" },
           highlight: true,
         },
+        {
+          id: "sila-2026",
+          start: "2026-11-06",
+          title: "Algiers International Book Fair (SILA 2026)",
+          date: "6 Nov 2026",
+          place: "SAFEX, Algiers",
+          tags: ["Literature", "Cultural Outing", "Inmir Voyage"],
+          icon: "menu_book",
+          summary:
+            "A cultural trip organized in partnership with Inmir Voyage to the 29th Algiers International Book Fair (SILA): 48 students explored the pavilions, met authors, and celebrated the release of 'The White Keeper' by club author Nourhane Belgacem.",
+          stat: "48 participants",
+          cover:
+            "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/sila/rasa-delegation-inmir-sila-2026.webp",
+          coverPosition: "center 35%",
+          link: { href: "/events/sila-2026", label: "View event & gallery" },
+          highlight: true,
+        },
       ],
     },
     {

@@ -28,6 +28,7 @@ const WEBSITE_ID = `${SITE}/#website`;
 const PAGES = [
   { file: "index.html", path: "/", og: "default", type: "WebPage" },
   { file: "events.html", path: "/events", og: "events", type: "CollectionPage", crumbs: [["Events", "/events"]] },
+  { file: "events/sila-2026.html", path: "/events/sila-2026", og: "events", crumbs: [["Events", "/events"], ["SILA 2026", "/events/sila-2026"]] },
   { file: "literature.html", path: "/literature", og: "literature", dept: "Literature", crumbs: [["Literature", "/literature"]] },
   { file: "literature/arabic.html", path: "/literature/arabic", og: "arabic", library: "ar", type: "CollectionPage", crumbs: [["Literature", "/literature"], ["Arabic Library", "/literature/arabic"]] },
   { file: "literature/english.html", path: "/literature/english", og: "english", library: "en", type: "CollectionPage", crumbs: [["Literature", "/literature"], ["English Library", "/literature/english"]] },
@@ -75,7 +76,7 @@ function save(f, s, crlf) {
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const text = (html) => html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-const url = (p) => SITE + p;
+const url = (p) => (/^https?:\/\//i.test(p) ? p : SITE + (p.startsWith("/") ? p : "/" + p));
 const hash = (buf) => crypto.createHash("sha256").update(buf).digest("hex").slice(0, 10);
 
 // Last commit date of a file (YYYY-MM-DD); today if it has uncommitted changes.
