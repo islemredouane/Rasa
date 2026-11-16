@@ -8,7 +8,7 @@
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-febea60d86";
+const VERSION = "rasa-5ff4ec23c7";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
