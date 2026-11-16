@@ -51,6 +51,20 @@ window.RASA_EVENTS = {
           highlight: true,
         },
         {
+          id: "1-november-2026",
+          start: "2026-11-01",
+          title: "1 November commemoration",
+          date: "1 Nov 2026",
+          place: "ESTIN",
+          tags: ["100% RASA", "Heritage"],
+          icon: "flag",
+          summary:
+            "Commemorating the outbreak of the Algerian Revolution at ESTIN with an honored veteran guest, student tributes, and an interactive history competition honoring national memory.",
+          cover:
+            "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev/images/events/2026-27/1-november/cover.webp",
+          highlight: true,
+        },
+        {
           id: "sila-2026",
           start: "2026-11-06",
           title: "Algiers International Book Fair (SILA 2026)",
