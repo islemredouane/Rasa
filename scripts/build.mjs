@@ -79,6 +79,18 @@ const decode = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/
 const url = (p) => (/^https?:\/\//i.test(p) ? p : SITE + (p.startsWith("/") ? p : "/" + p));
 const hash = (buf) => crypto.createHash("sha256").update(buf).digest("hex").slice(0, 10);
 
+// Content-hash versioning (?v=<hash>) so browsers and social scrapers never serve stale assets.
+const assetVersion = new Map();
+function versioned(ref) {
+  const clean = ref.split("?")[0];
+  if (!assetVersion.has(clean)) {
+    const f = file(clean.replace(/^\//, ""));
+    assetVersion.set(clean, fs.existsSync(f) ? hash(fs.readFileSync(f)) : null);
+  }
+  const v = assetVersion.get(clean);
+  return v ? `${clean}?v=${v}` : ref;
+}
+
 // Last commit date of a file (YYYY-MM-DD); today if it has uncommitted changes.
 // lastmod / dateModified then only move when a page really changes.
 function git(args) {
@@ -169,7 +181,7 @@ const ORGANIZATION = {
     "Rasa is the cultural and artistic student club of ESTIN in Amizour, Béjaïa, Algeria: literature, art, music, chess, activities and charity.",
   url: SITE + "/",
   logo: { "@type": "ImageObject", url: url("/icons/icon-512.png"), width: 512, height: 512 },
-  image: url("/images/og/default.jpg"),
+  image: url(versioned("/images/og/default.jpg")),
   slogan: "Feel the emotion. Live the expression.",
   keywords: "Rasa Club, club culturel ESTIN, ESTIN Béjaïa, student club Algeria, literature, art, music, chess, charity",
   knowsAbout: ["Literature", "Reading and book fairs", "Visual art", "Music", "Chess", "Games and student activities", "Charity and solidarity", "Amazigh culture and Yennayer", "Student life at ESTIN"],
@@ -312,7 +324,7 @@ function breadcrumb(page) {
 // ---------------------------------------------------------------- head block
 function headBlock(page, title, description, html) {
   const pageUrl = url(page.path);
-  const image = url(`/images/og/${page.og}.jpg`);
+  const image = url(versioned(`/images/og/${page.og}.jpg`));
   const graph = [
     {
       "@type": page.type || "WebPage",
@@ -361,6 +373,7 @@ function headBlock(page, title, description, html) {
     <meta property="og:title" content="${attr(title)}" />
     <meta property="og:description" content="${attr(description)}" />
     <meta property="og:image" content="${image}" />
+    <meta property="og:image:secure_url" content="${image}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -454,18 +467,7 @@ function faqSection() {
 
 // ---------------------------------------------------------------- run
 // ---------------------------------------------------------------- asset versions
-// Every local CSS/JS file referenced by the pages gets ?v=<hash of its content>, so browsers can cache
-// it for a long time and still get the new file as soon as it changes.
-const assetVersion = new Map();
-function versioned(ref) {
-  const clean = ref.split("?")[0];
-  if (!assetVersion.has(clean)) {
-    const f = file(clean.replace(/^\//, ""));
-    assetVersion.set(clean, fs.existsSync(f) ? hash(fs.readFileSync(f)) : null);
-  }
-  const v = assetVersion.get(clean);
-  return v ? `${clean}?v=${v}` : ref;
-}
+// Every local CSS/JS/favicon file referenced by the pages gets ?v=<hash of its content>.
 const versionAssets = (html) =>
   html
     .replace(/(<script\b[^>]*\bsrc=")(\/(?:js|data)\/[^"]+\.js)(?:\?v=[^"]*)?(")/g, (_, a, ref, b) => a + versioned(ref) + b)
