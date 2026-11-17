@@ -1,5 +1,5 @@
 # Rasa Club — robots.txt
-# Site: https://rasa-off.vercel.app · Maintained by the Rasa Design Department
+# Site: https://rasa.estin.dz · Maintained by the Rasa Design Department
 #
 # AI policy — "answers yes, training no":
 #   - Search engines, AI search and AI assistants are welcome, so Rasa can be found and cited
@@ -34,8 +34,8 @@ Disallow: /
 # -------------------------------------------------------------
 # Sitemap and machine-readable guides (llmstxt.org)
 # -------------------------------------------------------------
-Sitemap: https://rasa-off.vercel.app/sitemap.xml
+Sitemap: https://rasa.estin.dz/sitemap.xml
 
 # LLM context files:
-# Concise index: https://rasa-off.vercel.app/llms.txt
-# Full guide:    https://rasa-off.vercel.app/llms-full.txt
+# Concise index: https://rasa.estin.dz/llms.txt
+# Full guide:    https://rasa.estin.dz/llms-full.txt

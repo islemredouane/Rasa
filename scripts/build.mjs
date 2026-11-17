@@ -18,7 +18,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://rasa-off.vercel.app";
+const SITE = "https://rasa.estin.dz";
 const TODAY = new Date().toLocaleDateString("en-CA"); // local date, YYYY-MM-DD
 const ORG_ID = `${SITE}/#organization`;
 const WEBSITE_ID = `${SITE}/#website`;

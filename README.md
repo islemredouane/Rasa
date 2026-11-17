@@ -1,12 +1,12 @@
 <div align="center">
 
-<a href="https://rasa-off.vercel.app">
+<a href="https://rasa.estin.dz">
   <img src=".github/assets/banner.webp" alt="Rasa Club — the cultural and artistic club of ESTIN Béjaïa. Feel the emotion. Live the expression." width="100%">
 </a>
 
 <br>
 
-[![Website](https://img.shields.io/badge/rasa--off.vercel.app-live-ea6a1f?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=000000)](https://rasa-off.vercel.app)
+[![Website](https://img.shields.io/badge/rasa.estin.dz-live-ea6a1f?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=000000)](https://rasa.estin.dz)
 [![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 [![PWA](https://img.shields.io/badge/PWA-installable-ea6a1f?style=for-the-badge&logo=pwa&logoColor=white&labelColor=000000)](#-performance--offline)
 [![Instagram](https://img.shields.io/badge/Instagram-@rasa.estin-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=000000)](https://www.instagram.com/rasa.estin/)
@@ -14,7 +14,7 @@
 **Events · the board · six departments · libraries with an in-page reader · charity · recruitment**<br>
 the home of Rasa Club at ESTIN Béjaïa, fast on any phone, and installable as an app.
 
-[**Visit the site**](https://rasa-off.vercel.app) &nbsp;·&nbsp;
+[**Visit the site**](https://rasa.estin.dz) &nbsp;·&nbsp;
 [Features](#-features) &nbsp;·&nbsp;
 [Architecture](#-architecture) &nbsp;·&nbsp;
 [Visual identity](#-visual-identity) &nbsp;·&nbsp;
@@ -245,7 +245,7 @@ soft glass surfaces and generous rounded shapes.
 | **Visible FAQ** | Nine questions on the homepage, generated from the same source as the `FAQPage` schema. |
 | **Sitemap** | `sitemap.xml` lists the 12 indexable pages with their **last git commit date** and an **image sitemap** of each page's photos; `/noregistrations`, `/offline` and the 404 page are `noindex`. |
 | **robots.txt** | *Answers yes, training no*: search engines and AI assistants are welcome; crawlers that only collect AI training data are blocked. `/api/` is not crawled. |
-| **llms.txt** | [`llms.txt`](https://rasa-off.vercel.app/llms.txt) (short index) and [`llms-full.txt`](https://rasa-off.vercel.app/llms-full.txt) (full guide: board, every event, Chess Cup results, library catalogue, FAQ) for AI assistants ([llmstxt.org](https://llmstxt.org)). |
+| **llms.txt** | [`llms.txt`](https://rasa.estin.dz/llms.txt) (short index) and [`llms-full.txt`](https://rasa.estin.dz/llms-full.txt) (full guide: board, every event, Chess Cup results, library catalogue, FAQ) for AI assistants ([llmstxt.org](https://llmstxt.org)). |
 | **Clean URLs** | `/events`, not `/events.html`. Old addresses answer `308` redirects so shared links keep working. |
 | **Images** | Descriptive `alt` text everywhere; photos compressed to WebP. |
 | **Security** | `nosniff`, `SAMEORIGIN` framing, strict referrer and a locked-down `Permissions-Policy` on every response (HSTS from Vercel). |
@@ -361,7 +361,7 @@ fonts and colours:
 - [ ] Contact details for the four board members who don't have them yet
 - [ ] A dedicated share image for each department page
 - [ ] French and Arabic versions of the main pages, with `hreflang`
-- [ ] A custom domain for the club
+- [x] A custom domain for the club (`rasa.estin.dz`)
 - [ ] Run the CSS and SEO builds automatically on Vercel instead of committing their output
 
 <br>
@@ -377,7 +377,7 @@ fonts and colours:
 ✉️ [rasa@estin.dz](mailto:rasa@estin.dz) &nbsp;·&nbsp;
 📸 [Instagram @rasa.estin](https://www.instagram.com/rasa.estin/) &nbsp;·&nbsp;
 💼 [LinkedIn](https://www.linkedin.com/company/rasa-club/) &nbsp;·&nbsp;
-🌐 [rasa-off.vercel.app](https://rasa-off.vercel.app)
+🌐 [rasa.estin.dz](https://rasa.estin.dz)
 
 **Website** designed and built by the Rasa Design Department ·
 developer [**Redouane Mohamed Islem**](https://www.linkedin.com/in/redouane-mohamed-islem-48923a435)

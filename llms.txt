@@ -6,15 +6,15 @@ Rasa was created by students to ease the pressure of studies with a space for li
 
 ## Pages
 
-- [Home](https://rasa-off.vercel.app/): about the club, events, the 2026/27 board, FAQ and contact form
-- [Events](https://rasa-off.vercel.app/events): upcoming events and every activity of past seasons
-- [Literature](https://rasa-off.vercel.app/literature): reading, book fairs, the Speaking Club, English/French/Arabic libraries
-- [Art](https://rasa-off.vercel.app/art): drawings, paper quilling and members' artwork
-- [Music](https://rasa-off.vercel.app/music): musical evenings and instruments
-- [Chess](https://rasa-off.vercel.app/chess): training and the RASA Chess Cup
-- [Activities](https://rasa-off.vercel.app/activities): games and tournaments
-- [Charity](https://rasa-off.vercel.app/charity): solidarity campaigns with accredited associations
-- [Register](https://rasa-off.vercel.app/registrations): join Rasa Club 2026/27 and pick a department
+- [Home](https://rasa.estin.dz/): about the club, events, the 2026/27 board, FAQ and contact form
+- [Events](https://rasa.estin.dz/events): upcoming events and every activity of past seasons
+- [Literature](https://rasa.estin.dz/literature): reading, book fairs, the Speaking Club, English/French/Arabic libraries
+- [Art](https://rasa.estin.dz/art): drawings, paper quilling and members' artwork
+- [Music](https://rasa.estin.dz/music): musical evenings and instruments
+- [Chess](https://rasa.estin.dz/chess): training and the RASA Chess Cup
+- [Activities](https://rasa.estin.dz/activities): games and tournaments
+- [Charity](https://rasa.estin.dz/charity): solidarity campaigns with accredited associations
+- [Register](https://rasa.estin.dz/registrations): join Rasa Club 2026/27 and pick a department
 
 ## Board 2026/27
 
