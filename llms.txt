@@ -37,7 +37,7 @@ Rasa was created by students to ease the pressure of studies with a space for li
 - Zaidi Yanis: Multimedia Department Manager
 - Mehtour Abderrahman: Graphic Design Manager
 - Benkahla Redouane: Communication Department Manager
-- Bendjama Fadi: Communication Department Manager
+- Bendjama Fady: Communication Department Manager
 - Arbouche Feriel: Logistics Department Manager
 
 ## Upcoming
