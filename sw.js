@@ -8,7 +8,7 @@
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-bfdd49ae1c";
+const VERSION = "rasa-2da471703e";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
@@ -30,20 +30,20 @@ const PRECACHE_URLS = [
   "/literature/french",
   "/offline",
   "/manifest.webmanifest",
-  "/css/activities.css?v=c1ae80f980",
-  "/css/arabic.css?v=4d3b98ff09",
-  "/css/art.css?v=df3c883b23",
-  "/css/charity.css?v=c864c42cce",
-  "/css/chess.css?v=93eddabf0e",
-  "/css/english.css?v=bc289d909f",
-  "/css/events.css?v=c59920d61b",
-  "/css/french.css?v=bc289d909f",
-  "/css/index.css?v=0a7cbe0a1f",
-  "/css/literature.css?v=b6a3cc6dc1",
-  "/css/music.css?v=40e79a39f6",
-  "/css/noregistrations.css?v=4619958c2a",
-  "/css/registrations.css?v=964cf05f20",
-  "/js/mobile-nav.js?v=95a3e7d5b3",
+  "/css/activities.css?v=3fcb51f5c9",
+  "/css/arabic.css?v=f2a24797de",
+  "/css/art.css?v=274b4015a9",
+  "/css/charity.css?v=1708b62265",
+  "/css/chess.css?v=3e060a4228",
+  "/css/english.css?v=b9b79c9ea9",
+  "/css/events.css?v=91a2a983c5",
+  "/css/french.css?v=b9b79c9ea9",
+  "/css/index.css?v=8bdd3ee625",
+  "/css/literature.css?v=7c5748154a",
+  "/css/music.css?v=7239e780ee",
+  "/css/noregistrations.css?v=a14e2cba3f",
+  "/css/registrations.css?v=6f6cedecab",
+  "/js/mobile-nav.js?v=15ce905e90",
   "/js/events.js?v=4bc368b2f4",
   "/js/pwa.js?v=50e3fcbef8",
   "/js/book-reader.js?v=8e908f0860",

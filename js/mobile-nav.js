@@ -208,4 +208,32 @@
   }, { passive: true });
   window.addEventListener("resize", () => { placeSheet(); select(selected); onScroll(); });
   onScroll();
+
+  // ---------- Footer helpers: Copy email & Smooth Back to Top ----------
+  document.querySelectorAll("[data-copy-email]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-copy-email");
+      const label = btn.querySelector("[data-copy-label]");
+      const originalText = label ? label.textContent : "";
+      try {
+        await navigator.clipboard.writeText(email);
+        if (label) label.textContent = "Copied! ✨";
+        if (typeof showToast === "function") {
+          showToast({ type: "success", title: "Email Copied", message: email + " copied to clipboard" });
+        }
+      } catch {
+        if (label) label.textContent = email;
+      }
+      if (label) {
+        setTimeout(() => { label.textContent = originalText; }, 2000);
+      }
+    });
+  });
+
+  document.getElementById("footer-to-top")?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  });
 })();
