@@ -357,7 +357,7 @@ fonts and colours:
 ## ✦ Roadmap
 
 - [ ] Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools
-- [ ] Add privacy-friendly analytics (e.g. Vercel Web Analytics) to see which pages and events students visit
+- [x] Add privacy-friendly analytics (Vercel Web Analytics) to see which pages and events students visit
 - [ ] Contact details for the four board members who don't have them yet
 - [ ] A dedicated share image for each department page
 - [ ] French and Arabic versions of the main pages, with `hreflang`

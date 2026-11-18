@@ -8,7 +8,7 @@
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-d76ff99e0b";
+const VERSION = "rasa-bfdd49ae1c";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
@@ -84,7 +84,7 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   const sameOrigin = url.origin === self.location.origin;
 
-  if (sameOrigin && url.pathname.startsWith("/api/")) return;
+  if (sameOrigin && (url.pathname.startsWith("/api/") || url.pathname.startsWith("/_vercel/"))) return;
 
   if (request.mode === "navigate") {
     event.respondWith(networkFirstPage(event));

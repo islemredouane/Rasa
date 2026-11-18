@@ -42,6 +42,13 @@ class Handler(SimpleHTTPRequestHandler):
         parts = urlsplit(self.path)
         path, query = parts.path, ("?" + parts.query if parts.query else "")
 
+        if path.startswith("/_vercel/"):
+            self.send_response(200)
+            self.send_header("Content-Type", "application/javascript")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+
         if path in REDIRECTS:
             return self._redirect(REDIRECTS[path] + query)
         if path.endswith(".html"):
