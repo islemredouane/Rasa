@@ -42,7 +42,7 @@ page, and vanilla JavaScript, with no framework. It is served by **Vercel** with
 makes it installable and keeps it working offline.
 
 <div align="center">
-  <img src=".github/assets/preview.webp" alt="The Rasa homepage on a desktop browser and the events page on a phone" width="100%">
+  <img src=".github/assets/preview.webp" alt="The Rasa homepage on a desktop browser and on a phone" width="100%">
 </div>
 
 <br>

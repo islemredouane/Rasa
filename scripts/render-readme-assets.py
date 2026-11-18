@@ -77,7 +77,7 @@ def main() -> None:
     shoot(f"{SITE}/", SRC / "shots" / "desktop.png", 1440, 900)
     # phone: an exact 390 px frame inside a 500 px window, then cropped to the frame
     mobile = SRC / "shots" / "mobile.png"
-    shoot(f"{SITE}/.github/assets/src/shot-frame.html?u=/events&w=390&h=844", mobile, 500, 844, mobile=True)
+    shoot(f"{SITE}/.github/assets/src/shot-frame.html?u=/&w=390&h=844", mobile, 500, 844, mobile=True)
     Image.open(mobile).crop((0, 0, 390 * 2, 844 * 2)).save(mobile)
 
     print("README images")
