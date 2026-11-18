@@ -487,7 +487,7 @@ for (const page of PAGES) {
   const { s: original, crlf } = load(page.file);
   let s = original;
   const title = decode(s.match(/<title>([\s\S]*?)<\/title>/)[1].trim());
-  const description = decode(s.match(/<meta name="description" content="([^"]*)"/)[1]);
+  const description = decode(s.match(/<meta\s+name="description"\s+content="([^"]*)"/)[1]);
 
   s = replaceBlock(s, "<!-- seo:start -->", "<!-- seo:end -->", headBlock(page, title, description, s), (src, block) => {
     const anchor = src.match(/\n([ \t]*)<meta name="apple-mobile-web-app-status-bar-style"[^>]*>/);

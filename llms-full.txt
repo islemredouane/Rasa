@@ -24,7 +24,8 @@ Rasa was created by students to ease the pressure of studies by giving the stude
 - Kernou Abdellah: President
 - Zamoum Chemseddine: Vice President
 - Slimani Sabrina: Secretary
-- Redouane Mohamed Islem: Human Resources Manager & Website Developer
+- Redouane Mohamed Islem: Human Resources Manager &
+                Website Developer
 - Abid Khalida: Literature Department Manager
 - Sawsen Aouzellag: Literature Department Manager
 - Benhaoua Boualam: Art Department Manager
@@ -40,7 +41,9 @@ Rasa was created by students to ease the pressure of studies by giving the stude
 - Zaidi Yanis: Multimedia Department Manager
 - Mehtour Abderrahman: Graphic Design Manager
 - Benkahla Redouane: Communication Department Manager
+              
 - Bendjama Fady: Communication Department Manager
+              
 - Arbouche Feriel: Logistics Department Manager
 
 ## Upcoming
