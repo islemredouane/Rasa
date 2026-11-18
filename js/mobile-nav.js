@@ -71,7 +71,7 @@
     }
     if (!pill) return;
     if (!item) { pill.style.opacity = "0"; return; }
-    const inset = 4;
+    const inset = 2;
     pill.style.width = item.offsetWidth - inset * 2 + "px";
     pill.style.transform = `translateX(${item.offsetLeft + inset}px)`;
     pill.style.opacity = "1";

@@ -364,7 +364,7 @@
         html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
       }
     </style>
-  <link rel="stylesheet" href="/css/english.css?v=482e78ee7c" />
+  <link rel="stylesheet" href="/css/english.css?v=258f5fbc4a" />
 </head>
 
   <body
@@ -793,7 +793,7 @@
               </div>
               <div>
                 <span class="text-2xl font-display font-bold text-white tracking-tight">Rasa</span>
-                <p class="text-[11px] text-primary font-medium tracking-wide">ESTIN Cultural Sanctuary</p>
+                <p class="text-[11px] text-primary font-medium tracking-wide">ESTIN Cultural Club</p>
               </div>
             </a>
             <p class="mt-4 text-white/60 text-sm leading-relaxed max-w-sm">
@@ -858,7 +858,7 @@
             </p>
             <div class="mt-4 p-3 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
               <div>
-                <p class="text-[11px] font-semibold text-white">Sanctuary · Club Room</p>
+                <p class="text-[11px] font-semibold text-white">Club Room</p>
                 <p class="text-[11px] text-white/50">ESTIN Library · Ground Floor</p>
               </div>
               <a href="https://www.google.com/maps/dir/?api=1&destination=36.66364687538598,4.909960575296492" target="_blank" rel="noopener" class="size-8 rounded-lg bg-white/5 hover:bg-primary hover:text-black border border-white/10 text-primary flex items-center justify-center transition-all shrink-0" aria-label="Open location in Google Maps" title="Open in Google Maps">
@@ -893,27 +893,32 @@
   </footer>
 
     <!-- Mobile bottom navigation -->
-    <div class="glass-panel rounded-full fixed left-1/2 -translate-x-1/2 bottom-[calc(0.5rem+env(safe-area-inset-bottom)*0.3)] w-[calc(100%-2rem)] max-w-[22rem] z-50 md:hidden shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
-      <div data-nav-row class="relative flex items-center max-w-sm mx-auto px-2 py-2.5">
-        <span data-nav-pill aria-hidden="true" class="absolute left-0 top-2.5 bottom-2.5 rounded-full bg-white/10 border border-white/10 opacity-0 transition-[transform,width,opacity] duration-300 ease-out"></span>
-        <a href="/" data-nav="home" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
+    <!-- ✅ Mobile Bottom Navigation -->
+  <div class="glass-panel rounded-full fixed left-1/2 -translate-x-1/2 bottom-[calc(0.5rem+env(safe-area-inset-bottom)*0.3)] w-[calc(100%-1.5rem)] max-w-[23.5rem] z-50 md:hidden shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
+    <div data-nav-row class="relative flex items-center max-w-sm mx-auto px-2 py-2.5">
+        <span data-nav-pill aria-hidden="true" class="absolute left-0 top-2.5 bottom-2.5 rounded-2xl bg-white/10 border border-white/10 opacity-0 transition-[transform,width,opacity] duration-300 ease-out"></span>
+        <a href="/" data-nav="home" class="relative z-10 flex flex-[0.9] flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">home</span>
           <span class="text-[10px] font-semibold tracking-wide">Home</span>
         </a>
-        <a href="/#team" data-nav="board" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
+        <a href="/#events" data-nav="events" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[22px] leading-none">event</span>
+          <span class="text-[10px] font-semibold tracking-wide">Events</span>
+        </a>
+        <a href="/#team" data-nav="board" class="relative z-10 flex flex-[0.9] flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">groups</span>
           <span class="text-[10px] font-semibold tracking-wide">Board</span>
         </a>
-        <button type="button" data-nav="departments" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
+        <button type="button" data-nav="departments" data-dept-toggle aria-expanded="false" aria-controls="deptSheet" class="relative z-10 flex flex-[1.3] flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">grid_view</span>
-          <span class="text-[10px] font-semibold tracking-wide">Departments</span>
+          <span class="text-[9.5px] font-semibold tracking-tight">Departments</span>
         </button>
         <a href="/#contact" data-nav="contact" class="relative z-10 flex flex-1 flex-col items-center gap-0.5 py-2 text-white/60 hover:text-white transition-colors">
           <span class="material-symbols-outlined text-[22px] leading-none">mail</span>
           <span class="text-[10px] font-semibold tracking-wide">Contact</span>
         </a>
       </div>
-    </div>
+  </div>
 
     <script>
       (function () {
@@ -1005,7 +1010,7 @@
         update();
       })();
     </script>
-    <script src="/js/mobile-nav.js?v=15ce905e90" defer></script>
+    <script src="/js/mobile-nav.js?v=6b6ac9e98b" defer></script>
     <script src="/js/pwa.js?v=50e3fcbef8" defer></script>
     <script src="/js/book-reader.js?v=8e908f0860" defer></script>
 </body>
