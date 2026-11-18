@@ -47,6 +47,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/shemsou.JPG</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/Thiziri.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/girl-avatar.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/events</loc>
@@ -54,6 +55,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/events.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/events/sila-2026</loc>
@@ -61,6 +63,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/events.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/literature</loc>
@@ -70,6 +73,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/og/literature.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/abid-khalida.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/sawsen-aouzellag.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/literature/arabic</loc>
@@ -77,6 +81,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/arabic.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/arses.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/crime.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/Back%20to%20haifa.png</image:loc></image:image>
@@ -90,6 +95,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/english.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/harry%20potter.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/Orwell.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/Midnight%20library.png</image:loc></image:image>
@@ -102,6 +108,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/french.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/AC.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/AL.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/peste.png</image:loc></image:image>
@@ -128,6 +135,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/7.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/8.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/9.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/music</loc>
@@ -138,6 +146,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/mandolin.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/darbuka.jpeg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/flute.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/zemali-boudjemaa.webp</image:loc></image:image>
   </url>
   <url>
@@ -169,6 +178,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5670.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5675.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/9.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/activities</loc>
@@ -178,6 +188,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/og/activities.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/bekhouche-ahmed-ziad.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/hamdi-adem.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/charity</loc>
@@ -187,6 +198,7 @@
     <image:image><image:loc>https://rasa.estin.dz/images/og/charity.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/belgacem-nourhane.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/adam-bouakkache.webp</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/registrations</loc>
@@ -194,5 +206,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/registrations.jpg</image:loc></image:image>
+    <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
 </urlset>
