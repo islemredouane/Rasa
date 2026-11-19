@@ -8,7 +8,7 @@
 //   /api/*, POST, other hosts  not touched
 //
 // Shipping a change: bump VERSION so old caches are cleared on the next visit.
-const VERSION = "rasa-f8ee147974";
+const VERSION = "rasa-62e11707c8";
 const PRECACHE = `${VERSION}-precache`;
 const RUNTIME = `${VERSION}-runtime`;
 const IMAGES = `${VERSION}-images`;
@@ -38,7 +38,7 @@ const PRECACHE_URLS = [
   "/css/english.css?v=d2f5a9844f",
   "/css/events.css?v=5fcf74082d",
   "/css/french.css?v=d2f5a9844f",
-  "/css/index.css?v=99b4c7a2e5",
+  "/css/index.css?v=8a27119e94",
   "/css/literature.css?v=f672b725f2",
   "/css/music.css?v=fa399a0313",
   "/css/noregistrations.css?v=e27bc93a6c",
