@@ -19,6 +19,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "scripts" / "og" / "card.html"
 OUT = ROOT / "images" / "og"
+R2 = "https://pub-34f597cfc4b044778078247a7859dbfb.r2.dev"  # gallery and cover images live on Cloudflare R2, not in the repo
 
 CARDS = {
     "default": dict(title="Rasa Club", eyebrow="Cultural & artistic club · ESTIN Béjaïa",
@@ -26,16 +27,16 @@ CARDS = {
                     stat="11", statLabel="activities in 2025/26"),
     "events": dict(title="Events", eyebrow="Rasa Club · ESTIN Béjaïa",
                    line="What's coming next, and every moment we lived together.",
-                   img="images/events/2025-26/welcome-day/cover.webp", stat="11", statLabel="activities · 2025/26"),
+                   img=R2 + "/images/events/2025-26/welcome-day/cover.webp", stat="11", statLabel="activities · 2025/26"),
     "literature": dict(title="Literature Department", eyebrow="Rasa Club · Literature",
                        line="Reading, book fairs, the Speaking Club and three libraries.",
-                       img="images/events/2025-26/sila/cover.webp"),
+                       img=R2 + "/images/events/2025-26/sila/cover.webp"),
     "english": dict(title="English Library", eyebrow="Rasa Club · Literature",
-                    line="Our English book picks, readable right in the browser.", img="images/harry potter.png"),
+                    line="Our English book picks, readable right in the browser.", img=R2 + "/images/library/harry-potter.png"),
     "french": dict(title="French Library", eyebrow="Rasa Club · Literature",
-                   line="Nos lectures en français, à lire directement sur le site.", img="images/peste.png"),
+                   line="Nos lectures en français, à lire directement sur le site.", img=R2 + "/images/library/peste.png"),
     "arabic": dict(title="Arabic Library", eyebrow="Rasa Club · Literature",
-                   line="Our Arabic book picks, readable right in the browser.", img="images/Back to haifa.png"),
+                   line="Our Arabic book picks, readable right in the browser.", img=R2 + "/images/library/back-to-haifa.png"),
     "art": dict(title="Art Department", eyebrow="Rasa Club · Art",
                 line="Drawing, painting and paper quilling by our members.",
                 img="images/photo_5782752836901866859_w.jpg"),
@@ -43,7 +44,7 @@ CARDS = {
                   line="Musical evenings, instruments and students who play together.",
                   img="images/photo_6037583180832902927_y.jpg"),
     "chess": dict(title="Chess Department", eyebrow="Rasa Club · Chess",
-                  line="Training, puzzles and the RASA Chess Cup.", img="images/chess-cup-2026/9.webp",
+                  line="Training, puzzles and the RASA Chess Cup.", img=R2 + "/images/chess-cup-2026/9.webp",
                   stat="24", statLabel="players · Chess Cup 2026"),
     "activities": dict(title="Activities Department", eyebrow="Rasa Club · Activities",
                        line="Games, tournaments and fun moments beyond lectures.", img="images/IMG_1252.JPG"),

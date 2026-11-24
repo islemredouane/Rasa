@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rasa.estin.dz/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/default.jpg</image:loc></image:image>
@@ -41,7 +41,6 @@
     <image:image><image:loc>https://rasa.estin.dz/images/Hana.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/rahim.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/ahmed.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/islem.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/insaf.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/abdellah.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/shemsou.JPG</image:loc></image:image>
@@ -77,107 +76,55 @@
   </url>
   <url>
     <loc>https://rasa.estin.dz/literature/arabic</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/arabic.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/arses.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/crime.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/Back%20to%20haifa.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/Fem.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/Heart.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/killed%20student.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/literature/english</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/english.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/harry%20potter.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/Orwell.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/Midnight%20library.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/were%20none.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/ASH.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/literature/french</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/french.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/AC.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/AL.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/peste.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/MF.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/nuitsblanches.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/etranger.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/m%C3%A9tamorphose.png</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/L'Alchimiste.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/art</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/art.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/benhaoua-boualam.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/banahcen-mohamed-ishak.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/1.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/2.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/3.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/4.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/5.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/6.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/7.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/8.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/art-showcase/9.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/music</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/music.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/mandolin.jpg</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/darbuka.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/flute.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/zemali-boudjemaa.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://rasa.estin.dz/chess</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://rasa.estin.dz/images/og/chess.jpg</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/dr-salim-benslimane.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/board-2026-27/zekagh-ishak.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/winner-2.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/winner-1.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/winner-3.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/11.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/1.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/2.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/3.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/4.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/5.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/6.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/7.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/8.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/10.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/chess-1.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/chess-2.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5663.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5664.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5665.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5670.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/img-5675.webp</image:loc></image:image>
-    <image:image><image:loc>https://rasa.estin.dz/images/chess-cup-2026/9.webp</image:loc></image:image>
     <image:image><image:loc>https://rasa.estin.dz/images/estin-logo-white.png</image:loc></image:image>
   </url>
   <url>
